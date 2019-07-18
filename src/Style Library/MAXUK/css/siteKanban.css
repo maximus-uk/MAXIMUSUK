@@ -1,0 +1,461 @@
+﻿.columnTitle .titleLine h2 {
+    color: #000 !important;
+    position: relative;
+    top: -20px !important;
+    left: 10px;
+    padding: 0 0 0 10px;
+}
+
+.columnCards {
+    position: relative;
+    /*top: 185px;
+    width: 97.5%;
+    margin: 0 0 0 -20px;*/
+    height: 75vh;
+    z-index: 1;
+}
+
+.container {
+    overflow: hidden;
+    display: inline-block;
+    padding: 5px 10px 10px 5px;
+    /*margin: 10px 0 0 5px;*/
+    min-height: 50%;
+    height: 100%;
+    width: 15% !important;
+    text-align: left;
+    vertical-align: top !important;
+    float: left;
+    clear: right;
+    margin: 10px;
+    border: 1px solid #7676b8;
+    box-shadow: 5px 5px #ddddeb;
+    border-radius: 10px;
+}
+
+.titleLine {
+    z-index: 10 !important;
+    height: 40px;
+    /*width: 15% !important;*/
+    margin: 5px 5px 8px 5px;
+}
+
+    .titleLine .addNew {
+        position: relative;
+        top: -8px;
+        float: right;
+        background-color: #ddddeb !important;
+        color: #000 !important;
+        width: 30px;
+        height: 30px;
+    }
+
+        .titleLine .addNew:hover {
+            color: #7676b8
+        }
+
+        .titleLine .addNew .glyphicon {
+            top: -1px;
+            left: -4px
+        }
+
+    .titleLine h2 {
+        padding: 0;
+        margin: 0 auto;
+        top: 28px;
+        left: 70px;
+    }
+
+    .titleLine hr {
+        border-top: 2px solid #545487;
+        position: relative;
+        top: -15px;
+    }
+
+.scroll {
+    height: 91%;
+    width: 103%;
+    border-radius: 10px !important;
+    margin-left: 0 !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-base-color: transparent !important;
+    scrollbar-face-color: #7676b8;
+    scrollbar-3dlight-color: transparent !important;
+    scrollbar-highlight-color: #ddddeb !important;
+    scrollbar-track-color: white !important;
+    scrollbar-arrow-color: #545487 !important;
+    scrollbar-shadow-color: #545487 !important;
+}
+
+    .scroll .nav-pills {
+        margin-left: 5px !important;
+        position: relative;
+        left: 3px;
+    }
+
+/*
+.titleAdjust {
+    margin-left: 5px;
+}
+
+.titleSection {
+    position: fixed;
+    top: 160px;
+    z-index: 999 !important;
+    width: 12.5% !important;
+    background: white;
+    border-bottom: 1px #545487 solid;
+}
+
+.columnTitle {
+    position: fixed;
+    top: 160px;
+    left: 100px;
+    z-index: 10 !important;
+    width: 90% !important;
+    text-align: left;
+    height: 30px;
+}
+*/
+
+.sortable {
+    list-style-type: none;
+    margin: 0 -2px 5px -2px;
+    padding: 2px;
+    min-height: 100%;
+    border-radius: 10px;
+}
+
+    .sortable li {
+        margin: 3px 3px 3px 5px;
+        padding: 0.4em;
+        padding-left: 1.5em;
+        font-size: 1.4em;
+        height: 18px;
+    }
+
+        .sortable li span {
+            position: absolute;
+            margin-left: -1.3em;
+        }
+
+.kanbanCardTitle {
+    position: fixed;
+    height: 205px;
+    background-color: white;
+    z-index: 99;
+    margin: -20px 0 0 0;
+}
+
+/*
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-binding: url('assets/xml/ellipsis.xml#ellipsis');
+}
+*/
+
+.cardScroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-base-color: white;
+    scrollbar-face-color: #ddddeb;
+    scrollbar-3dlight-color: white;
+    scrollbar-highlight-color: white;
+    scrollbar-track-color: white;
+    scrollbar-arrow-color: white;
+    scrollbar-shadow-color: white !important;
+}
+
+.kanbanCardHeader {
+    height: 125px;
+    background-color: #ddddeb;
+}
+
+    .kanbanCardHeader h2 {
+        margin: 10px;
+        color: #000 !important;
+    }
+
+    .kanbanCardHeader #idNum {
+        color: #545487
+    }
+
+.kanbanCardTask {
+    margin: 10px;
+    left: 10%;
+}
+
+.kanbanCardHeaderBottom {
+    margin: 0;
+    height: 40px;
+}
+
+.kanbanCardHeaderRight, .kanbanCardHeaderRightEdit {
+    float: right;
+}
+
+.kanbanCardHeaderRightEdit {
+    top: 133px;
+    left: 44.5%;
+    position: absolute;
+}
+
+.kanbanCardHeaderLeftEdit {
+    float: left;
+}
+
+.kanbanCardHeaderLeftEdit {
+    top: -5px;
+    left: 2px
+}
+
+.kanbanCardContent, .kanbanCardContentEdit {
+    position: relative;
+    top: -10px !important;
+    left: 7px;
+    height: 50vh !important;
+    width: 98%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+    .kanbanCardContent h3, .kanbanCardContentEdit h3 {
+        float: left !important;
+        margin: 0 0 5px 20px;
+    }
+
+.kanbanCardDescription {
+    margin: 5px 0;
+}
+
+.kanbanCardAcceptance, kanbanCardFeatures {
+    margin: 10px 0;
+}
+
+.kanbanCardAcceptance, .kanbanCardDescription, .kanbanCardFeatures {
+    width: 95%;
+    padding: 5px;
+    font-size: .9em;
+}
+
+.kanbanCardComments, .kanbanCardCommentsPost, .kanbanCardDocuments, .kanbanCardNavTabsEdit {
+    position: relative;
+    width: 95%;
+    left: 5px;
+}
+
+.kanbanCardComments {
+    margin: 0;
+}
+
+.kanbanCardNavTabsEdit {
+    top: -20px;
+}
+
+    .kanbanCardNavTabsEdit .pill :hover {
+        background-color: #7676b8 !important;
+        color: white !important
+    }
+
+.nav-pills a .active .show {
+    background-color: #545487 !important;
+    color: white !important
+}
+
+#agileWeighting {
+    display: none
+}
+
+.projectButton {
+    margin-bottom: 3px;
+    width: 94%
+}
+
+.projectTitle h1 {
+    color: #fff !important;
+    padding-top: 5px;
+}
+
+.projectTitle {
+    background-color: #7676b8;
+    margin: -10px 0 5px 0;
+    padding: 0 0 2px 10px;
+}
+
+.high {
+    border: 1.5px solid red;
+}
+
+.normal, .norm {
+    border: 1.5px solid orange;
+}
+
+.low {
+    border: 1.5px solid green;
+}
+
+.complete {
+    border: 1.5px solid blue
+}
+
+.none {
+    border: 1.5px solid #545487
+}
+
+.projectButton {
+    margin-bottom: 3px;
+    width: 94%
+}
+
+.kanban {
+    background-color: #ddddeb;
+    border-radius: 10px;
+    height: 100px !important;
+    margin: 5px !important
+}
+
+    .kanban h4 {
+        color: #fff !important;
+        font-weight: bolder;
+        height: 25px;
+        vertical-align: top;
+        padding: 4px 0 0 3px;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .kanban h5 {
+        color: #545487
+    }
+
+    .kanban h6 {
+        font-size: .5em !important
+    }
+
+    .kanban .rowAdjust {
+        margin: 0 -26px;
+        width: 111%;
+        height: 27px;
+        text-overflow: ellipsis;
+        text-align: left;
+    }
+
+    .kanban .weighting {
+        position: relative;
+        margin: 2px -15px 0 0;
+        background-color: #7676b8;
+        color: #fff !important
+    }
+
+    .kanban .bugIcon, .storyIcon {
+        position: relative;
+    }
+
+.bugIcon {
+    color: red !important;
+}
+
+.storyIcon {
+    color: blue !important;
+}
+
+.pLow {
+    background-color: green;
+}
+
+.pNorm {
+    background-color: orange;
+}
+
+.pHigh {
+    background-color: red;
+}
+
+.pNone {
+    background-color: #545487;
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.ready {
+    font-size: 1.5em;
+}
+
+.ui-progressbar-value {
+    background: lightgreen;
+}
+
+.progressbar-container {
+    position: relative;
+    width: 100%;
+}
+
+.progressbar-bar {
+    height: 25px;
+    margin: 10px 0;
+    border-radius: 7px;
+    width: 158%;
+}
+
+.progressbar-label {
+    position: absolute;
+    top: 2px;
+    left: 45%;
+    z-index: 2;
+}
+
+.featureChk, .featureTxt {
+    position: relative;
+    left: -20px !important;
+    text-align: left !important;
+}
+
+.featureTxt {
+    /*top:-10px!important;*/
+}
+
+#newFeatureItem {
+    margin-top: 10px
+}
+
+.newFeature:hover {
+    color: #ca5c28 !important
+}
+
+.checkedItem {
+    text-decoration: line-through;
+    color: #ddddeb !important;
+}
+
+.ms-long {
+    width: 100% !important
+}
+
+.ms-usereditor {
+    position: relative;
+    top: -70px;
+    left: 10px
+}
+
+    .ms-usereditor table tr td, .ms-usereditor table tr td td a {
+        color: black !important;
+    }
+
+#assignedTo {
+    top: -20px
+}
+
+.editDueDate input {
+    width: 100px !important;
+    left: -20px
+}

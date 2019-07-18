@@ -1,0 +1,321 @@
+<%-- SPG:
+
+This HTML file has been associated with a SharePoint Master Page (.master file) carrying the same name.  While the files remain associated, you will not be allowed to edit the .master file, and any rename, move, or deletion operations will be reciprocated.
+
+To build the master page directly from this HTML file, simply edit the page as you normally would.  Use the Snippet Generator at https://maximusunitedkingdom.sharepoint.com/_layouts/15/ComponentHome.aspx?Url=https%3A%2F%2Fmaximusunitedkingdom%2Esharepoint%2Ecom%2F%5Fcatalogs%2Fmasterpage%2FMAXUK%2FMAXUK%2Emaster to create and customize useful SharePoint entities, then copy and paste them as HTML snippets into your HTML code.   All updates to this file will automatically sync to the associated Master Page.
+
+ --%>
+<%@Master language="C#"%>
+<%@Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="wssucw" TagName="Welcome" Src="~/_controltemplates/15/Welcome.ascx"%>
+<%@Register TagPrefix="wssucmui" TagName="MUISelector" Src="~/_controltemplates/15/MUISelector.ascx"%>
+<%@Register TagPrefix="PublishingRibbon" TagName="PublishingRibbon" Src="~/_controltemplates/15/Ribbon.ascx"%>
+<!DOCTYPE html >
+<SharePoint:SPHtmlTag lang="en" runat="server" id="SPHtmlTag" dir="&lt;%$Resources:wss,multipages_direction_dir_value%&gt;">
+    <head runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=10" />
+        
+        
+        
+        
+        <meta name="GENERATOR" content="Microsoft SharePoint" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Expires" content="0" />
+        <SharePoint:RobotsMetaTag runat="server">
+        </SharePoint:RobotsMetaTag>
+        <SharePoint:PageTitle runat="server">
+            <asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server">
+                <SharePoint:ProjectProperty Property="Title" runat="server">
+                </SharePoint:ProjectProperty>
+            </asp:ContentPlaceHolder>
+        </SharePoint:PageTitle>
+        <SharePoint:StartScript runat="server">
+        </SharePoint:StartScript>
+        <SharePoint:CssLink runat="server" Version="15">
+        </SharePoint:CssLink>
+        <SharePoint:CacheManifestLink runat="server">
+        </SharePoint:CacheManifestLink>
+        <SharePoint:PageRenderMode runat="server" RenderModeType="Standard">
+        </SharePoint:PageRenderMode>
+        <SharePoint:ScriptLink language="javascript" name="core.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="menu.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="callout.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="suitelinks.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:CustomJSUrl runat="server">
+        </SharePoint:CustomJSUrl>
+        <SharePoint:SoapDiscoveryLink runat="server">
+        </SharePoint:SoapDiscoveryLink>
+        <SharePoint:AjaxDelta id="DeltaPlaceHolderAdditionalPageHead" Container="false" runat="server">
+            <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server">
+            </asp:ContentPlaceHolder>
+            <SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true">
+            </SharePoint:DelegateControl>
+            <asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat="server">
+            </asp:ContentPlaceHolder>
+        </SharePoint:AjaxDelta>
+        <SharePoint:CssRegistration Name="Themable/corev15.css" runat="server">
+        </SharePoint:CssRegistration>
+        <SharePoint:AjaxDelta id="DeltaSPWebPartManager" runat="server">
+            <WebPartPages:SPWebPartManager runat="server">
+            </WebPartPages:SPWebPartManager>
+        </SharePoint:AjaxDelta>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        
+        <link rel="shortcut icon" href="/publishingimages/favicon.ico" />
+        <!-- Bootstrap core CSS -->
+        <link href="/_catalogs/masterpage/MAXUK/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <SharePoint:CssRegistration name="&lt;% $SPUrl:~sitecollection/_catalogs/masterpage/MAXUK/vendor/jquery/jquery-ui.min.css %&gt;" runat="server" after="SharepointCssFile" />
+        <!-- Custom fonts for this template -->
+        <SharePoint:CssRegistration name="&lt;% $SPUrl:~sitecollection/_catalogs/masterpage/MAXUK/vendor/fontawesome-free/css/all.min.css %&gt;" runat="server" after="SharepointCssFile" />
+        <SharePoint:CssRegistration name="&lt;% $SPUrl:~sitecollection/_catalogs/masterpage/MAXUK/vendor/fontawesome-free/css/solid.min.css %&gt;" runat="server" after="SharepointCssFile" />
+        <SharePoint:CssRegistration name="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" runat="server" after="SharepointCssFile" />
+        <SharePoint:CssRegistration name="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" runat="server" after="SharepointCssFile" />
+        <!-- Plugin CSS -->
+        <link href="/_catalogs/masterpage/MAXUK/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="/_catalogs/masterpage/MAXUK/css/maxuk.css" rel="stylesheet" />
+        <SharePoint:CssRegistration name="&lt;% $SPUrl:~sitecollection/_catalogs/masterpage/MAXUK/maxuk_sites/css/maxuksites.css %&gt;" runat="server" after="SharepointCssFile" />
+        </head>
+    <body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();"><SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" /><SharePoint:ImageLink runat="server" /><SharePoint:SharePointForm onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}" runat="server"><asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
+        <!-- Header -->
+        <header>
+            <div class="container-fluid">
+                <!-- ***** Header Top Section ***** -->
+                <div class="row headerTop">
+                    <!-- ***** Header Left Container ***** -->
+                    <div class="col-7 headerLeftContainer">
+                        <nav class="navbar navbar-expand-sm" id="mainNav">
+                            <!-- Links -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">UK CLT
+                                    
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        Shared Services Helpline
+                                    
+                                    
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <h5 class="dropdown-item font-weight-bold">0808 250 5049
+                                        
+                                        </h5>
+                                        <h6 class="dropdown-item">Option 1 - IT
+                                        
+                                        </h6>
+                                        <h6 class="dropdown-item">Option 2 - HR
+                                        
+                                        </h6>
+                                        <h6 class="dropdown-item">Option 3 - Payroll
+                                        
+                                        </h6>
+                                        <h6 class="dropdown-item">Option 4 - Expenses
+                                        
+                                        </h6>
+                                        <h6 class="dropdown-item">Option 5 - Travel
+                                        
+                                        </h6>
+                                        <h6 class="dropdown-item">Option 6 - Security &amp; Data Protection
+                                        
+                                        </h6>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        Central Teams
+                                    
+                                    
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Recruitment
+                                        
+                                        </a>
+                                        <a class="dropdown-item" href="#">Engagement
+                                        
+                                        </a>
+                                        <a class="dropdown-item" href="#">Talent &amp; Development
+                                        
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        Central Portals
+                                    
+                                    
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Benefits Centre
+                                        
+                                        </a>
+                                        <a class="dropdown-item" href="#">Latest Vacancies
+                                        
+                                        </a>
+                                        <a class="dropdown-item" href="#">Travel Portal
+                                        
+                                        </a>
+                                        <a class="dropdown-item" href="#">Human Resources
+                                        
+                                        </a>
+                                        <a class="dropdown-item" href="#">People Manager
+                                        
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- ***** Header Right Container ***** -->
+                    <div class="col-5 headerRightContainer">
+                        <div class="helplineTxt col-x float-right text-center pt-1">
+                            <p>Shared Services Helpline: 0808 250 5049
+                            
+                            </p>
+                        </div>
+                        <!--<div class="navSearch">
+                                <nav class="navbar navbar-expand-sm">
+                                    <form class="form-inline" action="/action_page.php">
+                                        <input class="form-control mr-sm-2" type="text" placeholder="Search"/>
+                                        <button class="btn btn-success" type="submit">Search</button>
+                                    </form>                            
+                                </nav>  
+                            </div>-->
+                    </div>
+                </div>
+                <!-- ***** Header Coloured Band Section ***** -->
+                <div class="row headerBand">
+                    <img src="/publishingimages/Header/Header_Coloured_Bands.png" />
+                </div>
+                <!-- ***** Header Bottom Section ***** -->
+                <div class="row headerBottom">
+                    <div class="col-sm-4 welcomeText" id="welcomeMsg">
+                    </div>
+                    <div class="col-sm-8 headerLogo">
+                        <img class="img-fluid float-right" src="/publishingimages/Header/Header_Swoosh.png" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        
+        
+        <SharePoint:SPSecurityTrimmedControl runat="server" HideFromSearchCrawler="true" EmitDiv="true">
+            <div id="TurnOnAccessibility" style="display:none" class="s4-notdlg noindex">
+                <a id="linkTurnOnAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">
+                    <SharePoint:EncodedLiteral runat="server" text="&lt;%$Resources:wss,master_turnonaccessibility%&gt;" EncodeMethod="HtmlEncode">
+                    </SharePoint:EncodedLiteral>
+                </a>
+            </div>
+            <div id="TurnOffAccessibility" style="display:none" class="s4-notdlg noindex">
+                <a id="linkTurnOffAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(false);UpdateAccessibilityUI();document.getElementById('linkTurnOnAcc').focus();return false;">
+                    <SharePoint:EncodedLiteral runat="server" text="&lt;%$Resources:wss,master_turnoffaccessibility%&gt;" EncodeMethod="HtmlEncode">
+                    </SharePoint:EncodedLiteral>
+                </a>
+            </div>
+        </SharePoint:SPSecurityTrimmedControl>
+        <div class="hidden" id="ms-designer-ribbon">
+            <PublishingRibbon:PublishingRibbon runat="server" />
+            
+        </div>
+        <SharePoint:SPSecurityTrimmedControl runat="server" AuthenticationRestrictions="AnonymousUsersOnly">
+            <wssucw:Welcome runat="server" EnableViewState="false">
+            </wssucw:Welcome>
+        </SharePoint:SPSecurityTrimmedControl>
+        
+        <div class="mainContainer container-fluid">
+            <div data-name="ContentPlaceHolderMain">
+                
+                
+                <SharePoint:AjaxDelta ID="DeltaPlaceHolderMain" IsMainContent="true" runat="server">
+                    <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server">
+                    </asp:ContentPlaceHolder>
+                </SharePoint:AjaxDelta>
+                
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript -->
+        <script src="/_catalogs/masterpage/MAXUK/vendor/jquery/jquery.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script src="/_catalogs/masterpage/MAXUK/vendor/jquery/jquery-ui.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script src="/_catalogs/masterpage/MAXUK/vendor/AngularJS/angularjs.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script src="/_catalogs/masterpage/MAXUK/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script src="/_catalogs/masterpage/MAXUK/vendor/jquery/jquery.SPServices.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <!-- Plugin JavaScript -->
+        <script src="/_catalogs/masterpage/MAXUK/vendor/fontawesome-free/js/all.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script src="/_catalogs/masterpage/MAXUK/vendor/jquery-easing/jquery.easing.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script src="/_catalogs/masterpage/MAXUK/vendor/scrollreveal/scrollreveal.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script src="/_catalogs/masterpage/MAXUK/vendor/magnific-popup/jquery.magnific-popup.min.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <!-- Custom scripts for this template -->
+        <script src="/_catalogs/masterpage/MAXUK/js/maxuk.js" type="text/javascript">//<![CDATA[
+        
+        //]]></script>
+        <script type="text/javascript">//<![CDATA[
+            var siteURL = _spPageContextInfo.webAbsoluteUrl;
+            var userid = _spPageContextInfo.userId;
+            var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/SP.UserProfiles.PeopleManager/GetMyProperties"; //"/_api/web/getuserbyid(" + userid + ")";
+            var requestHeaders = { "accept" : "application/json;odata=verbose" };
+            
+            $.ajax({
+                url: requestUri,
+                type: "GET",
+                contentType : "application/json;odata=verbose",
+                headers : requestHeaders,
+                success : onSuccess,
+                error : onError
+            });
+       
+            function onSuccess(data) {
+
+                var firstName = "";
+                var dataResults = data.d.UserProfileProperties.results;
+                var displayName = data.d.DisplayName;
+                for (var i = 0; i < dataResults.length; i++) {
+                    var property = dataResults[i];
+                    if (property.Key === "FirstName") {
+                        firstName = property.Value;
+                        $('#welcomeMsg').append('<h1>Welcome '+firstName+'</h1>');
+                    }
+                }
+            }
+
+            function onError(error) {
+                console.log(error);
+            }
+
+            getSlideData(siteURL);
+
+        
+        
+        //]]></script>
+    <SharePoint:AjaxDelta id="DeltaFormDigest" BlockElement="true" runat="server"><asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server"><SharePoint:formdigest runat="server" /></asp:ContentPlaceHolder></SharePoint:AjaxDelta></SharePoint:SharePointForm><SharePoint:AjaxDelta id="DeltaPlaceHolderUtilityContent" runat="server"><asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server" /></SharePoint:AjaxDelta><asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigationSiteMap" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigation" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderSearchArea" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTopNavBar" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBarDataSource" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderCalendarNavigator" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftActions" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBarTop" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderSiteName" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageDescription" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageImage" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleLeftBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderMiniConsole" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleRightMargin" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleAreaSeparator" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderNavSpacer" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderBodyLeftBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" Visible="False" runat="server" /><asp:ContentPlaceHolder id="WSSDesignConsole" Visible="False" runat="server" /><asp:ContentPlaceHolder id="SPNavigation" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderQuickLaunchTop" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderQuickLaunchBottom" Visible="False" runat="server" /></body>
+</SharePoint:SPHtmlTag>

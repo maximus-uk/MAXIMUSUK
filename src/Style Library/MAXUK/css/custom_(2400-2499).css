@@ -1,0 +1,217 @@
+﻿@media screen and (min-width: 2400px) and (max-width: 2499px) {
+
+    .nivo-controlNav {
+        width: 100% !important;
+    }
+
+    .headingText {
+        width: 965px;
+        height: 40px;
+    }
+
+    #showhideApp {
+        display: inherit
+    }
+
+    .ms-cal-weekname {
+        width: 10%;
+    }
+
+    .nav-tabs > li {
+        width: 85px;
+        font-size: .9em;
+    }
+
+    .accordion-toggle:after {
+        top: -30px !important;
+        left: -12px !important;
+    }
+
+    .accordion-toggle.collapsed:after {
+        top: -30px !important;
+        left: -12px !important;
+    }
+
+    .panel-title {
+        font-size: 1.2em !important;
+        text-decoration: none !important;
+    }
+
+    /*** For Document Viewer ***/
+
+    .tabContainer {
+        width: 48% !important;
+        height: 650px !important;
+    }
+
+    .tabContent {
+        height: 75%;
+    }
+
+    /*.teamDocumentTabs > ul {font-size:.9em!important;}*/
+    .teamDocumentFoldersContainer, .teamDocumentViewerContainer {
+        height: 610px;
+    }
+
+    .docItem {
+        font-size: 1em !important;
+    }
+
+    .btn-responsive {
+        padding: 4px 9px;
+        font-size: 90%;
+        line-height: 1.5;
+    }
+
+    .documents {
+        height: 530px;
+    }
+
+    #docs, #viewer {
+        height: 500px !important;
+    }
+    /*#docFolders{height:260px!important}*/
+    #viewer {
+        width: 57.2%;
+    }
+
+    .fadein {
+        height: 230px !important;
+        width: 500px !important;
+        margin-left: 45px;
+    }
+
+    /********* END *********/
+
+    .pageText {
+        width: 100% !important;
+    }
+
+    .knowledgeDocuments {
+        width: 100% !important;
+    }
+
+    /**** for SMT Values ****/
+    .smtBanner > h3 {
+        font-size: 1em;
+    }
+
+    .list-group {
+        font-size: 1em !important;
+    }
+
+    .smtTabContainer {
+        position: relative;
+        top: 12px;
+        left: 2px !important;
+        height: 350px !important;
+        width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+
+    .smtTabBar {
+        font-size: .9em;
+    }
+
+    /*** for SMT Contact Cards ***/
+    .smtContainer {
+        top: 60px;
+        width: 83.5%;
+        height: 240px;
+    }
+
+    .smtCards {
+        position: relative;
+        top: 10px !important;
+        left: 5px;
+    }
+
+    .homeTabContainer {
+        position: relative;
+        top: 1px !important;
+        left: 20px !important;
+        height: 580px !important;
+        width: 150% !important;
+    }
+
+    /*.homeTabBar, .navTabBar, .tabBar {
+        top: 1px;
+        left: -10px;
+    }*/
+
+    .faqContainer {
+        height: 900px !important;
+    }
+
+    .contactsTabs {
+        width: 15vw;
+        font-size: .9em;
+    }
+
+    .CHDACentres {
+        height: 295px;
+    }
+
+    .acSection {
+        position: relative;
+        left: 20px;
+    }
+
+    .CentresDataBox {
+        padding-left: 1px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 195px;
+        width: 660px;
+    }
+
+    .newsMastContainer {
+        height: 70%;
+        width: 24% !important;
+    }
+
+    .newsMast img {
+        left: -15px !important;
+        width: 150px !important;
+        height: 100px !important;
+    }
+
+    .newsMast h3, .newsHeadline {
+        top: -8px;
+        left: 20px;
+    }
+
+    .newsMast h3 {
+        font-size: 1.2em !important;
+    }
+
+    .newsMast .newsHeadline {
+        /* color: #545487 !important;*/
+        font-size: 1.1em;
+        margin: -3px 0 1em 3px;
+        width: 99%;
+    }
+
+    .newsDetailContainer {
+        height: 70%;
+        width: 50%;
+    }
+
+    .postToolsContainer {
+        left: 72% !important;
+        height: 74.5% !important;
+        width: 9% !important;
+    }
+
+    .postMastContainer, .postDetailContainer {
+        height: 76vh;
+    }
+
+    .postDetailContainer {
+        width: 44%;
+    }
+
+    #postsIcon {
+        left: 76% !important
+    }
+}

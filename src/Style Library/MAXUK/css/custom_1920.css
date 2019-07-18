@@ -1,0 +1,172 @@
+﻿/* For resolution 1920px x 1080px only: */
+@media screen and (min-width: 1919px) and (max-width:1921px) {
+
+    .headingText {
+        width: 965px;
+        height: 40px;
+    }
+
+    #showhideApp {
+        display: inherit
+    }
+
+    .imageWindow img {
+        width: 50%;
+    }
+
+    .nav-tabs > li {
+        width: 85px;
+        font-size: .9em;
+    }
+
+    .accordion-toggle:after {
+        top: -30px !important;
+        left: -12px !important;
+    }
+
+    .accordion-toggle.collapsed:after {
+        top: -30px !important;
+        left: -12px !important;
+    }
+
+    .panel-title {
+        font-size: 1em !important;
+        text-decoration: none !important;
+    }
+
+    .docItem {
+        font-size: 1em !important;
+    }
+
+    .btn-responsive {
+        padding: 4px 9px;
+        font-size: 90%;
+        line-height: 1.5;
+    }
+
+    .documents {
+        height: 530px;
+    }
+
+    .docPreview {
+        height: 530px;
+    }
+
+    #docs, #viewer {
+        height: 500px !important;
+    }
+
+    #viewer {
+        width: 57.2%;
+    }
+
+    .fadein {
+        height: 230px !important;
+        width: 500px !important;
+        margin-left: 45px;
+    }
+
+    .pageText {
+        width: 90% !important;
+    }
+
+    .knowledgeDocuments {
+        width: 100% !important;
+    }
+
+    /*** for SMT values ***/
+    .smtBanner > h3 {
+        font-size: 1em;
+    }
+
+    .list-group {
+        font-size: 1em !important;
+    }
+
+    .smtTabBar {
+        font-size: .9em;
+    }
+
+    /*** for SMT Contact cards ***/
+    .smtContainer {
+        top: 60px;
+        width: 83.5%;
+        height: 240px;
+    }
+
+    .smtCards {
+        position: relative;
+        top: 10px !important;
+        left: 5px;
+    }
+
+    .homeTabContainer {
+        position: relative;
+        top: -20px;
+        left: 20px !important;
+        height: 250px !important;
+        width: 95% !important
+    }
+
+    .faqContainer {
+        height: 730px !important;
+    }
+
+    .titleRow {
+        width: 88% !important
+    }
+
+    .CHDACentres {
+        height: 295px;
+    }
+
+    .acSection {
+        position: relative;
+        left: 20px;
+    }
+
+    .CentresDataBox {
+        padding-left: 1px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 195px;
+        width: 660px;
+    }
+
+    .newsMastContainer {
+        height: 64%;
+        width: 24% !important;
+    }
+
+    .newsMast img {
+        left: -15px !important;
+        width: 150px !important;
+        height: 100px !important;
+    }
+
+    .newsMast h3, .newsHeadline {
+        top: -8px;
+        left: 20px;
+    }
+
+    .newsMast h3 {
+        font-size: 1.09em !important;
+    }
+
+    .newsMast .newsHeadline {
+        font-size: 1em;
+        margin: -3px 0 1em 3px;
+        width: 99%;
+    }
+
+    .newsDetailContainer {
+        height: 64%;
+        width: 50%;
+    }
+
+    /***** FORUM *****/
+    .postToolsContainer {
+        left: 72.8% !important;
+        height: 74.5% !important;
+    }
+}

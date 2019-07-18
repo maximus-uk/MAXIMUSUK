@@ -1,0 +1,65 @@
+﻿/****** Code Page ******/
+
+.codeContainer{height:520px;width:100%!important}
+.codeFunctions,.codeViewer{height:470px;overflow-y:scroll; overflow-x:hidden}
+.codeFunctions{position:fixed;top:360px;left:110px;width:15%;}
+.codeViewer{position:relative;top:-16px;left:290px;width:71%;}
+.codeNewButton{position:fixed;top:320px;left:52.5%;}
+
+/**********************/
+
+/* Google Chrome Only */
+@media screen and (-webkit-min-device-pixel-ratio:1) {
+}
+
+/* For low-medium resolution screens: max 1280 x 1199 */
+@media screen and (max-width: 1280px) and (min-width: 1180px) {
+}
+
+/* For medium resoultion screens: 1280px to 1400px with min height 768px */
+@media screen and (min-width:1281px) and (max-width:1400px) and (max-height:1023px){
+}
+
+/* For medium resoultion screens: 1280px to 1400pxwith min height 1024px */
+@media screen and (min-width:1281px) and (max-width:1400px) and (min-height:1024px) { 
+}
+
+/* For medium resoultion screens: 1400px to 1600px */
+@media screen and (min-width:1401px) and (max-width:1599px) {  
+	.codeContainer{height:350px;}
+	.codeFunctions,.codeViewer{height:295px;}
+	.codeFunctions{width:20%;}
+	.codeViewer{left:310px;}
+	.codeNewButton{left:77%;}
+}
+
+/* Screen Resolution Size: 1750px to 1918px + */
+@media screen and (min-width: 1600px) and (max-width: 1749px) {
+}
+
+/* Screen Resolution Size: 1750px to 1918px + */
+@media screen and (min-width: 1750px) and (max-width: 1918px) {
+}
+
+/* For resolution 1920px x 1080px only: */
+@media screen and (min-width: 1919px) and (max-width:1921px) {
+}
+
+/* Screen Resolution Size: 1921px to 2400px */
+@media screen and (min-width: 1922px) and (max-width:2399px) {
+}
+
+/* Screen Resolution Size: 2400px to 2500px */
+@media screen and (min-width: 2400px) and (max-width: 2499px) {
+}
+
+/* Screen Resolution Size: 2500px to 2600px */
+@media screen and (min-width: 2500px) and (max-width: 2600px) {
+}
+
+/* Screen Resolution Size: 2600px to 3000px */
+@media screen and (min-width: 2601px) and (max-width: 3000px) {
+}
+
+@media screen and (min-width:3072px) {
+}

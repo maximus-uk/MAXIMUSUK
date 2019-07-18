@@ -1,0 +1,91 @@
+.ms-srch-people-outerContainer {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  border: 1px solid #e1e1e1;
+  margin: 0 15px 15px 0;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.ms-srch-people-outerContainer .ms-srch-people-item {
+  width: auto;
+  padding: 0;
+  min-height: none;
+  overflow: visible;
+}
+
+.ms-srch-people-outerContainer #UserPersonaContainer {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.ms-srch-people-outerContainer #UserPersonaContainer #UserPersona .ms-table {
+  margin: 0 auto;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer {
+  width: 100%;
+  margin: 0;
+  float: none;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer .label {
+  font-weight: bold;
+  margin: 0 5px 0 0;
+  width: auto;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer #NameField {
+  text-align: center;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer #NameField a, .ms-srch-people-outerContainer #UserInfoContainer #NameField a:link, .ms-srch-people-outerContainer #UserInfoContainer #NameField a:visited {
+  font-size: 18px;
+  color: #005a84;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer #NameField a:hover {
+  color: #13b5ea;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer #JobTitleField {
+  text-align: center;
+  font-style: italic;
+  padding-top: 0;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer #DepartmentField {
+  margin-top: 10px;
+}
+
+.ms-srch-people-outerContainer #UserInfoContainer #MobilePhoneField,
+.ms-srch-people-outerContainer #UserInfoContainer #MoreInfoShort,
+.ms-srch-people-outerContainer #UserInfoContainer #MoreInfoLong,
+.ms-srch-people-outerContainer #UserInfoContainer #SelfSearchInfo,
+.ms-srch-people-outerContainer #UserInfoContainer
+.ms-srch-people-item-separator {
+  display: none;
+}
+
+.alpha-controls {
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.alpha-controls .letter {
+  float: left;
+  min-width: 16px;
+  text-align: center;
+  margin-right: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  background-color: #005a84;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.alpha-controls .letter:hover, .alpha-controls .letter.active {
+  background-color: #13b5ea;
+}

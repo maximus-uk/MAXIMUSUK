@@ -1,0 +1,105 @@
+.metrotiles {
+    width: 330px;
+    height: 315px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-left:0;
+    scrollbar-base-color: white;
+    scrollbar-face-color: white;
+    scrollbar-3dlight-color: white;
+    scrollbar-highlight-color: white;
+    scrollbar-track-color: white;
+    scrollbar-arrow-color: white;
+    scrollbar-shadow-color: white;
+}
+.metrotiles .row{margin-left:0}
+.metrotiles::-webkit-scrollbar {
+    display: none
+}
+
+.metrotile {
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: relative;
+    margin: 0 5px 5px 0;
+    border: 1px solid #ddddeb;
+    border-radius: 10px;
+    box-shadow: 3px 2px #545487;
+}
+
+.metrotile .overlay {
+    width: 102px;
+    height: 102px;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.metrotile:hover .overlay {
+    background-color: #7676b8;
+}
+
+.metrotile img {
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    box-shadow: 2px 2px #7676b8;
+}
+
+.metrotile:hover img {
+    filter: grayscale(1) blur(2px);
+    -webkit-filter: grayscale(1) blur(2px);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.metrotile h5 {
+    position: relative;
+    top: 55%;
+    left: 0;
+    width:97%;
+    float:left;
+    font-size: .55em;
+    padding: 5px;
+    opacity: 0.7;
+    background: #545487;
+    font-weight:bolder;
+}
+
+.metrotile .info {
+    display: none;
+    background-color: transparent;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    /*border: 1px solid #7676b8;
+        border-radius:10px;            
+        opacity: 0.8;
+        filter: alpha(opacity=080);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        height: 90px;
+        width: 90px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.metrotile:hover .info {
+    opacity: .8;
+    display: inline-block;
+    /*filter: alpha(opacity=70);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);*/
+    height: 102px;
+    width: 102px;
+    font-size: .7em;
+    border: 1px solid #7676b8;
+    background-color: #7676b8;
+}

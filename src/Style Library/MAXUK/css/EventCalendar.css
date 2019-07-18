@@ -1,0 +1,154 @@
+﻿div#tipDiv {
+    padding: 15px;
+    border: 1px solid #545487;
+    border-radius: 10px;
+    line-height: 133%;
+    background-color: #ddddeb;
+    color: black !important;
+    width: 15%;
+    text-align: left;
+    -moz-box-shadow: 0 0 8px gray; /* FF3.5+ */
+    -webkit-box-shadow: 0 0 8px gray; /* Saf3.0+, Chrome */
+    box-shadow: 0 0 8px gray; /* Opera 10.5, IE 9.0 */
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135,strength=5)"; For IE 8 */
+}
+
+    div#tipDiv span {
+        margin-left: -10px;
+        padding-bottom: 0.33em;
+        vertical-align: middle;
+        font-weight: bold;
+        color: black !important;
+    }
+
+    div#tipDiv ul {
+        margin-top: 8px;
+        margin-bottom: 0;
+        color: black !important;
+    }
+
+        div#tipDiv ul:hover {
+            color: #7676b8 !important;
+            cursor: pointer;
+        }
+
+    div#tipDiv li {
+        margin-left: -20px;
+        padding-bottom: 0.33em;
+        vertical-align: middle;
+        font-weight: normal;
+        color: black !important;
+        /* width: 100%; */
+    }
+
+
+    div#tipDiv ul li a:hover {
+        color: #7676b8 !important;
+    }
+
+.tipContent span ul li a:hover {
+    color: #7676b8 !important
+}
+
+/*.tipContent {
+	color:white;
+	display:block;
+}*/
+
+.showTip:hover {
+    /* background-color: #ddddeb !important;*/
+    color: white !important;
+}
+
+.ecl-calendar {
+    margin-bottom: 10px;
+    border-color: #ddddeb;
+    background-color: white;
+    width: 50%;
+    z-index: 99;
+}
+
+    .ecl-calendar table,
+    .ecl-calendar tr:first-child {
+        background-color: #545487;
+    }
+
+    .ecl-calendar th {
+        text-align: center !important;
+    }
+
+    .ecl-calendar tr:first-child td {
+        background-color: inherit !important;
+        color: white !important;
+        width: 100%;
+        /*font-family: 'Glyphicons Halflings';
+        content:"\e079";*/
+    }
+
+.ecl-nextprev a {
+    /*font-family: 'Glyphicons Halflings';
+    content: "\e251";*/
+    font-size: 1.2em !important;
+    font-weight: bolder !important;
+    color: white !important;
+}
+
+    .ecl-nextprev a:hover {
+        color: #7676b8 !important;
+    }
+
+.ecl-nextprev #prev {
+    padding-left: 5px
+}
+
+.ecl-nextprev #next {
+    padding-right: 5px
+}
+
+.ecl-day:hover,
+.ecl-event:hover,
+.ecl-event a:hover,
+.ecl-today:hover {
+    background-color: #7676b8 !important;
+    color: white !important;
+}
+
+.ecl-event {
+    color: black !important;
+    background-color: #ddddeb;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+    .ecl-event a {
+        color: black !important;
+    }
+
+.ecl-title tr td:nth-child(1) a:before {
+    /*position:relative;
+    top:10px;
+    left:10px;
+    font-family: 'Glyphicons Halflings';
+    content: "\e251";
+    font-size: 1.4em!important;
+    font-weight:bolder!important;
+	color:white!important;*/
+}
+
+.ecl-title tr td:nth-child(2) {
+    font-size: 1.5em;
+}
+
+.ecl-today {
+    background-color: #545487;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+    .ecl-today div a {
+        color: white !important
+    }
+
+.ecl-other-month, .ecl-other-month:hover, .ecl-weekend, .ecl-weekend:hover {
+    color: #ddddeb;
+}
