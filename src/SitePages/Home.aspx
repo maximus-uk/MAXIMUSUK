@@ -71,7 +71,7 @@
 						</div>		
 
 						<div class="logoContainer HML">
-							<a class="portfolio-box" href="/sites/HML/" target="_blank">
+							<a class="portfolio-box" href="/sites/hml/" target="_blank">
 								<div class="borders">
 									<img class="img-fluid" src="/publishingimages/logos/hml_logo.png" alt="" />
 								</div>
@@ -118,7 +118,7 @@
 						</div>
 
 						<div class="logoContainer Revitalise">
-							<a class="portfolio-box" href="/sites/revitalise" target="_blank">
+							<a class="portfolio-box" href="/sites/revitalised" target="_blank">
 								<div class="borders">
 									<img class="img-fluid revitalisedLogo" src="/publishingimages/logos/revitalised_logo.png" alt="" />
 								</div>
@@ -133,7 +133,7 @@
 						</div>
 
 						<div class="logoContainer MaxUK">
-							<a class="portfolio-box" href="/sites/maxuk" target="_blank">
+							<a class="portfolio-box" href="/sites/maximusuk" target="_blank">
 								<div class="borders">								
 									<img class="img-fluid" src="/publishingimages/logos/maximus_logo.png" alt="" />
 								</div>
