@@ -286,8 +286,8 @@
         }
     
         .ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
-            margin-right: 5px;
-            /*padding: 0;*/
+            /*margin-right: 5px;
+            padding: 0;*/
         }
     
             .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {

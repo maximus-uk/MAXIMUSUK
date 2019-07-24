@@ -10,7 +10,8 @@
     }
 
     .nav-tabs > li {
-        width: 90px;
+        width: 85px;
+        font-size:.8em;
     }
 
     /*** For Document Viewer ***/
