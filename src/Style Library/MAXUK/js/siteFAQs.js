@@ -88,22 +88,24 @@ function getItems(siteURL) {
                 var faqAnswer = ($(this).attr("ows_Answer"));
                 var tabName = "";
                 var accordName = "";
+                var parentName = "";
 
                 for (count = 0; count <= categories.length - 1; count++) {
                     if (faqCategory === categories[count]) {
                         tabName = '#C' + tabNum[count];
                         accordName = '#faq' + tabNum[count];
+                        parentName = '#accordion' + count;
                         //alert(categories[count]+" : "+faqCategory + " : " + tabName);                    		
                     }
                 }
-
+            
                 $(tabName).append("<a class='card-link accordion-toggle' data-toggle='collapse' data-parent=" + accordName + " href='#section" + ID + "'>" +
                     "<div class='card-header faqQuestion'>" +
                     "<strong>" + faqQuestion + "</strong>" +
                     "</div>" +
                     "</a>" +
-                    "<div id='section" + ID + "' class='collapse faqAnswer'> " +
-                    "<div class='list-group'>" +
+                    "<div id='section" + ID + "' class='collapse faqAnswer' data-parent='"+parentName+"'> " +
+                    "<div class='card-body'>" +
                     "<blockquote>" + faqAnswer + "</blockquote>" +
                     "</div>" +
                     "</div>");
