@@ -1,4 +1,4 @@
-﻿@media screen and (min-width: 1601px) and (max-width: 1690px) {
+@media screen and (min-width: 1601px) and (max-width: 1690px) {
 
     .slider-wrapper {
         width: 75% !important;
@@ -457,4 +457,15 @@
     .forumToolbox {
         height: 36%
     }
+
+    .accordion-toggle:after {
+        top: -25px !important;
+        left: -10px !important;
+    }
+    
+    .accordion-toggle.collapsed:after {
+        top: -25px !important;
+        left: -10px !important;
+    }    
+
 }
