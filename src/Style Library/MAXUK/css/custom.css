@@ -1320,7 +1320,6 @@ div .postReplies :hover {
     height: 66vh;
     width: 100%;
     position: relative;
-    top: -15px;
     left: 3px;
     scrollbar-base-color: white;
     scrollbar-face-color: #7676b8;
@@ -1812,12 +1811,13 @@ blockquote {
     overflow-y: auto;
     background-color: transparent !important;
 }
+*/
 
 .faqQuestion {
-    padding: 0 35px 0 10px!important;
+    /*padding: 0 35px 0 10px!important;*/
     font-size: .9em;
+    margin-bottom:5px;
 }
-*/
 
 .contactsContainer {
     position: relative;
@@ -1980,7 +1980,7 @@ blockquote {
     }
 
 .suggestionContent {
-    left: 17vw;
+    left: 18vw;
     width: 73% !important;
     height: 100%;
     padding: 10px;
@@ -1991,7 +1991,7 @@ blockquote {
 .suggestionTabs::-webkit-scrollbar{display:none}
 
     .suggestionContent .collapsing, .faqAnswer .collapsing {
-        top: -20px !important;
+        top: -10px !important;
         width: 100% !important;
     }
 

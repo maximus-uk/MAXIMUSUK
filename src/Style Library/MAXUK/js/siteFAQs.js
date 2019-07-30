@@ -35,7 +35,7 @@ function getTabs(siteURL) {
                     "<a class='nav-link active' data-toggle='pill' href='#tab0' role='tab'>" + categories[0] + "</a>" +
                     "</li>");
                 $("#tabData").append("<div id='tab0' class='tab-pane fade show active' role='tabpanel'>" +
-                    "<div class='row' style='margin-bottom: 10px;' id='accordion0'>" +
+                    "<div class='row' style='margin-bottom: 10px;' id='faq0'>" +
                     "<div id='C0' class='card'>" +
                     "</div>" +
                     "</div>" +
@@ -48,7 +48,7 @@ function getTabs(siteURL) {
                     "<a class='nav-link' data-toggle='pill' href='#tab" + x + "' role='tab'>" + categories[x] + "</a>" +
                     "</li>");
                 $("#tabData").append("<div id='tab" + x + "' class='tab-pane fade' role='tabpanel'>" +
-                    "<div class='row' style='margin-bottom: 10px;' id='accordion" + x + "'>" +
+                    "<div class='row' style='margin-bottom: 10px;' id='faq" + x + "'>" +
                     "<div id='C" + x + "' class='card'>" +
                     "</div>" +
                     "</div>" +
@@ -94,17 +94,17 @@ function getItems(siteURL) {
                     if (faqCategory === categories[count]) {
                         tabName = '#C' + tabNum[count];
                         accordName = '#faq' + tabNum[count];
-                        parentName = '#accordion' + count;
+                        //parentName = '#accordion' + count;
                         //alert(categories[count]+" : "+faqCategory + " : " + tabName);                    		
                     }
                 }
             
-                $(tabName).append("<a class='card-link accordion-toggle' data-toggle='collapse' data-parent=" + accordName + " href='#section" + ID + "'>" +
+                $(tabName).append("<a class='card-link accordion-toggle' data-toggle='collapse'  href='#section" + ID + "'>" +
                     "<div class='card-header faqQuestion'>" +
                     "<strong>" + faqQuestion + "</strong>" +
                     "</div>" +
                     "</a>" +
-                    "<div id='section" + ID + "' class='collapse faqAnswer' data-parent='"+parentName+"'> " +
+                    "<div id='section" + ID + "' class='collapse' data-parent=" + accordName + ">" +
                     "<div class='card-body'>" +
                     "<blockquote>" + faqAnswer + "</blockquote>" +
                     "</div>" +
