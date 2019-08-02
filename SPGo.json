@@ -1,6 +1,6 @@
 {
     "sourceDirectory": "src",
-    "sharePointSiteUrl": "https://maximusunitedkingdom.sharepoint.com",
+    "sharePointSiteUrl": "https://maximusukdev.sharepoint.com",
     "publishingScope": "Major",
     "authenticationType": "Digest",
     "storeCredentials": true,
