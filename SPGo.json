@@ -13,6 +13,7 @@
         "_catalogs/masterpage/MAXUK/vendor/*/**",
         "_catalogs/masterpage/MAXUK/img/*/**",
         "_catalogs/masterpage/MAXUK/scss/",       
+        "_catalogs/masterpage/MAXUK_Sites/",       
         "_catalogs/masterpage/MAXUK_Sites/*/**",       
         "/SitePages/",
         "/Pages/",

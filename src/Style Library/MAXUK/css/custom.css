@@ -804,6 +804,9 @@ div:empty {
  *************************************/
 
 .newsTabs {
+    position: fixed;
+    top: 180px;
+    left: 100px;
     width: 90%;
     height: 50px;
     background-color: white;
@@ -811,12 +814,14 @@ div:empty {
 }
 
 .newsMastContainer, .postMastContainer {
+    position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 10;
 }
 
 .newsDetailContainer, .postDetailContainer {
+    position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
     word-wrap: normal;
@@ -826,8 +831,8 @@ div:empty {
 .newsMastContainer {
     top: 230px;
     left: 110px;
-    border: .5px #ddddeb solid;
 }
+
     .newsMastContainer .newsMast {
         position: relative;
         left: 7px;
@@ -862,11 +867,8 @@ div:empty {
         }
 
 .newsDetailContainer {
-    position:absolute;
-    top: 50px;
+    top: 230px;
     left: 30.5%;
-    height: 74vh;
-    width: 39vw;
     border: .5px #ddddeb solid;
 }
 
@@ -1236,10 +1238,9 @@ div .postReplies :hover {
     }
 /******************* End Forum section **********************/
 
-.cultureContainer{position:relative;top:-9%}
 .cultureImage {
     position: relative;
-    width:36vw;
+    top: -70px !important;
 }
 
 /************************************	
@@ -1320,6 +1321,7 @@ div .postReplies :hover {
     height: 66vh;
     width: 100%;
     position: relative;
+    top: -15px;
     left: 3px;
     scrollbar-base-color: white;
     scrollbar-face-color: #7676b8;
@@ -1811,13 +1813,12 @@ blockquote {
     overflow-y: auto;
     background-color: transparent !important;
 }
-*/
 
 .faqQuestion {
-    /*padding: 0 35px 0 10px!important;*/
+    padding: 0 35px 0 10px!important;
     font-size: .9em;
-    margin-bottom:5px;
 }
+*/
 
 .contactsContainer {
     position: relative;
@@ -1941,23 +1942,19 @@ blockquote {
  *********************************/
 .suggestionContainer {
     position: absolute;
-    top: 7vh;
+    top: 15vh;
     height: 68vh;
     width: 100%;
-}
-
-.suggestionTabs, .suggestionContent{
-    position:absolute;
-    top:6%;
 }
 
 .suggestionTabs {
     overflow-y: scroll;
     padding: 10px;
-    left: -1%;
+    left: -10px;
     height: 100%;
     text-align: left;
 }
+
     .suggestionTabs .nav-tabs li > a {
         color: black;
         font-weight: bold;
@@ -1980,18 +1977,16 @@ blockquote {
     }
 
 .suggestionContent {
-    left: 18vw;
-    width: 73% !important;
+    position: relative;
+    width: 65% !important;
     height: 100%;
     padding: 10px;
-    overflow: scroll;
+    overflow-y: scroll;
     background-color: transparent !important;
 }
-.suggestionContent::-webkit-scrollbar{display:none}
-.suggestionTabs::-webkit-scrollbar{display:none}
 
     .suggestionContent .collapsing, .faqAnswer .collapsing {
-        top: -10px !important;
+        top: -20px !important;
         width: 100% !important;
     }
 
@@ -2082,7 +2077,7 @@ blockquote {
 
 .smtTabContainer {
     position: relative;
-    top: 15px;
+    top: 12px;
     width: 100% !important;
     margin: -6px 0 15px 0 !important;
 }
@@ -2122,7 +2117,7 @@ blockquote {
 .contactContainer {
     position: relative;
     left: 0;
-    top: 150px;
+    top: 50px;
     width: 101%;
     height: 230px;
     overflow: hidden;

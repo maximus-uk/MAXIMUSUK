@@ -73,6 +73,7 @@
     .knowledgeDocuments {
         width: 100% !important;
     }
+    .documentSection{height:61vh;border:1px solid red}
 
     /*** for SMT values ***/
     .smtBanner > h3 {

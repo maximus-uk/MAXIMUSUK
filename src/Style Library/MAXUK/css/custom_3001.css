@@ -1,105 +1,18 @@
 ﻿@media screen and (min-width:3001px) {
 
-    .pageLeftContainer {
-    }
-
-    .metroTilesSection {
-        width: 18%;
-    }
-
-    .pageMiddleContainer {
-        width: 13%;
-    }
-
-    .usefulLinksSection {
-        width: 7%;
-    }
-
-    .pageRightContainer {
-        /* left: 90.3% !important;*/
-        height: 87.7% !important;
-        width: 7.8% !important;
-    }
-
-    .slider-wrapper {
-        /*width: 56.5% !important;*/
-    }
-
-    .nivo-controlNav {
-        width: 100% !important;
-    }
-
-    .siteWelcomeMessage {
-    }
-
     .headingText {
         width: 965px;
         height: 40px;
     }
 
-    /*   .restricted {
-        top: 162px;
-        left: 58.5%;
-        width: 13%;
-        height: 27%;
-    }
-
-        .restricted:before {
-            top: 6%;
-            left: 20%;
-            font-size: 15em;
-        }
-*/
     #showhideApp {
         display: inherit
     }
 
-    .metroTiles {
-    }
-
-    /*  tile row height */
-    div.ms-promlink-body {
-    }
-
-    /*  tile dimensions, including inter-tile margin */
-    div.ms-tileview-tile-root {
-    }
-
-    /*  tile and title( + description) overlay dimensions */
-    div.ms-tileview-tile-content, div.ms-tileview-tile-detailsBox {
-    }
-
-    /*  title and description text  */
-    ul.ms-tileview-tile-detailsListMedium {
-    }
-
-    /*  description text class  */
-    li.ms-tileview-tile-descriptionMedium {
-    }
-
-    /*  title text when description not shown  */
-    div.ms-tileview-tile-titleTextMediumCollapsed {
-    }
-
-    .linkContainer {
-    }
-
-        .linkContainer .panel-group {
-        }
-
-    .ms-cal-weekname {
-        width: 10%;
-    }
 
     .nav-tabs > li {
         width: 85px;
         font-size: .9em;
-    }
-
-    .accordion-toggle:after {
-    }
-
-    .accordion-toggle.collapsed:after {
     }
 
     .panel-title {
@@ -108,9 +21,6 @@
     }
 
     /*** For Document Viewer ***/
-    .tabContainer {
-    }
-
     .tabBar {
         padding-top: 10px !important;
         height: 50px;
@@ -120,27 +30,8 @@
         left: 20px !important;
     }
 
-    .docViewer {
-    }
-
-    /*.teamDocumentTabs > ul {font-size:.9em!important;}*/
     .teamDocumentFoldersContainer, .teamDocumentViewerContainer {
         height: 610px;
-    }
-
-    .teamDocumentFoldersContainer {
-    }
-
-    .teamDocumentViewerContainer {
-    }
-
-    .teamDocumentViewerFrame {
-    }
-
-    .teamDocButtonContainer {
-    }
-
-    .buttonContainer {
     }
 
     .docItem {
@@ -164,7 +55,6 @@
     #docs, #viewer {
         height: 500px !important;
     }
-    /*#docFolders{height:260px!important}*/
     #viewer {
         width: 57.2%;
     }
@@ -236,15 +126,8 @@
         font-size: .9em;
     }
 
-    .contactsContent {
-        /*width: 37vw;*/
-    }
-
     .suggestionContainer, .suggestionTabs, .suggestionContent {
         height: 660px !important;
-    }
-
-    .suggestionTabs {
     }
 
     .suggestionContent {
@@ -289,7 +172,6 @@
     }
 
     .newsMast .newsHeadline {
-        /* color: #545487 !important;*/
         font-size: 1.1em;
         margin: -3px 0 1em 3px;
         width: 99%;
@@ -317,8 +199,5 @@
     .postDetailContainer {
         left: 24.9% !important;
         width: 46.5%;
-    }
-
-    .newPostBtn {
     }
 }

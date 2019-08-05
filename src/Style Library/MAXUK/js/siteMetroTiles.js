@@ -93,9 +93,12 @@ function getTeamTiles(appURL) {
                 var tileImage = $(this).attr("ows_ImageURL").split(',')[0];
                 var tileTarget = $(this).attr("ows_LaunchBehaviour");
 
+                //console.log(tileLink);
+                
                 if (tileDesc === undefined) { tileDesc = "" };
 
                 $('#row' + rowNum).append('<a href="' + tileLink + '" target="' + tileTarget + '" class="metrotile text-decoration-none text-center">' +
+                //$('#row' + rowNum).append('<a href="#" onclick="loadPage(\''+tileTitle+'.html\'); return false;" class="metrotile text-decoration-none text-center">' +
                     '<img class="img-responsive rounded" src="' + tileImage + '">' +
                     '<div class="overlay">' +
                     '<h5 class="font-weight-bolder text-decoration-none text-uppercase text-white text-center">' + tileTitle + '</h5>' +
@@ -110,4 +113,9 @@ function getTeamTiles(appURL) {
             });
         }
     });
+}
+
+function loadPage(pageName){
+    console.log(siteURL+"/sitepages/"+pageName);
+    $('#appContentFrame').attr('src',"/sites/chda/it/sitepages/"+pageName);
 }

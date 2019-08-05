@@ -1,0 +1,340 @@
+<%-- SPG:
+
+This HTML file has been associated with a SharePoint Master Page (.master file) carrying the same name.  While the files remain associated, you will not be allowed to edit the .master file, and any rename, move, or deletion operations will be reciprocated.
+
+To build the master page directly from this HTML file, simply edit the page as you normally would.  Use the Snippet Generator at https://maximusukdev.sharepoint.com/_layouts/15/ComponentHome.aspx?Url=https%3A%2F%2Fmaximusukdev%2Esharepoint%2Ecom%2F%5Fcatalogs%2Fmasterpage%2FMAXUK%5FSites%2Fmaxuk%5Fsites%2Emaster to create and customize useful SharePoint entities, then copy and paste them as HTML snippets into your HTML code.   All updates to this file will automatically sync to the associated Master Page.
+
+ --%>
+<%@Master language="C#"%>
+<%@Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="wssucw" TagName="Welcome" Src="~/_controltemplates/15/Welcome.ascx"%>
+<%@Register TagPrefix="wssucmui" TagName="MUISelector" Src="~/_controltemplates/15/MUISelector.ascx"%>
+<%@Register TagPrefix="PublishingRibbon" TagName="PublishingRibbon" Src="~/_controltemplates/15/Ribbon.ascx"%>
+<!DOCTYPE html >
+<SharePoint:SPHtmlTag lang="en" runat="server" id="SPHtmlTag" dir="&lt;%$Resources:wss,multipages_direction_dir_value%&gt;">
+    <head runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=10" />
+        
+        
+        
+        
+        <meta name="GENERATOR" content="Microsoft SharePoint" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Expires" content="0" />
+        <SharePoint:RobotsMetaTag runat="server">
+        </SharePoint:RobotsMetaTag>
+        <SharePoint:PageTitle runat="server">
+            <asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server">
+                <SharePoint:ProjectProperty Property="Title" runat="server">
+                </SharePoint:ProjectProperty>
+            </asp:ContentPlaceHolder>
+        </SharePoint:PageTitle>
+        <SharePoint:StartScript runat="server">
+        </SharePoint:StartScript>
+        <SharePoint:CssLink runat="server" Version="15">
+        </SharePoint:CssLink>
+        <SharePoint:CacheManifestLink runat="server">
+        </SharePoint:CacheManifestLink>
+        <SharePoint:PageRenderMode runat="server" RenderModeType="Standard">
+        </SharePoint:PageRenderMode>
+        <SharePoint:ScriptLink language="javascript" name="core.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="menu.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="callout.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink language="javascript" name="suitelinks.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:CustomJSUrl runat="server">
+        </SharePoint:CustomJSUrl>
+        <SharePoint:SoapDiscoveryLink runat="server">
+        </SharePoint:SoapDiscoveryLink>
+        <SharePoint:AjaxDelta id="DeltaPlaceHolderAdditionalPageHead" Container="false" runat="server">
+            <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server">
+            </asp:ContentPlaceHolder>
+            <SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true">
+            </SharePoint:DelegateControl>
+            <asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat="server">
+            </asp:ContentPlaceHolder>
+        </SharePoint:AjaxDelta>
+        <SharePoint:CssRegistration Name="Themable/corev15.css" runat="server">
+        </SharePoint:CssRegistration>
+        <SharePoint:AjaxDelta id="DeltaSPWebPartManager" runat="server">
+            <WebPartPages:SPWebPartManager runat="server">
+            </WebPartPages:SPWebPartManager>
+        </SharePoint:AjaxDelta>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Jason Clark" />
+        
+        <!-- ***** STYLES ***** -->
+        <link href="/_catalogs/masterpage/maxuk_sites/css/CHDA_corev15.css" />
+        <SharePoint:CssRegistration name="/_catalogs/masterpage/vendor/fontawesome-free/css/all.min.css" runat="server" after="SharepointCssFile" />
+        <link href="/_catalogs/masterpage/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/_catalogs/masterpage/vendor/jquery/jquery-ui.min.css" />
+        <link href="/_catalogs/masterpage/maxuk_sites/css/MAXUKSites.css" />
+        <link href="/Style Library/maxuk/css/custom.css" />
+        <link href="/Style Library/maxuk/css/rotating-card.css" />
+        <link href="/Style Library/maxuk/css/custom_Chrome.css" />
+        <link href="/Style Library/maxuk/css/EventCalendar.css" />
+        <link href="/Style Library/maxuk/css/EventListing.css" />
+        <!-- Plugin CSS -->
+
+        <!-- Custom styles for this template -->
+        <!-- Slideshow CSS -->
+        <SharePoint:CssRegistration name="/_catalogs/masterpage/vendor/nivo/css/nivo-slider.css" runat="server" after="SharepointCssFile" />
+        <SharePoint:CssRegistration name="/_catalogs/masterpage/vendor/nivo/css/themes/default/default.css" runat="server" after="SharepointCssFile" />
+        <!-- ***** Chrome Resolution CSS files ***** -->
+        <link rel="stylesheet" media="screen and (-webkit-min-device-pixel-ratio:0), screen and (-webkit-min-device-pixel-ratio:1), screen and (-webkit-min-device-pixel-ratio:2)" href="/Style%20Library/maxuk/css/custom_Chrome.css" />
+        <!-- ***** Small Resolution CSS files ***** -->
+        <link rel="stylesheet" media="screen and (max-width:1200px)" href="/Style%20Library/maxuk/css/custom_smlScreen.css" />
+        <!-- ***** Medium Resolution CSS files ***** -->
+        <link rel="stylesheet" media="screen and (min-width: 1201px) and (max-width:1280px)" href="/Style%20Library/maxuk/css/custom_(1201-1280).css" />
+        <link rel="stylesheet" media="screen and (min-width: 1281px) and (max-width:1399px)" href="/Style%20Library/maxuk/css/custom_(1281-1399).css" />
+        <link rel="stylesheet" media="screen and (min-width: 1400px) and (max-width:1600px)" href="/Style%20Library/maxuk/css/custom_(1400-1600).css" />
+        <!-- ***** Large Resolution CSS files ***** -->
+        <link rel="stylesheet" media="screen and (min-width: 1601px) and (max-width:1749px)" href="/Style%20Library/maxuk/css/custom_(1601-1749).css" />
+        <link rel="stylesheet" media="screen and (min-width: 1750px) and (max-width:1918px)" href="/Style%20Library/maxuk/css/custom_(1750-1918).css" />
+        <link rel="stylesheet" media="screen and (min-width: 1919px) and (max-width:1921px)" href="/Style%20Library/maxuk/css/custom_1920.css" />
+        <link rel="stylesheet" media="screen and (min-width: 1922px) and (max-width:1999px)" href="/Style%20Library/maxuk/css/custom_(1922-1999).css" />
+        <link rel="stylesheet" media="screen and (min-width: 2000px) and (max-width:2199px)" href="/Style%20Library/maxuk/css/custom_(2000-2199).css" />
+        <link rel="stylesheet" media="screen and (min-width: 2200px) and (max-width:2399px)" href="/Style%20Library/maxuk/css/custom_(2200-2399).css" />
+        <link rel="stylesheet" media="screen and (min-width: 2400px) and (max-width:2499px)" href="/Style%20Library/maxuk/css/custom_(2400-2499).css" />
+        <link rel="stylesheet" media="screen and (min-width: 2500px) and (max-width:2600px)" href="/Style%20Library/maxuk/css/custom_(2500-2600).css" />
+        <!-- ***** Very Big Resolution CSS files ***** -->
+        <link rel="stylesheet" media="screen and (min-width: 2601px) and (max-width:3000px)" href="/Style%20Library/maxuk/css/custom_(2601-3000).css" />
+        <link rel="stylesheet" media="screen and (min-width: 3001px)" href="/Style%20Library/maxuk/css/custom_3001.css" />
+        </head>
+    <body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();"><SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" /><SharePoint:ImageLink runat="server" /><SharePoint:SharePointForm onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}" runat="server"><asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
+        
+        
+        
+        <SharePoint:SPSecurityTrimmedControl runat="server" HideFromSearchCrawler="true" EmitDiv="true">
+            <div id="TurnOnAccessibility" style="display:none" class="s4-notdlg noindex">
+                <a id="linkTurnOnAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">
+                    <SharePoint:EncodedLiteral runat="server" text="&lt;%$Resources:wss,master_turnonaccessibility%&gt;" EncodeMethod="HtmlEncode">
+                    </SharePoint:EncodedLiteral>
+                </a>
+            </div>
+            <div id="TurnOffAccessibility" style="display:none" class="s4-notdlg noindex">
+                <a id="linkTurnOffAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(false);UpdateAccessibilityUI();document.getElementById('linkTurnOnAcc').focus();return false;">
+                    <SharePoint:EncodedLiteral runat="server" text="&lt;%$Resources:wss,master_turnoffaccessibility%&gt;" EncodeMethod="HtmlEncode">
+                    </SharePoint:EncodedLiteral>
+                </a>
+            </div>
+        </SharePoint:SPSecurityTrimmedControl>
+        
+        <div id="ms-designer-ribbon">
+            <PublishingRibbon:PublishingRibbon runat="server" />
+            
+        </div>
+        
+        <SharePoint:SPSecurityTrimmedControl runat="server" AuthenticationRestrictions="AnonymousUsersOnly">
+            <wssucw:Welcome runat="server" EnableViewState="false">
+            </wssucw:Welcome>
+        </SharePoint:SPSecurityTrimmedControl>
+        
+
+        <div id="s4-workspace">
+            <div id="s4-bodyContainer">
+
+                <!-- Header -->
+                <header class="py-5 mb-5">
+                    <div class="row">
+                        <!-- ***** Header Left Container ***** -->
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 headerLeftContainer box">
+                        </div>
+
+                        <!-- ***** Header Right Container ***** -->
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 headerRightContainer box">
+                        </div>
+                    </div>
+                </header>
+
+                <!-- ***** Main Content Container ***** -->
+                <div class="container-fluid mainContainer">
+
+                    <!-- ***** Page Content ***** -->
+                    <div class="hidden msgBannerAdjust" id="pageContent">
+                        <div data-name="ContentPlaceHolderMain">
+
+                            
+                            
+                            <SharePoint:AjaxDelta ID="DeltaPlaceHolderMain" IsMainContent="true" runat="server">
+                            <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server">
+
+                            <!-- *********************** -->
+                            <!-- **** Left Section ***** -->
+                            <!-- *********************** -->
+                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 clearfix text-justify pageLeftContainer">
+
+                            </div>
+
+                            <!-- ************************* -->
+                            <!-- **** Middle Section ***** -->
+                            <!-- ************************* -->
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 metroTilesSection" id="showHideApp">
+                                <div class="pageMiddleContainer">
+                                    <div class="hidden restricted" id="restrictApp">
+                                    </div>
+                                    <div class="metroTiles">
+                                    </div>
+                                    <!-- **** End MetroTiles **** -->
+                                </div>
+                                <!-- **** End Middle Container **** -->
+                            </div>
+                            <!-- **** End MetroTile Section **** -->
+
+                            </asp:ContentPlaceHolder>
+                            </SharePoint:AjaxDelta>
+                            
+                        </div>
+
+                        <!-- ************************* -->
+                        <!-- ***** Right Section ***** -->
+                        <!-- ************************* -->
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-justify usefulLinksSection" id="pageRightContainer">
+                            <div class="pageRightContainer">
+                                <div class="row linkContainer" id="usefulLinks">
+                                    <div class="panel-group" id="accordion">
+                                        <!-- ***** Group 1 is the Team links ***** -->
+                                        <div class="panel panel-default" id="usefulLinksGroup1">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#group1" style="text-decoration:none">
+                                                <div class="panel-heading">
+                                                    <div class="panel-title">
+                                                        <strong id="groupTitle1">
+                                                        </strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div id="group1" class="panel-collapse collapse">
+                                                <div class="list-group" id="links1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- ***** Group 2 is the CHDA links ***** -->
+                                        <div class="panel panel-default" id="usefulLinksGroup2">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#group2" style="text-decoration:none">
+                                                <div class="panel-heading">
+                                                    <div class="panel-title">
+                                                        <strong id="groupTitle2">
+                                                        </strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div id="group2" class="panel-collapse collapse">
+                                                <div class="list-group" id="links2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- ***** Group 3 is the MAXIMUS UK links ***** -->
+                                        <div class="panel panel-default" id="usefulLinksGroup3">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#group3" style="text-decoration:none">
+                                                <div class="panel-heading">
+                                                    <div class="panel-title">
+                                                        <strong id="groupTitle3">
+                                                        </strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div id="group3" class="panel-collapse collapse">
+                                                <div class="list-group" id="links3">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ***** This is for the Site Contacts ***** -->
+                                        <div class="panel panel-default" id="usefulLinksSiteContacts">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#siteContacts" style="text-decoration:none">
+                                                <div class="panel-heading">
+                                                    <div class="panel-title">
+                                                        <strong>
+                                                            Site Contacts
+                                                        </strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div id="siteContacts" class="panel-collapse collapse">
+                                                <div class="list-group">
+                                                    <strong>
+                                                        <h5 style="margin:-2px 0 0 15px;padding-top:5px;">
+                                                            Owners
+                                                            <hr style="margin-top:2px;color:#545487;" />
+                                                        </h5>
+                                                    </strong>
+                                                    <div id="siteOwner" style="margin-top:-20px!important">
+                                                    </div>
+                                                    <strong>
+                                                        <h5 style="margin:-2px 0 0 15px;padding-top:5px;">
+                                                            Power Users
+                                                            <hr style="margin-top:2px;color:#545487;" />
+                                                        </h5>
+                                                    </strong>
+                                                    <div id="powerUser" style="margin-top:-20px!important">
+                                                    </div>
+                                                    <strong>
+                                                        <h5 style="margin:-2px 0 0 15px;padding-top:5px;">
+                                                            Moderators
+                                                            <hr style="margin-top:2px;color:#545487;" />
+                                                        </h5>
+                                                    </strong>
+                                                    <div id="moderatorUser" style="margin-top:-20px!important">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end contacts panel-->
+                                    </div>
+                                    <!-- end panel group -->
+                                </div>
+                                <!-- end link container -->
+                            </div>
+                            <!-- end Right Container -->
+                        </div>
+                        <!-- end Column -->
+                    </div>
+                    <!-- end main row -->
+                </div>
+                <!-- end Main Container -->
+
+                <!-- Bootstrap core JavaScript -->
+                <script src="/_catalogs/masterpage/vendor/jquery/jquery.min.js">//<![CDATA[
+                //]]></script>
+                <script src="/_catalogs/masterpage/vendor/bootstrap/js/bootstrap.bundle.min.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/_catalogs/masterpage/vendor/jquery/jquery-ui.min.js">//<![CDATA[
+                //]]></script>
+
+                <!-- Plugin JavaScript -->
+                <script src="/_catalogs/masterpage/vendor/jquery-easing/jquery.easing.min.js">//<![CDATA[
+                //]]></script>
+                <script src="/_catalogs/masterpage/vendor/scrollreveal/scrollreveal.min.js">//<![CDATA[
+                //]]></script>
+                <script src="/_catalogs/masterpage/vendor/magnific-popup/jquery.magnific-popup.min.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/_catalogs/masterpage/vendor/jquery/jquery.SPServices.min.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/_catalogs/masterpage/MAXUK_sites/js/maxuk.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/_catalogs/masterpage/vendor/jquery/jquery.tickerNews.min.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/_catalogs/masterpage/vendor/nivo/jquery.nivo.slider.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/Style%20Library/MAXUK/js/siteLinks.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/Style%20Library/MAXUK/js/siteContacts.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/Style%20Library/MAXUK/js/siteMessages.js">//<![CDATA[
+                //]]></script>
+                <script type="text/javascript" src="/Style%20Library/MAXUK/js/importantMessage.js">//<![CDATA[
+                //]]></script>
+
+            </div>
+        </div>
+    <SharePoint:AjaxDelta id="DeltaFormDigest" BlockElement="true" runat="server"><asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server"><SharePoint:formdigest runat="server" /></asp:ContentPlaceHolder></SharePoint:AjaxDelta></SharePoint:SharePointForm><SharePoint:AjaxDelta id="DeltaPlaceHolderUtilityContent" runat="server"><asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server" /></SharePoint:AjaxDelta><asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigationSiteMap" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigation" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderSearchArea" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTopNavBar" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBarDataSource" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderCalendarNavigator" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftActions" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBarTop" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderSiteName" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageDescription" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageImage" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleLeftBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderMiniConsole" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleRightMargin" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleAreaSeparator" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderNavSpacer" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderBodyLeftBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" Visible="False" runat="server" /><asp:ContentPlaceHolder id="WSSDesignConsole" Visible="False" runat="server" /><asp:ContentPlaceHolder id="SPNavigation" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderQuickLaunchTop" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderQuickLaunchBottom" Visible="False" runat="server" /></body>
+</SharePoint:SPHtmlTag>

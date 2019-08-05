@@ -14,8 +14,8 @@
      Notes		:
 
     ************************************************** */
-    /***** Brand Colours & Fonts *****/
-    :root {
+        /***** Brand Colours *****/
+        :root {
         --PrimaryDark: #545487;
         --PrimaryMid: #7676b8;
         --PrimaryLight: #dbdcf4;
@@ -25,12 +25,6 @@
         --SecondaryDark2: #c95828;
         --SecondaryMid2: #f9ad86;
         --SecondaryLight2: #fae8d6;
-        --SecondaryDark3: #036e62;
-        --SecondaryMid3: #66bbb0;
-        --SecondaryLight3: #cee4e1;
-        --SecondaryDark4: #878a8f;
-        --SecondaryMid4: #b2b2b2;
-        --SecondaryLight4: #e2e1df;    
         --AccentDark1: #205794;
         --AccentMid1: #6e96cf;
         --AccentLight1: #e5eaf6;
@@ -51,57 +45,57 @@
       }
       
     @font-face {
-        font-family: Avenir;
-        src: url("/fonts/AvenirLTStd-Book.oft") format("opentype");
+    font-family: Avenir;
+    src: url("/fonts/AvenirLTStd-Book.oft") format("opentype");
     }
     
     @font-face {
-        font-family: Avenir;
-        font-weight: bold;
-        src: url("/fonts/AvenirLTStd-Heavy.oft") format("opentype");
+    font-family: Avenir;
+    font-weight: bold;
+    src: url("/fonts/AvenirLTStd-Heavy.oft") format("opentype");
     }
     
     @font-face {
-        font-family: Avenir;
-        font-weight: normal;
-        src: url("/fonts/AvenirLTStd-Light.oft") format("opentype");
+    font-family: Avenir;
+    font-weight: normal;
+    src: url("/fonts/AvenirLTStd-Light.oft") format("opentype");
     }
     
     @font-face {
-        font-family: Avenir;
-        src: url("/fonts/AvenirLTStd-Medium.oft") format("opentype");
+    font-family: Avenir;
+    src: url("/fonts/AvenirLTStd-Medium.oft") format("opentype");
     }
     
     @font-face {
-        font-family: Avenir;
-        src: url("/fonts/AvenirLTStd-Roman.oft") format("opentype");
+    font-family: Avenir;
+    src: url("/fonts/AvenirLTStd-Roman.oft") format("opentype");
     }
     
     @font-face {
-        font-family: FS ME;  
-        src: url("/fonts/FS ME Heavy.oft") format("opentype"),
+    font-family: FS ME;  
+    src: url("/fonts/FS ME Heavy.oft") format("opentype"),
             url("/fonts/FS ME Heavy.woff") format("woff"),
             url("/fonts/FS ME Heavy.svg#filename") format("svg");
     }
     
     @font-face {
-        font-family: FS ME;
-        font-weight: bold;
-        src: url("/fonts/FS ME Bold.oft") format("opentype"),
+    font-family: FS ME;
+    font-weight: bold;
+    src: url("/fonts/FS ME Bold.oft") format("opentype"),
             url("/fonts/FS ME Bold.woff") format("woff"),
             url("/fonts/FS ME Bold.svg#filename") format("svg");
     }
     
     @font-face {
-        font-family: FS ME;
-        font-weight: normal;
-        src: url("/fonts/FS ME Light.oft") format("opentype"),
+    font-family: FS ME;
+    font-weight: normal;
+    src: url("/fonts/FS ME Light.oft") format("opentype"),
             url("/fonts/FS ME Light.woff") format("woff"),
             url("/fonts/FS ME Light.svg#filename") format("svg");
     }
 
     html, body {
-        width: 100%;
+        /*width: 100%;*/
         height: 100%;
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         overflow: hidden !important;
@@ -216,22 +210,19 @@
     }
     
     .nav-tabs > li > a {
-        color: var(--PrimaryDark);
+        color: #545487;
         line-height: .8;
         border-bottom: none;
         border-radius: 0;
     }
     
-        .nav-tabs .nav-link:hover {
+        .nav-tabs > li > a:hover {
             border-top: 0;
             border-left: 0;
             border-right: 0;
             background-color: transparent;
-            border-bottom:5px solid var(--PrimaryMid);
         }
     
-    .nav-tabs .nav-link:active{border-bottom:5px solid var(--PrimaryDark);}
-
     .nav-tabs .nav-link.active,
     .nav-tabs > li.active > a:hover,
     .nav-tabs > li.active > a:focus {
@@ -240,7 +231,7 @@
         border-top: 0;
         border-left: 0;
         border-right: 0;
-        border-radius: 3px;
+        border-radius: 0;
     }
     
     .nav-tabs > li {
@@ -262,7 +253,7 @@
         color:white;
         background-color:var(--PrimaryMid);
     }    
-    
+
     /*
     .teamSelected {
         color: white !important;
@@ -286,8 +277,8 @@
         }
     
         .ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
-            /*margin-right: 5px;
-            padding: 0;*/
+            margin-right: 5px;
+            /*padding: 0;*/
         }
     
             .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
@@ -599,7 +590,7 @@
     
     h4 {
         font-family: Arial, Helvetica, sans-serif !important;
-        font-size: 16px !important;
+        font-size: 14px !important;
         font-weight: bold;
         text-shadow: none !important;
     }
@@ -617,7 +608,7 @@
     
     h6 {
         font-family: Arial, Helvetica, sans-serif !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
         font-weight: 700;
         text-shadow: none !important;
     }
@@ -740,7 +731,7 @@
         overflow-y:auto;
         overflow-x:hidden;
         z-index: 1 !important;
-    }
+    }   
 
         /* Webkit Browser Scrollbar */
         .pageLeftContainer::-webkit-scrollbar {
@@ -871,7 +862,6 @@
         margin-bottom:5px;
         padding-left:1px;
         display:block;
-        width:100%;
     }
     
             .card > .list-group .list-group-item,
@@ -883,16 +873,18 @@
             margin-top: 0px;
         }
     
-        /*.card > .list-group, .card > .collapse > .list-group {
-            border: .5px solid #545487 !important;
+        .card > .list-group, .card > .collapse > .list-group {
+            /*border: .5px solid #545487 !important;*/
             padding: 1px;
-        }*/
+        }
     
     .card-header {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         text-decoration: none !important;   
     }
+    
+    
         .card-header:hover, .accordion-toggle:hover {
             text-decoration: none !important;
         }
@@ -1437,6 +1429,7 @@
     
     @media screen and (min-width: 2000px) and (max-width:2099px) {
 
+        
         /****************************/
         /******* Page Content *******/
         /****************************/
@@ -1451,7 +1444,7 @@
         .pageMiddleContainer {
             flex: 0 0 20%;
         }
-    
+
         .adminTools {
             left: 79%;
         }
@@ -1480,7 +1473,7 @@
         .pageMiddleContainer {
             flex: 0 0 20%;
         }
-    
+
         .adminTools {
             left: 79%;
         }
@@ -1502,7 +1495,7 @@
         .pageMiddleContainer {
             flex: 0 0 20%;
         }
-    
+
         .adminTools {
             left: 70%;
         }
@@ -1515,7 +1508,7 @@
         /****************************/
         .pageLeftContainer {
             flex: 0 0 75%;
-            max-width: 80%;
+            max-width:80%;
         }
 
         /**************************/
@@ -1537,7 +1530,7 @@
         /****************************/
         .pageLeftContainer {
             flex: 0 0 77.2%;
-            max-width: 80%;
+            max-width:80%;
         }
 
         /**************************/
@@ -1568,7 +1561,7 @@
         .pageMiddleContainer {
             flex: 0 0 20%;
         }
-    
+
         .adminTools {
             left: 70%;
         }

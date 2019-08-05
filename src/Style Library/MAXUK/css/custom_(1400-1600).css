@@ -24,7 +24,7 @@
     }
 
     .nav-tabs > li {
-        width: 100px;
+        width: 90px;
     }
 
     .panel-title {
@@ -78,6 +78,8 @@
     .knowledgeDocuments {
         width: 90% !important;
     }
+
+    .documentSection{height:61vh;}
 
     .panel-title {
         font-size: .9em !important;
@@ -163,6 +165,11 @@
 
     /**************************/
 
+    .newsMastContainer {
+        height: 48%;
+        width: 22% !important;
+    }
+
     .newsMast img {
         left: -15px !important;
         width: 100px !important;
@@ -186,8 +193,11 @@
     }
 
     .newsDetailContainer {
+        height: 48%;
+        width: 49%;
         left: 31.5%;
     }
+
         .newsDetailContainer #newsDetail {
             font-size: .9em;
         }
@@ -198,6 +208,11 @@
 
     #viewer {
         width: 57.3%
+    }
+
+    .fadein {
+        width: 400px;
+        margin: 0 0 0 25px;
     }
 
     .postToolsContainer {
