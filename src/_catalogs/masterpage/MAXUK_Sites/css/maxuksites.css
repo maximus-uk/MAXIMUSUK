@@ -725,9 +725,10 @@
     .pageLeftContainer {
         position: relative !important;
         top: 40px;
-        flex: 0 0 67.8%;
-        max-width: 70%;
-        max-height:85vh;
+        flex: 0 0 95%;
+        max-width: 95%;
+        height:87vh;
+        max-height:87vh;
         overflow-y:auto;
         overflow-x:hidden;
         z-index: 1 !important;
@@ -811,9 +812,9 @@
         width: 100%;
     }
     
-        .linkContainer .card {
+        /*.linkContainer .card {
             width: 220px
-        }
+        }*/
     
         .linkContainer::-webkit-scrollbar {
             display:none;
@@ -1321,16 +1322,16 @@
     
     @media screen and (min-width:1350px) and (max-width:1399px) {
 
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 57%;
             max-width: 65%;
-        }
+        }*/
     
-        .pageRightContainer {
+        /*.pageRightContainer {
             left:3%;
             max-width: 15%;
             height:80vh;
-        }
+        }*/
 
         .nav-section {
             font-size: .9em;
@@ -1343,14 +1344,14 @@
     
     @media screen and (min-width:1400px) and (max-width:1499px) {
 
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 57.6%;
             max-width: 65%;
-        }
+        }*/
     
-        .pageRightContainer {
+        /*.pageRightContainer {
             max-width: 16%;
-        }
+        }*/
 
         .adminTools {
             left: 69%;
@@ -1359,12 +1360,13 @@
     
     @media screen and (min-width:1500px) and (max-width:1599px) {
     
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 59.7%;
             max-width: 65%;
             max-height: 82vh;
-        }        
-        .pageMiddleContainer{max-width: 23%;flex:0 0 21%;}
+        }*/
+
+        /*.pageMiddleContainer{max-width: 23%;flex:0 0 21%;}*/
         
         .adminTools {
             left: 69%;
@@ -1373,16 +1375,16 @@
     
     @media only screen and (min-width: 1600px) and (max-width: 1690px) {
     
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 60%;
             max-width: 65%;
-        }
+        }*/
     
-        .pageRightContainer {
+        /*.pageRightContainer {
             left:0.5%;
             flex: 0 0 14%;
             max-width: 14%;
-        }
+        }*/
     
         .adminTools {
             left: 69%;
@@ -1391,16 +1393,16 @@
     
     @media only screen and (min-width: 1691px) and (max-width: 1749px) {
     
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 63.5%;
             max-width: 65%;
-        }
+        }*/
     
-        .pageRightContainer {
+        /*.pageRightContainer {
             left:0.5%;
             flex: 0 0 14%;
             max-width: 14%;
-        }
+        }*/
     
         .adminTools {
             left: 70%;
@@ -1433,17 +1435,17 @@
         /****************************/
         /******* Page Content *******/
         /****************************/
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 69.1%;
             max-width:80%;
-        }
+        }*/
 
         /**************************/
         /******* Metrotiles *******/
         /**************************/
-        .pageMiddleContainer {
+        /*.pageMiddleContainer {
             flex: 0 0 20%;
-        }
+        }*/
 
         .adminTools {
             left: 79%;
@@ -1462,17 +1464,17 @@
         /****************************/
         /******* Page Content *******/
         /****************************/
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 72.6%;
             max-width:80%;
-        }
+        }*/
 
         /**************************/
         /******* Metrotiles *******/
         /**************************/
-        .pageMiddleContainer {
+        /*.pageMiddleContainer {
             flex: 0 0 20%;
-        }
+        }*/
 
         .adminTools {
             left: 79%;
@@ -1484,17 +1486,17 @@
         /****************************/
         /******* Page Content *******/
         /****************************/
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 75%;
             max-width:80%;
-        }
+        }*/
 
         /**************************/
         /******* Metrotiles *******/
         /**************************/
-        .pageMiddleContainer {
+        /*.pageMiddleContainer {
             flex: 0 0 20%;
-        }
+        }*/
 
         .adminTools {
             left: 70%;
@@ -1506,17 +1508,17 @@
         /****************************/
         /******* Page Content *******/
         /****************************/
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 75%;
             max-width:80%;
-        }
+        }*/
 
         /**************************/
         /******* Metrotiles *******/
         /**************************/
-        .pageMiddleContainer {
+        /*.pageMiddleContainer {
             flex: 0 0 20%;
-        }
+        }*/
         
         .adminTools {
             left: 70%;
@@ -1528,17 +1530,17 @@
         /****************************/
         /******* Page Content *******/
         /****************************/
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 77.2%;
             max-width:80%;
-        }
+        }*/
 
         /**************************/
         /******* Metrotiles *******/
         /**************************/
-        .pageMiddleContainer {
+        /*.pageMiddleContainer {
             flex: 0 0 20%;
-        }
+        }*/
 
         .adminTools {
             left: 79%;
@@ -1550,17 +1552,17 @@
         /****************************/
         /******* Page Content *******/
         /****************************/
-        .pageLeftContainer {
+        /*.pageLeftContainer {
             flex: 0 0 79.6%;
             max-width:80%;
-        }
+        }*/
 
         /**************************/
         /******* Metrotiles *******/
         /**************************/
-        .pageMiddleContainer {
+        /*.pageMiddleContainer {
             flex: 0 0 20%;
-        }
+        }*/
 
         .adminTools {
             left: 70%;
