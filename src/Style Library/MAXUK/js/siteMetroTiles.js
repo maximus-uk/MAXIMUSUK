@@ -8,23 +8,21 @@ function getTiles(URL) {
     var rowNum = 1;
     var fields = "<ViewFields>" +
         "<FieldRef Name='ID' />" +
-        "<FieldRef Name='TileOrder' />" +
         "<FieldRef Name='Title' />" +
         "<FieldRef Name='Description' />" +
         "<FieldRef Name='LinkURL' />" +
         "<FieldRef Name='ImageURL' />" +
-        "<FieldRef Name='LaunchBehaviour' />" +
+        "<FieldRef Name='LaunchBehavior' />" +
         "</ViewFields>";
     var query = "<Query><OrderBy><FieldRef Name='TileOrder' Ascending='TRUE'/></OrderBy></Query>";
+    var buName = URL.split('/')[4];
 
     $('#metrotiles').append('<div class="row" id="row' + rowNum + '"></div>');
-    var appURL="https://"+URL.split('/')[2]+"/"
-    var buName = URL.split('/')[4];
 
     $().SPServices({
         operation: method,
         async: false,
-        webURL: appURL,
+        webURL: URL,
         listName: list,
         CAMLViewFields: fields,
         CAMLQuery: query,
@@ -36,14 +34,16 @@ function getTiles(URL) {
                 var tileDesc = $(this).attr("ows_Description");
                 var tileLink = $(this).attr("ows_LinkURL").split(',')[0];
                 var tileImage = $(this).attr("ows_ImageURL").split(',')[0];
-                var tileTarget = $(this).attr("ows_LaunchBehaviour");
+                var tileTarget = $(this).attr("ows_LaunchBehavior");
+                
+                console.log(tileTitle+" "+tileTarget);
 
                 if (tileDesc === undefined) { tileDesc = "" };
 
                 $('#row' + rowNum).append('<a href="' + tileLink + '" target="' + tileTarget + '" class="metrotile text-decoration-none text-center">' +
                     '<img class="img-responsive rounded" src="' + tileImage + '">' +
-                    '<div class="overlay">' +
                     '<h5 class="font-weight-bolder text-decoration-none text-uppercase text-white text-center">' + tileTitle + '</h5>' +
+                    '<div class="overlay">' +                   
                     '<p class="info text-decoration-none text-white font-weight-normal rounded">' + tileDesc + '</p>' +
                     '</div>' +
                     '</a>');
@@ -73,6 +73,7 @@ function getTeamTiles(appURL) {
         "<FieldRef Name='LaunchBehaviour' />" +
         "</ViewFields>";
     var query = "<Query><OrderBy><FieldRef Name='TileOrder' Ascending='TRUE'/></OrderBy></Query>";
+    //var appURL="https://"+URL.split('/')[2]+"/"
 
     $('#metrotiles').append('<div class="row" id="row' + rowNum + '"></div>');
     
@@ -100,8 +101,8 @@ function getTeamTiles(appURL) {
                 $('#row' + rowNum).append('<a href="' + tileLink + '" target="' + tileTarget + '" class="metrotile text-decoration-none text-center">' +
                 //$('#row' + rowNum).append('<a href="#" onclick="loadPage(\''+tileTitle+'.html\'); return false;" class="metrotile text-decoration-none text-center">' +
                     '<img class="img-responsive rounded" src="' + tileImage + '">' +
-                    '<div class="overlay">' +
                     '<h5 class="font-weight-bolder text-decoration-none text-uppercase text-white text-center">' + tileTitle + '</h5>' +
+                    '<div class="overlay">' +
                     '<p class="info text-decoration-none text-white font-weight-normal rounded">' + tileDesc + '</p>' +
                     '</div>' +
                     '</a>');
