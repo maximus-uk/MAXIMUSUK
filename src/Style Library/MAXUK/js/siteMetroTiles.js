@@ -93,6 +93,11 @@ function getTeamTiles(appURL) {
                 var tileLink = $(this).attr("ows_LinkURL").split(',')[0];
                 var tileImage = $(this).attr("ows_ImageURL").split(',')[0];
                 var tileTarget = $(this).attr("ows_LaunchBehavior");
+<<<<<<< HEAD
+=======
+
+                //console.log(tileLink);
+>>>>>>> d0088c43f76d883c61477b0d315ee9fea15fac1a
                 
                 if (tileDesc === undefined) { tileDesc = "" };
 
