@@ -76,7 +76,7 @@ function getSlideData() {
                                                 '<img src="'+slideImage+'" alt="'+slideName+'">' +
                                                 '<div class="carousel-caption">' +
                                                     '<h4 class="display-4 text-white font-weight-bolder">'+slideTitle+'</h4>' +
-                                                    '<p>'+slideHeadline+'</p>' +
+                                                    '<span>'+slideHeadline+'</span>' +
                                                 '</div>' +
                                                 '</a>' +                                        
                                                 '</div>');
@@ -89,7 +89,7 @@ function getSlideData() {
                                                 '<img src="'+slideImage+'" alt="'+slideName+'">' +
                                                 '<div class="carousel-caption">' +
                                                     '<h4 class="display-4 text-white font-weight-bolder">'+slideTitle+'</h4>' +
-                                                    '<p>'+slideHeadline+'</p>' +
+                                                    '<span>'+slideHeadline+'</span>' +
                                                 '</div>' +
                                                 '</a>' +                                        
                                                 '</div>');

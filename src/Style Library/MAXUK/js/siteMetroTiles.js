@@ -70,7 +70,7 @@ function getTeamTiles(appURL) {
         "<FieldRef Name='Description' />" +
         "<FieldRef Name='LinkURL' />" +
         "<FieldRef Name='ImageURL' />" +
-        "<FieldRef Name='LaunchBehaviour' />" +
+        "<FieldRef Name='LaunchBehavior' />" +
         "</ViewFields>";
     var query = "<Query><OrderBy><FieldRef Name='TileOrder' Ascending='TRUE'/></OrderBy></Query>";
     //var appURL="https://"+URL.split('/')[2]+"/"
@@ -92,9 +92,7 @@ function getTeamTiles(appURL) {
                 var tileDesc = $(this).attr("ows_Description");
                 var tileLink = $(this).attr("ows_LinkURL").split(',')[0];
                 var tileImage = $(this).attr("ows_ImageURL").split(',')[0];
-                var tileTarget = $(this).attr("ows_LaunchBehaviour");
-
-                //console.log(tileLink);
+                var tileTarget = $(this).attr("ows_LaunchBehavior");
                 
                 if (tileDesc === undefined) { tileDesc = "" };
 

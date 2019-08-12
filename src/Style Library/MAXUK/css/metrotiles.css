@@ -28,7 +28,7 @@
     top: 0;
     left: 1px;
     -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .metrotile:hover .overlay {
@@ -43,13 +43,13 @@
     box-shadow: 2px 2px #7676b8;
 }
 
-.metrotile:hover img {
+/*.metrotile:hover img {
     filter: grayscale(1) blur(2px);
     -webkit-filter: grayscale(1) blur(2px);
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
-}
+}*/
 
 .metrotile h5 {
     position: absolute;
@@ -90,8 +90,8 @@
         -webkit-transform: scale(1);
         -ms-transform: scale(1);
         transform: scale(1);*/
-    height: 102px;
-    width: 102px;
+    height: 100%;
+    width: 100%;
     font-size: .7em;
     border: 1px solid #7676b8;
     background-color: #7676b8;
