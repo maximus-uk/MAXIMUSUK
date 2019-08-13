@@ -47,57 +47,60 @@
     
     @font-face {
         font-family: Avenir;
-        src: url("/fonts/AvenirLTStd-Black.oft") format("opentype");
+        font-weight:bolder;
+        src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Black.oft") format("opentype");
       }
       
     @font-face {
     font-family: Avenir;
-    src: url("/fonts/AvenirLTStd-Book.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Book.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
     font-weight: bold;
-    src: url("/fonts/AvenirLTStd-Heavy.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Heavy.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
     font-weight: normal;
-    src: url("/fonts/AvenirLTStd-Light.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Light.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
-    src: url("/fonts/AvenirLTStd-Medium.oft") format("opentype");
+    font-weight: 700;
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Medium.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
-    src: url("/fonts/AvenirLTStd-Roman.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Roman.oft") format("opentype");
     }
     
     @font-face {
     font-family: FS ME;  
-    src: url("/fonts/FS ME Heavy.oft") format("opentype"),
-            url("/fonts/FS ME Heavy.woff") format("woff"),
-            url("/fonts/FS ME Heavy.svg#filename") format("svg");
+    font-weight:bolder;
+    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.oft") format("opentype"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.woff") format("woff"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.svg#filename") format("svg");
     }
     
     @font-face {
     font-family: FS ME;
     font-weight: bold;
-    src: url("/fonts/FS ME Bold.oft") format("opentype"),
-            url("/fonts/FS ME Bold.woff") format("woff"),
-            url("/fonts/FS ME Bold.svg#filename") format("svg");
+    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.oft") format("opentype"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.woff") format("woff"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.svg#filename") format("svg");
     }
     
     @font-face {
     font-family: FS ME;
     font-weight: normal;
-    src: url("/fonts/FS ME Light.oft") format("opentype"),
-            url("/fonts/FS ME Light.woff") format("woff"),
-            url("/fonts/FS ME Light.svg#filename") format("svg");
+    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Light.oft") format("opentype"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Light.woff") format("woff"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Light.svg#filename") format("svg");
     }
 
     html, body {
@@ -172,7 +175,6 @@
     .pageTitle {
         position: absolute;
         font-weight: bold !important;
-        font-family: Arial, Helvetica, sans-serif;
         text-align: left;
         left: 30px;
         margin: 0 !important;
@@ -295,7 +297,6 @@
                 font-size: 1em !important;
                 font-weight: bold;
                 text-transform: capitalize;
-                font-family: Arial, 'Open Sans', sans-serif;
                 /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
                 width: 100%;
             }
@@ -346,7 +347,6 @@
                 vertical-align: middle;
                 width: 100%;
                 text-align: center;
-                font-family: Arial, 'Open Sans', sans-serif;
                 /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
             }
     
@@ -519,7 +519,6 @@
         float: right;
         padding: 0 10px 0 0;
         font-size: 18px !important; /* Icon size */
-        font-family: Arial, Helvetica, sans-serif;
     }
         
         .siteHelp a:before {
@@ -579,7 +578,7 @@
     h1 {
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 24px !important;
-        font-weight: bold;
+        font-weight: bolder;
         /*text-shadow: .2em .2em .3px #545487 !important;*/
     }
     
@@ -599,28 +598,31 @@
     
     h4 {
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
-        font-size: 14px !important;
-        font-weight: bold;
+        font-size: 16px !important;
+        font-weight: 900;
         text-shadow: none !important;
     }
     
-        h4 > a {
-            text-decoration: none;
-        }
-    
     h5 {
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 800;
+        text-shadow: none !important;
+    }
+    
+    h6, p {
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 12px !important;
         font-weight: 700;
         text-shadow: none !important;
     }
-    
-    h6 {
-        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
-        font-size: 11px !important;
-        font-weight: 700;
-        text-shadow: none !important;
+
+    h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, p > a, a {
+        text-decoration: none;
     }
+
+    h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {background-color:var(--PrimaryMid); color:white!important; border-radius:5px; padding:3px 0 3px 0}
+    h1 > a .active, h2 > a .active, h3 > a .active, h4 > a .active, h5 > a .active, h6 > a .active {background-color:var(--PrimaryDark); color:white!important}
 
     .navbar-search ul > li > a {
         color: black !important;

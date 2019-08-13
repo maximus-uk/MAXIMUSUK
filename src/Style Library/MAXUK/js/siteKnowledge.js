@@ -1,6 +1,7 @@
 ﻿function getKnowledgeDocs(team) {
 
     // Setup Local Variables
+    console.log(siteURL);
     var url = _spPageContextInfo.webAbsoluteUrl;
     var pdfIcon = '<i class="fa fa-file-pdf redIcon" aria-hidden="true"></i>';
     var wordIcon = '<i class="fa fa-file-word blueIcon" aria-hidden="true"></i>';
@@ -96,7 +97,7 @@
                             break;
                     }                    
 
-                    //console.log("teamname="+teamName+" team="+team+" sharedteam="+sharedTeam+" docstatus="+docStatus);
+                    console.log("teamname="+teamName+" team="+team+" sharedteam="+sharedTeam+" docstatus="+docStatus);
                     
                     if ((teamName === team || sharedTeam === team || teamName === "All") && docStatus === '0') {
                         //console.log("subfolder="+docSubFolder);

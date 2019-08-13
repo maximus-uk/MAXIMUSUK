@@ -1780,44 +1780,6 @@ blockquote {
     font-size: .9em;
 }
 
-.faqContainer {
-    margin-top: 5px !important;
-    z-index: 5;
-}
-
-/*    .faqTabs .nav-tabs li > a {
-        color: black;
-        font-weight: bold;
-        font-size: 1.1em;
-        border-radius: 10px 10px 10px 10px;
-    }
-
-        .faqTabs .nav-tabs li > a:active {
-            color: white !important;
-            background-color: #ddddeb !important;
-            font-size: 1.1em;
-            height: 20px;
-            border-radius: 10px 10px 10px 10px;
-        }
-
-    .faqTabs a:hover {
-        color: white !important;
-        background: #7676b8 !important;
-        border-radius: 10px 10px 10px 10px;
-    }
-
-.faqContent {
-    overflow-y: auto;
-    background-color: transparent !important;
-}
-*/
-
-.faqQuestion {
-    /*padding: 0 35px 0 10px!important;*/
-    font-size: .9em;
-    margin-bottom:5px;
-}
-
 .contactsContainer {
     position: relative;
     height: 75vh;
@@ -1935,35 +1897,37 @@ blockquote {
 }
 /**************************************************/
 
-/*********************************
- ***** About Suggestion Page *****
- *********************************/
-.suggestionContainer {
-    position: absolute;
-    top: 7vh;
-    height: 68vh;
+/*****************************************
+ ***** About Suggestions & Team FAQs *****
+ *****************************************/
+.suggestionContainer, .faqContainer {
+    position: absolute;   
+    height: 85vh!important;
     width: 100%;
+    z-index: 5;
 }
+.suggestionContainer {top: 7vh;}
+.faqContainer {margin-top: 5px !important;}
 
-.suggestionTabs, .suggestionContent{
+.suggestionTabs, .suggestionContent, .faqTabs, .faqContent{
     position:absolute;
-    top:6%;
 }
+.suggestionTabs, .suggestionContent{top:6%;}
 
-.suggestionTabs {
+.suggestionTabs, .faqTabs {
     overflow-y: scroll;
     padding: 10px;
     height: 99%;
     text-align: left;
 }
-    .suggestionTabs .nav-tabs li > a {
+    .suggestionTabs .nav-tabs li > a, .faqTabs .nav-tabs li > a  {
         color: black;
         font-weight: bold;
         font-size: 1.1em;
         border-radius: 10px 10px 10px 10px;
     }
 
-        .suggestionTabs .nav-tabs li > a:active {
+        .suggestionTabs .nav-tabs li > a:active, .faqTabs .nav-tabs li > a:active {
             color: white !important;
             background-color: #7676b8 !important;
             font-size: 1.1em;
@@ -1971,13 +1935,13 @@ blockquote {
             border-radius: 10px 10px 10px 10px;
         }
 
-    .suggestionTabs a:hover {
+    .suggestionTabs a:hover, .faqTabs a:hover {
         color: white !important;
         background-color: #7676b8 !important;
         border-radius: 10px 10px 10px 10px;
     }
 
-.suggestionContent {
+.suggestionContent, .faqContent {
     left: 27vw;
     width: 69% !important;
     height: 99%;
@@ -1985,17 +1949,50 @@ blockquote {
     overflow: scroll;
     background-color: transparent !important;
 }
-.suggestionContent::-webkit-scrollbar{display:none;}
-.suggestionTabs::-webkit-scrollbar{display:none;}
+.suggestionContent::-webkit-scrollbar, .faqContent::-webkit-scrollbar{display:none;}
+.suggestionTabs::-webkit-scrollbar, .faqTabs::-webkit-scrollbar{display:none;}
 
-    .suggestionContent .collapsing, .faqAnswer .collapsing {
+    .suggestionContent .collapsing, .faqAnswer .collapsing, .faqContent .collapsing, .faqAnswer .collapsing {
         top: -10px !important;
         width: 100% !important;
     }
 
-    .suggestionContent .panel-group {
+    .suggestionContent .panel-group, .faqContent .panel-group {
         margin-right: 5px
     }
+    
+    /*    .faqTabs .nav-tabs li > a {
+            color: black;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 10px 10px 10px 10px;
+        }
+    
+            .faqTabs .nav-tabs li > a:active {
+                color: white !important;
+                background-color: #ddddeb !important;
+                font-size: 1.1em;
+                height: 20px;
+                border-radius: 10px 10px 10px 10px;
+            }
+    
+        .faqTabs a:hover {
+            color: white !important;
+            background: #7676b8 !important;
+            border-radius: 10px 10px 10px 10px;
+        }
+    
+    .faqContent {
+        overflow-y: auto;
+        background-color: transparent !important;
+    }
+    */
+    
+.faqQuestion {
+    /*padding: 0 35px 0 10px!important;*/
+    font-size: .9em;
+    margin-bottom:5px;
+}
 
 /**************************
  ***** About SMT Page *****

@@ -24,12 +24,12 @@
     }
 
     .accordion-toggle:after {
-        top: -30px !important;
+        top: -42px !important;
         left: -12px !important;
     }
 
     .accordion-toggle.collapsed:after {
-        top: -30px !important;
+        top: -42px !important;
         left: -12px !important;
     }
 
@@ -140,10 +140,6 @@
     .homeTabBar, .navTabBar, .tabBar {
         top: 1px;
         left: -10px;
-    }
-
-    .faqContainer {
-        height: 1065px !important;
     }
 
     .contactsTabs {
