@@ -80,24 +80,24 @@
     @font-face {
     font-family: FS ME;  
     src: url("/fonts/FS ME Heavy.oft") format("opentype"),
-         url("/fonts/FS ME Heavy.woff") format("woff"),
-         url("/fonts/FS ME Heavy.svg#filename") format("svg");
+            url("/fonts/FS ME Heavy.woff") format("woff"),
+            url("/fonts/FS ME Heavy.svg#filename") format("svg");
     }
     
     @font-face {
     font-family: FS ME;
     font-weight: bold;
     src: url("/fonts/FS ME Bold.oft") format("opentype"),
-         url("/fonts/FS ME Bold.woff") format("woff"),
-         url("/fonts/FS ME Bold.svg#filename") format("svg");
+            url("/fonts/FS ME Bold.woff") format("woff"),
+            url("/fonts/FS ME Bold.svg#filename") format("svg");
     }
     
     @font-face {
     font-family: FS ME;
     font-weight: normal;
     src: url("/fonts/FS ME Light.oft") format("opentype"),
-         url("/fonts/FS ME Light.woff") format("woff"),
-         url("/fonts/FS ME Light.svg#filename") format("svg");
+            url("/fonts/FS ME Light.woff") format("woff"),
+            url("/fonts/FS ME Light.svg#filename") format("svg");
     }
 
     html, body {
@@ -285,7 +285,7 @@
             left: 0 !important;
         }
     
-        /*.ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
+       /* .ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
             margin-right: 5px;
             padding: 0;
         }*/
