@@ -244,7 +244,7 @@
     }
     
     .nav-tabs > li {
-        width: auto
+        width: auto;
     }
     
     .nav-pills .nav-link {
@@ -735,8 +735,8 @@
     .pageLeftContainer {
         position: relative !important;
         top: 45px;
-        flex: 0 0 98%;
-        max-width: 98%;
+        flex: 0 0 97%;
+        max-width: 97%;
         height:87vh;
         max-height:87vh;
         overflow-y:auto;
