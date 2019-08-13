@@ -1,7 +1,8 @@
 ﻿function getKnowledgeDocs(team) {
 
     // Setup Local Variables
-    var url = _spPageContextInfo.webAbsoluteUrl;
+    //console.log(siteURL);
+    //var url = _spPageContextInfo.webAbsoluteUrl;
     var pdfIcon = '<i class="fa fa-file-pdf redIcon" aria-hidden="true"></i>';
     var wordIcon = '<i class="fa fa-file-word blueIcon" aria-hidden="true"></i>';
     var xlIcon = '<i class="fa fa-file-excel greenIcon" aria-hidden="true"></i>';
@@ -14,7 +15,7 @@
 
     // SPServices Variables
     var method = "GetListItems";
-    var siteURL = url.split("sites/")[0]+"sites/"+url.split("/")[4] + "/knowledge/";
+    var url = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
     
     //console.log(siteURL);
 
@@ -52,7 +53,7 @@
         $().SPServices({
             operation: method,
             async: false,
-            webURL: siteURL,
+            webURL: url,
             listName: list,
             CAMLViewFields: fields,
             CAMLQuery: query,
@@ -71,6 +72,7 @@
                     var otherTeams = $(this).attr("ows_KnowledgeSharedWith");
                     var office = $(this).attr("ows_KnowledgeOffice");
                     var sharedTeam = "none";
+                    var docFQN = url + list + '/' + docName;
 
                     if(teamName !== undefined){teamName=teamName.split(';#')[1]};
 
@@ -142,14 +144,15 @@
                             '<div class="col-sm-2 col-md-2 col-lg-2 iconContainer">' +
                             '<nobr>' +  // document tool kit goes here
                             '<div class="docIcon">' + icon + '</div>' +
+                            '<div class="docView"><a href="#" onclick="viewDoc(\''+docFQN+'\');return false;"><i class="fa fa-eye"></i></a></div>' +
                             '</nobr>' +
                             '</div>' +
                             '<div class="col-sm-10 col-md-10 col-lg-10 text-left">' +
-                            '<p class="docItem"><a href="' + siteURL + '_layouts/15/download.aspx?SourceUrl=' + siteURL + list + '/' + docName + '" target="_blank">' + docTitle + '</a></p>' +
+                            '<p class="docItem"><a href="' + url + '_layouts/15/download.aspx?SourceUrl=' + url + list + '/' + docName + '" target="_blank">' + docTitle + '</a></p>' +
                             '</div>' +
                             '</div>';                                                
 
-                        console.log("foldername="+docFolder);
+                        //console.log("foldername="+docFolder);
 
                         // **** check for folder level
                         if (docFolder !== undefined) {
@@ -214,7 +217,7 @@
                                         '</nobr>' +
                                         '</div>' +
                                         '<div class="col-sm-8 col-md-8 col-lg-8 text-left">' +
-                                        '<p class="docItem"><a href="' + siteURL + '_layouts/15/download.aspx?SourceUrl=' + siteURL + list + '/' + docName + '" target="_blank">' + docTitle + '</a></p>' +
+                                        '<p class="docItem"><a href="' + url + '_layouts/15/download.aspx?SourceUrl=' + url + list + '/' + docName + '" target="_blank">' + docTitle + '</a></p>' +
                                         '</div>' +
                                         '</div>' +
                                         '</div>' +
@@ -266,6 +269,11 @@
         });
     }
 }
+
+function viewDoc(docURL){
+    $('#docViewer').prop('src', docURL);
+}
+
 /*
 function checkFolder() {
 

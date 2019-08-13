@@ -14,8 +14,8 @@
      Notes		:
 
     ************************************************** */
-        /***** Brand Colours *****/
-        :root {
+    /***** Brand Colours & Fonts *****/
+    :root {
         --PrimaryDark: #545487;
         --PrimaryMid: #7676b8;
         --PrimaryLight: #dbdcf4;
@@ -25,6 +25,12 @@
         --SecondaryDark2: #c95828;
         --SecondaryMid2: #f9ad86;
         --SecondaryLight2: #fae8d6;
+        --SecondaryDark3: #036e62;
+        --SecondaryMid3: #66bbb0;
+        --SecondaryLight3: #cee4e1;
+        --SecondaryDark4: #878a8f;
+        --SecondaryMid4: #b2b2b2;
+        --SecondaryLight4: #e2e1df;    
         --AccentDark1: #205794;
         --AccentMid1: #6e96cf;
         --AccentLight1: #e5eaf6;
@@ -41,61 +47,64 @@
     
     @font-face {
         font-family: Avenir;
-        src: url("/fonts/AvenirLTStd-Black.oft") format("opentype");
+        font-weight:bolder;
+        src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Black.oft") format("opentype");
       }
       
     @font-face {
     font-family: Avenir;
-    src: url("/fonts/AvenirLTStd-Book.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Book.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
     font-weight: bold;
-    src: url("/fonts/AvenirLTStd-Heavy.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Heavy.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
     font-weight: normal;
-    src: url("/fonts/AvenirLTStd-Light.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Light.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
-    src: url("/fonts/AvenirLTStd-Medium.oft") format("opentype");
+    font-weight: 700;
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Medium.oft") format("opentype");
     }
     
     @font-face {
     font-family: Avenir;
-    src: url("/fonts/AvenirLTStd-Roman.oft") format("opentype");
+    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Roman.oft") format("opentype");
     }
     
     @font-face {
     font-family: FS ME;  
-    src: url("/fonts/FS ME Heavy.oft") format("opentype"),
-            url("/fonts/FS ME Heavy.woff") format("woff"),
-            url("/fonts/FS ME Heavy.svg#filename") format("svg");
+    font-weight:bolder;
+    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.oft") format("opentype"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.woff") format("woff"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.svg#filename") format("svg");
     }
     
     @font-face {
     font-family: FS ME;
     font-weight: bold;
-    src: url("/fonts/FS ME Bold.oft") format("opentype"),
-            url("/fonts/FS ME Bold.woff") format("woff"),
-            url("/fonts/FS ME Bold.svg#filename") format("svg");
+    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.oft") format("opentype"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.woff") format("woff"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.svg#filename") format("svg");
     }
     
     @font-face {
     font-family: FS ME;
     font-weight: normal;
-    src: url("/fonts/FS ME Light.oft") format("opentype"),
-            url("/fonts/FS ME Light.woff") format("woff"),
-            url("/fonts/FS ME Light.svg#filename") format("svg");
+    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Light.oft") format("opentype"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Light.woff") format("woff"),
+            url("_catalogs/masterpage/maxuk/fonts/FS ME Light.svg#filename") format("svg");
     }
 
     html, body {
-        /*width: 100%;*/
+        width: 100%;
         height: 100%;
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         overflow: hidden !important;
@@ -166,7 +175,6 @@
     .pageTitle {
         position: absolute;
         font-weight: bold !important;
-        font-family: Arial, Helvetica, sans-serif;
         text-align: left;
         left: 30px;
         margin: 0 !important;
@@ -210,18 +218,21 @@
     }
     
     .nav-tabs > li > a {
-        color: #545487;
+        color: var(--PrimaryDark);
         line-height: .8;
         border-bottom: none;
         border-radius: 0;
     }
     
-        .nav-tabs > li > a:hover {
+        .nav-tabs .nav-link:hover {
             border-top: 0;
             border-left: 0;
             border-right: 0;
             background-color: transparent;
+            border-bottom:5px solid var(--PrimaryMid);
         }
+
+    .nav-tabs .nav-link:active{border-bottom:5px solid var(--PrimaryDark);}
     
     .nav-tabs .nav-link.active,
     .nav-tabs > li.active > a:hover,
@@ -231,11 +242,11 @@
         border-top: 0;
         border-left: 0;
         border-right: 0;
-        border-radius: 0;
+        border-radius: 3px;
     }
     
     .nav-tabs > li {
-        width: auto
+        width: auto;
     }
     
     .nav-pills .nav-link {
@@ -276,17 +287,16 @@
             left: 0 !important;
         }
     
-        .ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
+       /* .ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
             margin-right: 5px;
-            /*padding: 0;*/
-        }
+            padding: 0;
+        }*/
     
             .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
                 padding: 2px 0 2px 13px;
                 font-size: 1em !important;
                 font-weight: bold;
                 text-transform: capitalize;
-                font-family: Arial, 'Open Sans', sans-serif;
                 /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
                 width: 100%;
             }
@@ -337,7 +347,6 @@
                 vertical-align: middle;
                 width: 100%;
                 text-align: center;
-                font-family: Arial, 'Open Sans', sans-serif;
                 /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
             }
     
@@ -474,7 +483,7 @@
         padding: 0 5px;
         margin-top: 5px;
     }
-            
+    
     .welcomeText {
         position: relative;
         left: 0 !important;
@@ -510,7 +519,6 @@
         float: right;
         padding: 0 10px 0 0;
         font-size: 18px !important; /* Icon size */
-        font-family: Arial, Helvetica, sans-serif;
     }
         
         .siteHelp a:before {
@@ -566,56 +574,59 @@
     }
     
     /************************** END Header Right Items *******************************/
-    
+
     h1 {
-        font-family: Arial, Helvetica, sans-serif !important;
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 24px !important;
-        font-weight: bold;
+        font-weight: bolder;
         /*text-shadow: .2em .2em .3px #545487 !important;*/
     }
     
     h2 {
-        font-family: Arial, Helvetica, sans-serif !important;
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 20px !important;
         font-weight: bold;
         /*text-shadow: .2em .2em .3px #545487 !important;*/
     }
     
     h3 {
-        font-family: Arial, Helvetica, sans-serif !important;
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 18px !important;
         font-weight: bold;
         text-shadow: none !important;
     }
     
     h4 {
-        font-family: Arial, Helvetica, sans-serif !important;
-        font-size: 14px !important;
-        font-weight: bold;
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 900;
         text-shadow: none !important;
     }
     
-        h4 > a {
-            text-decoration: none;
-        }
-    
     h5 {
-        font-family: Arial, Helvetica, sans-serif !important;
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 800;
+        text-shadow: none !important;
+    }
+    
+    h6, p {
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 12px !important;
         font-weight: 700;
         text-shadow: none !important;
     }
-    
-    h6 {
-        font-family: Arial, Helvetica, sans-serif !important;
-        font-size: 11px !important;
-        font-weight: 700;
-        text-shadow: none !important;
+
+    h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, p > a, a {
+        text-decoration: none;
     }
-    
+
+    h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {background-color:var(--PrimaryMid); color:white!important; border-radius:5px; padding:3px 0 3px 0}
+    h1 > a .active, h2 > a .active, h3 > a .active, h4 > a .active, h5 > a .active, h6 > a .active {background-color:var(--PrimaryDark); color:white!important}
+
     .navbar-search ul > li > a {
         color: black !important;
-    }
+    } 
     
     /* Focus on Content button */
     Span#fullscreenmodebox {
@@ -642,17 +653,17 @@
     }
         
     .watermark {
-        font-size: 100px;
+        font-size: 15em;
         /*-webkit-transform: rotate(-45deg);
       -moz-transform: rotate(-45deg);*/
         position: fixed;
         width: 100%;
-        height: 100%;
+        height: 100px;
         margin: 0 auto;
         z-index: -1;
-        left: 20%;
-        bottom: -70%;
-        opacity: 0.8;
+        left: 19vw;
+        top: 70vh;
+        opacity: 0.15;
     }
         
     /*************************************/
@@ -726,8 +737,8 @@
     .pageLeftContainer {
         position: relative !important;
         top: 45px;
-        flex: 0 0 98%;
-        max-width: 98%;
+        flex: 0 0 97%;
+        max-width: 97%;
         height:87vh;
         max-height:87vh;
         overflow-y:auto;
@@ -754,16 +765,23 @@
 
     /* bootstrap 4 slideshow Carousel Customization */   
     .carousel {border-radius:20px;height: 50% !important;}
-    .carousel-inner{border-radius:20px;height:75vh}
+    .carousel-inner{border-radius:20px;}
+    .carousel-inner, .carousel-item{height:75vh!important}
     .carousel-control-prev, .carousel-control-next{width:5%;opacity: 0.7;}
     .carousel-control-prev-icon, .carousel-control-next-icon{width:60%;height:60%;} 
-       
+    .carousel-caption{
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
+        font-size:1.3em!important;
+    }
+    .carousel-caption h4 {font-size:3rem!important}   
+    .carousel-caption span {font-size:1.3em}
+    
     .fill {
         width: 100%;
         min-height: 100px !important;
         background-position: center;
         background-size: cover;
-    }
+    }    
 
     /* Sidebar app container */     
     #slider{top:100px!important; right:0; height: 100%!important; width:35vw!important; transition: all 300ms ease 0s;z-index:100}
@@ -809,6 +827,7 @@
     }
     #faqQuestion{margin:0}
     .faqNewQuestion a {margin-top: 5px;}
+    .qText{margin:0}
     #faqCategory{padding:0}
     #faqQuestionText{resize:none;width:95%}
 
@@ -919,6 +938,7 @@
         margin-bottom:5px;
         padding-left:1px;
         display:block;
+				width:100%;
     }
     
             .card > .list-group .list-group-item,
@@ -930,10 +950,10 @@
             margin-top: 0px;
         }
     
-        .card > .list-group, .card > .collapse > .list-group {
-            /*border: .5px solid #545487 !important;*/
+        /*.card > .list-group, .card > .collapse > .list-group {
+            border: .5px solid #545487 !important;
             padding: 1px;
-        }
+        }*/
     
     .card-header {
         border-top-left-radius: 5px;
@@ -975,7 +995,6 @@
     /**********************************/
     /***** Page Other Parts Start *****/
     /**********************************/
-    .item, .active  {height: auto;}  
     
     .ms-webpartPage-root {
         border-spacing: 0px !important;
