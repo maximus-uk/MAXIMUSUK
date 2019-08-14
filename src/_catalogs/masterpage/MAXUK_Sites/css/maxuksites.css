@@ -47,60 +47,58 @@
     
     @font-face {
         font-family: Avenir;
-        font-weight:bolder;
-        src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Black.oft") format("opentype");
+        font-weight: bold;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Black.otf") format("opentype");
       }
-      
+
     @font-face {
-    font-family: Avenir;
-    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Book.oft") format("opentype");
+        font-family: Avenir;
+        font-weight: bolder;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Heavy.oft") format("opentype");
+    }
+
+    @font-face {
+        font-family: Avenir;
+        font-weight: 700;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Medium.otf") format("opentype");
+    }
+
+    @font-face {
+        font-family: Avenir;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Light.otf") format("opentype");
+    }
+/*    
+    @font-face {
+        font-family: Avenir;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Roman.otf") format("opentype");
+    }
+
+    @font-face {
+        font-family: Avenir;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Book.otf") format("opentype");
+    }
+*/    
+    @font-face {
+        font-family: FS ME;  
+        font-weight: bolder;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/FS ME Heavy.otf") format("opentype"),
+            url("/_catalogs/masterpage/MAXUK/fonts/FS ME Heavy.woff") format("woff"),
+            url("/_catalogs/masterpage/MAXUK/fonts/FS ME Heavy.svg#filename") format("svg");
     }
     
     @font-face {
-    font-family: Avenir;
-    font-weight: bold;
-    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Heavy.oft") format("opentype");
+        font-family: FS ME;
+        font-weight: bold;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/FS ME Bold.otf") format("opentype"),
+            url("/_catalogs/masterpage/MAXUK/fonts/FS ME Bold.woff") format("woff"),
+            url("/_catalogs/masterpage/MAXUK/fonts/FS ME Bold.svg#filename") format("svg");
     }
     
     @font-face {
-    font-family: Avenir;
-    font-weight: normal;
-    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Light.oft") format("opentype");
-    }
-    
-    @font-face {
-    font-family: Avenir;
-    font-weight: 700;
-    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Medium.oft") format("opentype");
-    }
-    
-    @font-face {
-    font-family: Avenir;
-    src: url("_catalogs/masterpage/maxuk/fonts/AvenirLTStd-Roman.oft") format("opentype");
-    }
-    
-    @font-face {
-    font-family: FS ME;  
-    font-weight:bolder;
-    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.oft") format("opentype"),
-            url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.woff") format("woff"),
-            url("_catalogs/masterpage/maxuk/fonts/FS ME Heavy.svg#filename") format("svg");
-    }
-    
-    @font-face {
-    font-family: FS ME;
-    font-weight: bold;
-    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.oft") format("opentype"),
-            url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.woff") format("woff"),
-            url("_catalogs/masterpage/maxuk/fonts/FS ME Bold.svg#filename") format("svg");
-    }
-    
-    @font-face {
-    font-family: FS ME;
-    font-weight: normal;
-    src: url("_catalogs/masterpage/maxuk/fonts/FS ME Light.oft") format("opentype"),
-            url("_catalogs/masterpage/maxuk/fonts/FS ME Light.woff") format("woff"),
-            url("_catalogs/masterpage/maxuk/fonts/FS ME Light.svg#filename") format("svg");
+        font-family: FS ME;
+        src: url("/_catalogs/masterpage/MAXUK/fonts/FS ME Light.otf") format("opentype"),
+            url("/_catalogs/masterpage/MAXUK/fonts/FS ME Light.woff") format("woff"),
+            url("/_catalogs/masterpage/MAXUK/fonts/FS ME Light.svg#filename") format("svg");
     }
 
     html, body {

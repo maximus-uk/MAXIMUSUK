@@ -19,7 +19,7 @@
     
     //console.log(siteURL);
 
-    for (var count = 0; count < library.length; count++) {
+    for (var count = 0; count <= library.length; count++) {
         var list = library[count];
         var docCount = 0;
         var docFlag = false;
@@ -63,6 +63,7 @@
 
                     // assign SP list item         
                     docCat = $(this).attr("ows_KnowledgeCategory");             
+                    var docID = $(this).attr("ows_ID");
                     var docName = $(this).attr("ows_LinkFilenameNoMenu");
                     var docTitle = $(this).attr("ows_LinkFilenameNoMenu").split(".")[0];
                     var docFolder = $(this).attr("ows_KnowledgeFolder");
@@ -73,6 +74,24 @@
                     var office = $(this).attr("ows_KnowledgeOffice");
                     var sharedTeam = "none";
                     var docFQN = url + list + '/' + docName;
+
+                    //console.log(url+" "+list+" "+docID);
+
+                    if(docID !== undefined){
+                        $.ajax({
+                            url: url + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
+                            method: "GET",
+                            async: false,
+                            headers: { "Accept": "application/json; odata=verbose" },
+                            success: function (data) {						
+                                console.log("id="+data);
+                                //console.log('doc GUID='+docGUID);
+                            },
+                            error: function (data) {
+                                console.log("Error: "+ data);
+                            }
+                        });
+                    }
 
                     if(teamName !== undefined){teamName=teamName.split(';#')[1]};
 
@@ -144,7 +163,7 @@
                             '<div class="col-sm-2 col-md-2 col-lg-2 iconContainer">' +
                             '<nobr>' +  // document tool kit goes here
                             '<div class="docIcon">' + icon + '</div>' +
-                            '<div class="docView"><a href="#" onclick="viewDoc(\''+docFQN+'\');return false;"><i class="fa fa-eye"></i></a></div>' +
+                            '<div class="docView"><a href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\');"><i class="fa fa-eye"></i></a></div>' +
                             '</nobr>' +
                             '</div>' +
                             '<div class="col-sm-10 col-md-10 col-lg-10 text-left">' +
@@ -169,16 +188,6 @@
                                     '<div id="' + listFolder + '" class="collapse docList">' +
                                     '<div class="card-body" id="' + listFolder + 'rootPanel">' +
                                     '<div class="" id=' + listFolder + 'Doc>' +
-                                    //'<div class="row" style="margin-bottom:5px">' +
-                                    //'<div class="col-sm-2 col-md-2 col-lg-2 iconContainer">' +
-                                    //'<nobr>' +
-                                    //'<div class="docIcon">' + icon + '</div>' +
-                                    //'</nobr>' +
-                                    //'</div>' +
-                                    //'<div class="col-sm-8 col-md-8 col-lg-8 text-left">' +
-                                    //'<p class="docItem"><a href="' + siteURL + '_layouts/15/download.aspx?SourceUrl=' + siteURL + list + '/' + docName + '" target="_blank">' + docTitle + '</a></p>' +
-                                    //'</div>' +
-                                    //'</div>' +
                                     '</div>' +
                                     '</div>' +
                                     '</div>' +
@@ -189,8 +198,6 @@
                                 fCount++;
                             }
                             
-                            
-
                             // **** check for sub-folder level
                             if (docSubFolder !== undefined) {
                                 var subFolderName = docSubFolder.split(';#')[1];
@@ -270,9 +277,28 @@
     }
 }
 
-function viewDoc(docURL){
-    $('#docViewer').prop('src', 'https://view.officeapps.live.com/op/embed.aspx?src='+docURL);
-    //https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={c95266fb-9ff5-4dcd-85b3-21eea4516858}&action=view
+function viewDoc(list,docID){
+
+    var docGUID = "";
+    var listURL = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
+    console.log(listURL);
+
+    $.ajax({
+        url: listURL + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
+        method: "GET",
+        async: false,
+        headers: { "Accept": "application/json; odata=verbose" },
+        success: function (data) {						
+            console.log(data.d.results);
+            //console.log('doc GUID='+docGUID);
+        },
+        error: function (data) {
+            console.log("Error: "+ data);
+        }
+    });
+
+    //$('#docViewer').prop('src', 'https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={C95266FB-9FF5-4DCD-85B3-21EEA4516858}&action=view');
+    //https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={afe2289b-dbff-4008-8ce7-0d5246e09146}&action=view
 }
 
 /*
