@@ -271,7 +271,8 @@
 }
 
 function viewDoc(docURL){
-    $('#docViewer').prop('src', docURL);
+    $('#docViewer').prop('src', 'https://view.officeapps.live.com/op/embed.aspx?src='+docURL);
+    //https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={c95266fb-9ff5-4dcd-85b3-21eea4516858}&action=view
 }
 
 /*
