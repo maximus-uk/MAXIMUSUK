@@ -19,7 +19,7 @@
     
     //console.log(siteURL);
 
-    for (var count = 0; count < library.length; count++) {
+    for (var count = 0; count <= library.length; count++) {
         var list = library[count];
         var docCount = 0;
         var docFlag = false;
@@ -74,6 +74,24 @@
                     var office = $(this).attr("ows_KnowledgeOffice");
                     var sharedTeam = "none";
                     var docFQN = url + list + '/' + docName;
+
+                    //console.log(url+" "+list+" "+docID);
+
+                    if(docID !== undefined){
+                        $.ajax({
+                            url: url + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
+                            method: "GET",
+                            async: false,
+                            headers: { "Accept": "application/json; odata=verbose" },
+                            success: function (data) {						
+                                console.log("id="+data);
+                                //console.log('doc GUID='+docGUID);
+                            },
+                            error: function (data) {
+                                console.log("Error: "+ data);
+                            }
+                        });
+                    }
 
                     if(teamName !== undefined){teamName=teamName.split(';#')[1]};
 
@@ -271,7 +289,7 @@ function viewDoc(list,docID){
         async: false,
         headers: { "Accept": "application/json; odata=verbose" },
         success: function (data) {						
-            console.log(data.d.ServerRedirectedEmbedUrl);
+            console.log(data.d.results);
             //console.log('doc GUID='+docGUID);
         },
         error: function (data) {
@@ -279,7 +297,7 @@ function viewDoc(list,docID){
         }
     });
 
-    $('#docViewer').prop('src', 'https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={C95266FB-9FF5-4DCD-85B3-21EEA4516858}&action=view');
+    //$('#docViewer').prop('src', 'https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={C95266FB-9FF5-4DCD-85B3-21EEA4516858}&action=view');
     //https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={afe2289b-dbff-4008-8ce7-0d5246e09146}&action=view
 }
 
