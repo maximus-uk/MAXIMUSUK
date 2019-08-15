@@ -1,4 +1,6 @@
-﻿function getKnowledgeDocs(team) {
+﻿var docTabs=[];
+
+function getKnowledgeDocs(team) {
 
     // Setup Local Variables
     //console.log(siteURL);
@@ -78,29 +80,6 @@
                     var sharedTeam = "none";
                     var docFQN = listURL + list + '/' + docName;
 
-                    console.log("doc guid="+docGUID);
-
-                    if(docID !== undefined){
-                        $.ajax({
-                            url: listURL + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
-                            method: "GET",
-                            async: false,
-                            headers: { 
-                                "Accept": "application/json; odata=verbose", 
-                                "content-type": "application/json;odata=verbose", 
-                                "X-RequestDigest": $("#__REQUESTDIGEST").val()
-                            },
-                            success: function (data) {
-                                var results = data.d.results;						
-                                console.log("results="+results);
-                                //console.log('doc GUID='+docGUID);
-                            },
-                            error: function (data) {
-                                console.log("Error: "+ data);
-                            }
-                        });
-                    }
-
                     if(teamName !== undefined){teamName=teamName.split(';#')[1]};
 
                     // ***** split teams string into seperate items and assign to array slots *****
@@ -113,8 +92,6 @@
                         }
                     }
                     
-                    console.log(docCat+" "+list);
-
                     switch(docCat){
                         case "":
                         case undefined:
@@ -182,8 +159,6 @@
                             '</div>' +
                             '</div>';                                                
 
-                        //console.log("foldername="+docFolder);
-
                         // **** check for folder level
                         if (docFolder !== undefined) {
                             var folderName = docFolder.split(';#')[1];
@@ -203,6 +178,8 @@
                                     '</div>' +
                                     '</div>' +
                                     '</div>';
+                                
+                                console.log("docCat 1="+docCat);
 
                                 $('#' + docCat).append(folderString);
                                 docFlag = true;
@@ -261,6 +238,7 @@
                             folderNamePrev = folderName;
                         } else {
                             //console.log(documentString);
+                            console.log("docCat 2="+docCat);
                             $('#' + docCat).append(documentString);
                         }
                         docNamePrev = docName;
@@ -273,7 +251,7 @@
                         docCat=list;
                         break;
                     case "Clinical Standards":
-                        docCat="Standards";
+                        docCat="Clinical Standards";
                         break;
                     default:
                         docCat = docCat.split(';#')[1];
@@ -281,7 +259,7 @@
                 }
 
                 if (docFlag==false) {
-                    console.log("docCat="+docCat);
+                    console.log("docCat 3="+docCat);
                     $("#" + docCat).append('<h4>There are no documents in this library</h4>');
                 }
             }
@@ -297,27 +275,81 @@ function viewDoc(list,docID,docName,docType){
     var listURL = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
    
 /*
-    $.ajax({
-        url: listURL + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
-        method: "GET",
-        async: false,
-        headers: { "Accept": "application/json; odata=verbose" },
-        success: function (data) {
-            var results = data.d.results;						
-            console.log(data);
-            //console.log('doc GUID='+docGUID);
-        },
-        error: function (data) {
-            console.log("Error: "+ data);
-        }
-    });
+        $.ajax({
+            url: listURL + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
+            method: "GET",
+            async: false,
+            headers: { 
+                "Accept": "application/json; odata=verbose", 
+                "content-type": "application/json;odata=verbose", 
+                "X-RequestDigest": $("#__REQUESTDIGEST").val()
+            },
+            success: function (data) {
+                var results = data.d.results;						
+                console.log("results="+results);
+                //console.log('doc GUID='+docGUID);
+            },
+            error: function (data) {
+                console.log("Error: "+ data);
+            }
+        });
 */
     $('#docViewer').prop('src',listURL+'/'+list+'/'+docName+'?web=1&action=view');
+}
 
-    //$('#docViewer').append('<img id="xlsp_image" class="'+docTypeClass+'" src="'+listURL+'/_vti_bin/'+docTypePage+'/'+list+'/'+docName+'?$format=image&amp;$cropw=301&amp;$croph=157"></img>');
-    //https://maximusukdev.sharepoint.com/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={c95266fb-9ff5-4dcd-85b3-21eea4516858}&action=interactivepreview
-    //$('#docViewer').prop('src', 'https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={C95266FB-9FF5-4DCD-85B3-21EEA4516858}&action=view');
-    //https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={afe2289b-dbff-4008-8ce7-0d5246e09146}&action=view
+function getDocTabs(){
+    var inc =0;
+    var tabNum =5;
+    var docContentString = "";
+    var docTabString = "";
+
+    //Current Context
+    var context = SP.ClientContext.get_current();
+    
+    //Current Taxonomy Session
+    var taxSession = SP.Taxonomy.TaxonomySession.getTaxonomySession(context);
+    
+    //Term Stores
+    var termStores = taxSession.get_termStores();
+    
+    //Name of the Term Store from which to get the Terms.
+    var termStore = termStores.getByName("Taxonomy_HF+Tg/S5P5zRiGE5lqCPEw==");
+    
+    //GUID of Term Set from which to get the Terms.
+    var termSet = termStore.getTermSet("65bde35b-d397-4de0-b69f-829df04dd9ce");
+    var parentTerm = termSet.getTerm('1e4b7e55-bfdb-4cb9-af87-fd068f3645b0');
+    var terms = parentTerm.get_terms();
+    
+    context.load(terms);
+    context.executeQueryAsync(function(){
+    
+    var termEnumerator = terms.getEnumerator();    
+        while(termEnumerator.moveNext()){
+            var currentTerm = termEnumerator.get_current();           
+            docTabs[inc] = currentTerm.get_name();
+            docContentString="<div id='knTab"+tabNum+"' class='tab-pane fade'><div id='"+docTabs[inc]+"'></div></div>";
+            
+            switch (docTabs[inc]){
+                case 'Management':
+                    docTabString = "<li class='nav-item' id='mgmtDocs'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+docTabs[inc]+"</a></li>";
+                    break;
+                case 'Clinical Standards':
+                    docTabString = "<li class='nav-item' id='clinicalDocs'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+docTabs[inc]+"</a></li>";
+                    break;
+                default:
+                    docTabString = "<li class='nav-item'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+docTabs[inc]+"</a></li>";
+                    break;
+            }
+
+            $('#docTabs').append(docTabString);
+            $('#docContent').append(docContentString);
+            inc++;
+            tabNum++;
+        } 
+    },function(sender,args){
+        console.log(args.get_message());
+    });
+
 }
 
 /*
