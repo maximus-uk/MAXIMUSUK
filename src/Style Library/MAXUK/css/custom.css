@@ -1345,37 +1345,41 @@ div .postReplies :hover {
         background:var(--PrimaryMid);
     }
 
-.documentFolder .card-header:hover h5{
-    color: white !important;
+.documentFolder {
+    width:99%;
 }
+    .documentFolder .card-header:hover h5{
+        color: white !important;
+    }
 
-.documentFolder .folderTitle:after {
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 900; 
-    content: "\f07b";
-    font-size: 1em;
-    float:left;
-    margin-right:10px;
-}
+    .documentFolder .folderTitle:after {
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900; 
+        content: "\f07b";
+        font-size: 1em;
+        float:left;
+        margin-right:10px;
+    }
 
-.documentFolder .folderTitle.collapsed:after {
-    font-family: 'Font Awesome 5 Free';
-    font-size: 1em;
-    font-weight:900;
-    content: "\f07c";
-    float:left;
-    margin-right:10px;
-}
+    .documentFolder .folderTitle.collapsed:after {
+        font-family: 'Font Awesome 5 Free';
+        font-size: 1em;
+        font-weight:900;
+        content: "\f07c";
+        float:left;
+        margin-right:10px;
+    }
 
 .documentViewer {
     position: absolute;
     top: 143px;
     left:41%;
     width: 55%;
-    height: 76vh;
-    border: 1px solid #666;
+    height: 75vh;
+    border: 1px solid #ddddeb;
     z-index: 999;
 }
+.documentViewer iframe {height:100%; width:100%}
 
 /*.documentFolder .panel-title:hover h5{color:white!important}*/
 
@@ -1389,9 +1393,24 @@ div .postReplies :hover {
     border: none;
 }*/
 
+.docItem {
+    position: relative;
+    height:20px;
+    width: 100%;
+    float: left !important;
+    margin: 5px 0 0 0 !important;
+    font-size: 1em !important;
+    font-weight: bold;
+}
+
+    .docItem a:hover {
+        background-color: #7676b8;
+        color: white !important;
+    }
+
 .iconContainer {
     display: inline-flex;
-    flex:0 0 10%;
+    flex:0 0 5%;
     max-width:15%;
 }
 
@@ -1648,20 +1667,6 @@ object embed {
 
     .highlight:hover p, .highlight:hover a {
         color: white !important;
-    }
-
-.docItem {
-    position: relative;
-    left:15%;
-    width: 100%;
-    float: left !important;
-    margin: 0 0 5px -10px !important;
-    font-size: 1em !important;
-    font-weight: bold;
-}
-
-    .docItem a:hover {
-        color: #7676b8 !important;
     }
 
 .docUline {

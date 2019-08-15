@@ -15,7 +15,7 @@
 
     // SPServices Variables
     var method = "GetListItems";
-    var url = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
+    var listURL = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
     
     //console.log(siteURL);
 
@@ -29,6 +29,7 @@
         var subFolderPrev = "";
         var docNamePrev = "";
         var docCat = "";
+        var docType = "";
         var teamSites = [];
         var sf1count = 1;
         var fCount = 1;
@@ -38,6 +39,7 @@
         var subFolderDoc = "";
         var fields = "<ViewFields>" +
             "<FieldRef Name='ID' />" +
+            "<FieldRef Name='UniqueID' />"+
             "<FieldRef Name='Title' />"+
             "<FieldRef Name='LinkFilenameNoMenu' />" +
             "<FieldRef Name='KnowledgeCategory' />"+
@@ -53,7 +55,7 @@
         $().SPServices({
             operation: method,
             async: false,
-            webURL: url,
+            webURL: listURL,
             listName: list,
             CAMLViewFields: fields,
             CAMLQuery: query,
@@ -62,8 +64,9 @@
                 $(xData.responseXML).SPFilterNode("z:row").each(function () {
 
                     // assign SP list item         
-                    docCat = $(this).attr("ows_KnowledgeCategory");             
+                    docCat = $(this).attr("ows_KnowledgeCategory");                                 
                     var docID = $(this).attr("ows_ID");
+                    var docGUID = $(this).attr("ows_UniqueID");
                     var docName = $(this).attr("ows_LinkFilenameNoMenu");
                     var docTitle = $(this).attr("ows_LinkFilenameNoMenu").split(".")[0];
                     var docFolder = $(this).attr("ows_KnowledgeFolder");
@@ -73,18 +76,23 @@
                     var otherTeams = $(this).attr("ows_KnowledgeSharedWith");
                     var office = $(this).attr("ows_KnowledgeOffice");
                     var sharedTeam = "none";
-                    var docFQN = url + list + '/' + docName;
+                    var docFQN = listURL + list + '/' + docName;
 
-                    //console.log(url+" "+list+" "+docID);
+                    console.log("doc guid="+docGUID);
 
                     if(docID !== undefined){
                         $.ajax({
-                            url: url + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
+                            url: listURL + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
                             method: "GET",
                             async: false,
-                            headers: { "Accept": "application/json; odata=verbose" },
-                            success: function (data) {						
-                                console.log("id="+data);
+                            headers: { 
+                                "Accept": "application/json; odata=verbose", 
+                                "content-type": "application/json;odata=verbose", 
+                                "X-RequestDigest": $("#__REQUESTDIGEST").val()
+                            },
+                            success: function (data) {
+                                var results = data.d.results;						
+                                console.log("results="+results);
                                 //console.log('doc GUID='+docGUID);
                             },
                             error: function (data) {
@@ -104,9 +112,12 @@
                             sharedTeam = teamSites[inc];
                         }
                     }
+                    
+                    console.log(docCat+" "+list);
 
                     switch(docCat){
                         case "":
+                        case undefined:
                             docCat=list;
                             break;
                         case "Clinical Standards":
@@ -123,7 +134,8 @@
                         //console.log("subfolder="+docSubFolder);
                         for (var x = 1; x < docName.length; x++) {
                             if (docName.split('.')[x] !== undefined) {
-                                switch (docName.split('.')[x]) {
+                                docType = docName.split('.')[x]; 
+                                switch (docType) {
                                     case 'pdf':
                                         icon = pdfIcon;
                                         break;
@@ -154,7 +166,6 @@
                                         icon = docIcon;
                                         break;
                                 }
-                                docType = docName.split(".")[x];
                                 docTitle = docTitle + "." + docName.split('.')[x];
                             }
                         }
@@ -163,11 +174,11 @@
                             '<div class="col-sm-2 col-md-2 col-lg-2 iconContainer">' +
                             '<nobr>' +  // document tool kit goes here
                             '<div class="docIcon">' + icon + '</div>' +
-                            '<div class="docView"><a href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\');"><i class="fa fa-eye"></i></a></div>' +
+                            '<div class="docView"><a href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\',\''+docName+'\',\''+docType+'\');"><i class="fa fa-eye"></i></a></div>' +
                             '</nobr>' +
                             '</div>' +
-                            '<div class="col-sm-10 col-md-10 col-lg-10 text-left">' +
-                            '<p class="docItem"><a href="' + url + '_layouts/15/download.aspx?SourceUrl=' + url + list + '/' + docName + '" target="_blank">' + docTitle + '</a></p>' +
+                            '<div class="col-sm-10 col-md-10 col-lg-10 text-left docItem">' +
+                            '<p><a href="' + listURL + '_layouts/15/download.aspx?SourceUrl=' + docFQN + '" target="_blank">' + docTitle + '</a></p>' +
                             '</div>' +
                             '</div>';                                                
 
@@ -221,10 +232,11 @@
                                         '<div class="col-sm-2 col-md-2 col-lg-2 iconContainer">' +
                                         '<nobr>' +
                                         '<div class="docIcon">' + icon + '</div>' +
+                                        '<div class="docView"><a href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\');"><i class="fa fa-eye"></i></a></div>' +
                                         '</nobr>' +
                                         '</div>' +
-                                        '<div class="col-sm-8 col-md-8 col-lg-8 text-left">' +
-                                        '<p class="docItem"><a href="' + url + '_layouts/15/download.aspx?SourceUrl=' + url + list + '/' + docName + '" target="_blank">' + docTitle + '</a></p>' +
+                                        '<div class="col-sm-8 col-md-8 col-lg-8 text-left docItem">' +
+                                        '<p><a href="' + listURL + '_layouts/15/download.aspx?SourceUrl=' + docFQN + '" target="_blank">' + docTitle + '</a></p>' +
                                         '</div>' +
                                         '</div>' +
                                         '</div>' +
@@ -257,6 +269,7 @@
 
                 switch(docCat){
                     case "":
+                    case undefined:
                         docCat=list;
                         break;
                     case "Clinical Standards":
@@ -277,26 +290,32 @@
     }
 }
 
-function viewDoc(list,docID){
+function viewDoc(list,docID,docName,docType){
 
     var docGUID = "";
+  
     var listURL = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
-    console.log(listURL);
-
+   
+/*
     $.ajax({
         url: listURL + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
         method: "GET",
         async: false,
         headers: { "Accept": "application/json; odata=verbose" },
-        success: function (data) {						
-            console.log(data.d.results);
+        success: function (data) {
+            var results = data.d.results;						
+            console.log(data);
             //console.log('doc GUID='+docGUID);
         },
         error: function (data) {
             console.log("Error: "+ data);
         }
     });
+*/
+    $('#docViewer').prop('src',listURL+'/'+list+'/'+docName+'?web=1&action=view');
 
+    //$('#docViewer').append('<img id="xlsp_image" class="'+docTypeClass+'" src="'+listURL+'/_vti_bin/'+docTypePage+'/'+list+'/'+docName+'?$format=image&amp;$cropw=301&amp;$croph=157"></img>');
+    //https://maximusukdev.sharepoint.com/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={c95266fb-9ff5-4dcd-85b3-21eea4516858}&action=interactivepreview
     //$('#docViewer').prop('src', 'https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={C95266FB-9FF5-4DCD-85B3-21EEA4516858}&action=view');
     //https://maximusukdev.sharepoint.com/:x:/r/sites/CHDA/knowledge/_layouts/15/Doc.aspx?sourcedoc={afe2289b-dbff-4008-8ce7-0d5246e09146}&action=view
 }
