@@ -75,16 +75,20 @@
                     var sharedTeam = "none";
                     var docFQN = url + list + '/' + docName;
 
-                    //console.log(url+" "+list+" "+docID);
+                    console.log(url+" "+list+" "+docID);
 
                     if(docID !== undefined){
                         $.ajax({
                             url: url + "/_api/web/lists/getbytitle('"+list+"')/Items/GetById("+docID+")?$select=id",
                             method: "GET",
-                            async: false,
-                            headers: { "Accept": "application/json; odata=verbose" },
-                            success: function (data) {						
-                                console.log("id="+data);
+                            async: true,
+                            headers: { "Accept": "application/json; odata=verbose", "content-type": "application/json;odata=verbose" },
+                            success: function (data) {	
+                                //data = data.d.results;
+                                console.log(data);
+                                $.each(data, function(index, value) {                                					
+                                    console.log("id="+value.uri);
+                                });
                                 //console.log('doc GUID='+docGUID);
                             },
                             error: function (data) {
