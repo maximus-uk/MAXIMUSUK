@@ -302,19 +302,19 @@
                 .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover {
                     padding: 2px 0 2px 14px;
                     border-radius: 10px 10px 0 0 !important;
-                    width: 100%;
+                    width: 85%!important;
                 }
     
             .ms-core-listMenu-horizontalBox li.selected a.selected {
                 padding: 2px 0 2px 13px;
                 border-radius: 10px !important;
-                width: 100%;
+                width: 85%;
             }
     
                 .ms-core-listMenu-horizontalBox li.selected a.selected:hover {
                     padding: 2px 0 2px 13px;
                     border-radius: 10px 10px 0 0 !important;
-                    width: 100%;
+                    width: 85%!important;
                 }
     
     /*.ms-navedit-flyoutArrow{
@@ -343,7 +343,7 @@
             #custom-bootstrap-menu ul a {
                 text-decoration: none;
                 vertical-align: middle;
-                width: 100%;
+                width: 85%;
                 text-align: center;
                 /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
             }
@@ -411,6 +411,12 @@
             transition: opacity .35s ease;
             -webkit-transition: opacity .35s ease;
         }
+            #custom-bootstrap-menu ul ul li a {
+                text-decoration: none;
+                vertical-align: middle;
+                width: 100%;
+                /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
+            }
     
             #custom-bootstrap-menu ul ul li {
                 float: none;
@@ -966,7 +972,7 @@
     
     .accordion-toggle:after {
         position: relative;
-        top: -25px !important;
+        top: -35px !important;
         left: -10px !important;
         padding: 0;
         font-family: "Font Awesome 5 Free"; 
@@ -978,7 +984,7 @@
     
     .accordion-toggle.collapsed:after {
         position: relative;
-        top: -25px !important;
+        top: -35px !important;
         left: -10px !important;
         padding: 0;
         font-family: 'Font Awesome 5 Free';
