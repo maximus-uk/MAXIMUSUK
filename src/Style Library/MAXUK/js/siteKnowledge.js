@@ -1,6 +1,4 @@
-﻿var docTabs=[];
-
-function getKnowledgeDocs(team) {
+﻿function getKnowledgeDocs(team) {
 
     // Setup Local Variables
     //var url = _spPageContextInfo.webAbsoluteUrl;
@@ -177,6 +175,7 @@ function getKnowledgeDocs(team) {
                                     '</div>';
                                 
                                 console.log("docCat 1="+docCat);
+                                console.log(folderString);
 
                                 $('#' + docCat).append(folderString);
                                 docFlag = true;
@@ -296,7 +295,7 @@ function viewDoc(list,docID,docName,docType){
 
 function getDocTabs(){
     var inc =0;
-    var tabNum =5;
+    var tabNum =6;
     var docContentString = "";
     var docTabString = "";
 
@@ -322,26 +321,32 @@ function getDocTabs(){
     
     var termEnumerator = terms.getEnumerator();    
         while(termEnumerator.moveNext()){
-            var currentTerm = termEnumerator.get_current();           
-            docTabs[inc] = currentTerm.get_name();
-            docContentString="<div id='knTab"+tabNum+"' class='tab-pane fade'><div id='"+docTabs[inc]+"'></div></div>";
-            
-            switch (docTabs[inc]){
-                case 'Management':
-                    docTabString = "<li class='nav-item' id='mgmtDocs'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+docTabs[inc]+"</a></li>";
-                    break;
-                case 'Clinical Standards':
-                    docTabString = "<li class='nav-item' id='clinicalDocs'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+docTabs[inc]+"</a></li>";
-                    break;
-                default:
-                    docTabString = "<li class='nav-item'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+docTabs[inc]+"</a></li>";
-                    break;
-            }
+            var currentTerm = termEnumerator.get_current();     
+            var tabName = currentTerm.get_name();
 
-            $('#docTabs').append(docTabString);
-            $('#docContent').append(docContentString);
-            inc++;
-            tabNum++;
+            if(tabName!=="General" && tabName!=="Quality" && tabName!=="Talent and Development"){
+                
+                docContentString="<div id='knTab"+tabNum+"' class='tab-pane fade'><div id='"+tabName+"'></div></div>";
+                
+                switch (tabName){
+                    case 'Management':
+                        docTabString = "<li class='nav-item' id='mgmtDocs'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+tabName+"</a></li>";
+                        break;
+                    case 'Clinical Standards':
+                        docTabString = "<li class='nav-item' id='clinicalDocs'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+tabName+"</a></li>";
+                        docContentString="<div id='knTab"+tabNum+"' class='tab-pane fade'><div id='Standards'></div></div>";
+                        break;
+
+                    default:
+                        docTabString = "<li class='nav-item'><a class='nav-link' data-toggle='pill' href='#knTab"+tabNum+"'>"+tabName+"</a></li>";
+                        break;
+                }
+
+                $('#docTabs').append(docTabString);
+                $('#docContent').append(docContentString);
+                inc++;
+                tabNum++;
+            }
         } 
     },function(sender,args){
         console.log(args.get_message());
