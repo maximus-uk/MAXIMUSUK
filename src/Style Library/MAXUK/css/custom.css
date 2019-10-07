@@ -1,351 +1,35 @@
-﻿/****** for testing purposes - different colour borders for objects ******/
-.blue {
-    border: 1px solid blue;
-}
+﻿/*   **************************************************
+     Site   	: MAX UK Intranets
+     Page   	: Any for UK Business Units Intranet / Front Door area using the Classic UI team or publishing site template
+     Author 	: Jason Clark
+     Date   	: Feb 2019
+     Purpose	: Custom CSS file for Single Page Apps (SPA) or custom in-page coding which is not part of the core site code for the Classic UI Intranet
+                  Note: This file contains NO colour code, please put all colour code in the CHDA.css located in the masterpage folder for CHDA root site collection 
+    
+     Modified By: 
+     Date		: 
+     Notes		: 
+     
+     Modified By:
+     Date		:
+     Notes		:
 
-.red {
-    border: 1px solid red;
-}
-
-.yellow {
-    border: 1px solid yellow;
-}
-
-.green {
-    border: 1px solid green;
-}
-
-.box {
-    border: 1px solid #999;
-}
-
-/* For mobile phones:
-[class*="col-"] {
-    width: 100%;
-}*/
-/**********************/
+    ************************************************** */
 
 @media screen and (-webkit-min-device-pixel-ratio:1) {
-    /*.ms-core-tableNoSpace {margin-left:100px!important;}*/
     .postForm {
         margin-left: 80px !important;
     }
 }
 
-/******************************
- ***** CORE Site Elements *****
- ******************************/
-
-html, body, .ms-core-defaultFont, #pageStatusBar, .ms-status-msg, .js-callout-body {
-    font-family: Arial,Tahoma,"Segoe UI","Segoe",Helvetica,sans-serif !important;
-    font-size: 1em;
-    color: #545487 !important;
-    font-weight: normal;
-    text-decoration: none;
-    white-space: normal;
-    word-break: normal;
-    line-height: normal;
-    /*transform : scale(0.8);  *** change zoom level to 80% for mozilla browsers ****/
-}
-
-body {
-    padding-top: 0;
-    line-height: 1.40;
-    margin: 0;
-    overflow: hidden;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    text-decoration: none !important;
-}
-
-    body #s4-ribbonrow {
-        background-color: #ddddeb !important;
-    }
-
-a {
-    color: #545487;
-}
-
-    a:focus, a:hover {
-        color: #7676b8;
-        text-decoration: none;
-    }
-
-/*::webkit-scrollbar {width:100px;}*/
-
-.s4-ribbonrowhidetitle {
-    display: none;
-}
-
-.coreBackground {
-    width: 100%;
-    height: 270px;
-    padding: 10px 10px 0 0;
-    background-color: #ddddeb;
-}
-
-#contentBox {
-    min-width: 10px !important;
-    margin-left: 20px !important
-}
-
-.col-sm-2 .col-md-2 .col-lg-2 {
-    padding-left: 1px !important;
-}
-
-.hidden {
-    display: none;
-}
-
-.restricted {
-    background-color: #ddddeb;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 56%;
-    height: 100%;
-    z-index: 99 !important;
-}
-
-    .restricted:before {
-        position: absolute;
-        top: -5%;
-        left: 15%;
-        color: red !important;
-        opacity: 0.8;
-        font-family: 'Glyphicons Halflings';
-        font-size: 15em;
-        content: "\e090";
-    }
-
-.ms-cui-tabBody a:hover {
-    color: white !important;
-}
-
-/* Add rounded borders to container around ribbon options */
-.ms-cui-tabBody {
-    width: 100%;
-    background-color: #ddddeb;
-    height: 90px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #545487;
-    /*border-radius: 5px;*/
-    margin: 0px;
-    padding: 0px;
-}
-
-.welcomeMsg {
-    position: fixed;
-    top: 168px;
-    left: 110px;
-    color: #545487 !important;
-}
-
-/***** Page Content Loader *****/
-.pageLoader {
-    position: relative;
-    top: 30%;
-    left: 40%;
-}
-
-    .pageLoader .loader {
-        /*border: 16px solid #f3f3f3;*/
-        border-radius: 70%;
-        border-top: 16px solid #7676b8;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite; /* Safari */
-        animation: spin 2s linear infinite;
-        position: relative;
-        left: 50px;
-    }
-
-.collapsing {
-    width: 100%;
-}
-
-/****************** END ********************/
-
-
-/********************************************/
-
 /*************************
  ***** Page Elements *****
  *************************/
-
-.ms-alternatingstrong {
-    background-color: #ddddeb;
-}
-
-/***** CHDA Colours *****/
-/* text colour */
-.forePurple1 {
-    color: #545487;
-}
-
-.forePurple2 {
-    color: #7676b8;
-}
-
-.forePurple3 {
-    color: #ddddeb;
-}
-
-.foreGreen1 {
-    color: #4e7b2f;
-}
-
-.foreGreen2 {
-    color: #9cc487;
-}
-
-.foreGreen3 {
-    color: #d9eccd;
-}
-
-.foreOrange1 {
-    color: #7676b8;
-}
-
-.foreOrange2 {
-    color: #f9ad86;
-}
-
-.foreOrange3 {
-    color: #fdf0e4;
-}
-
-.foreBlue1 {
-    color: #205794;
-}
-
-.foreBlue2 {
-    color: #7098cf;
-}
-
-.foreBlue3 {
-    color: #e5eaf6;
-}
-
-.foreYellow1 {
-    color: #8a7424;
-}
-
-.foreYellow2 {
-    color: #ddcc68;
-}
-
-.foreYellow3 {
-    color: #f2e5b6;
-}
-
-.forePink1 {
-    color: #6a2f53;
-}
-
-.forePink2 {
-    color: #e5cadb;
-}
-
-.forePink3 {
-    color: #ffe5ef;
-}
-
-/* background colour */
-.backPurple1 {
-    background-color: #545487;
-}
-
-.backPurple2 {
-    background-color: #7676b8;
-}
-
-.backPurple3 {
-    background-color: #ddddeb;
-}
-
-.backGreen1 {
-    background-color: #4e7b2f;
-}
-
-.backGreen2 {
-    background-color: #9cc487;
-}
-
-.backGreen3 {
-    background-color: #d9eccd;
-}
-
-.backOrange1 {
-    background-color: #7676b8;
-}
-
-.backOrange2 {
-    background-color: #f9ad86;
-}
-
-.backOrange3 {
-    background-color: #fdf0e4;
-}
-
-.backBlue1 {
-    background-color: #205794;
-}
-
-.backBlue2 {
-    background-color: #7098cf;
-}
-
-.backBlue3 {
-    background-color: #e5eaf6;
-}
-
-.backYellow1 {
-    background-color: #8a7424;
-}
-
-.backYellow2 {
-    background-color: #ddcc68;
-}
-
-.backYellow3 {
-    background-color: #f2e5b6;
-}
-
-.backPink1 {
-    background-color: #6a2f53;
-}
-
-.backPink2 {
-    background-color: #e5cadb;
-}
-
-.backPink3 {
-    background-color: #ffe5ef;
-}
-
 .pLow, .pNorm, .pHigh {
     display: block;
-    color: white;
     text-align: center;
     font-size: 1em;
 }
-
-.pLow {
-    background-color: green;
-}
-
-.pNorm {
-    background-color: orange;
-}
-
-.pHigh {
-    background-color: red;
-}
-
-/**********************************************/
 
 .h4-responsive {
     font-size: 1em !important;
@@ -359,22 +43,7 @@ a {
 a {
     text-decoration: none !important;
 }
-/*a:hover{background-color:#545487!important;}
-a:active{background-color:#7676b8!important;}*/
-.rowDivider {
-    border-bottom: 1px #7676b8 solid;
-}
 
-.highlight :hover {
-    background-color: #7676b8 !important;
-}
-
-    .highlight :hover .newsHeadline, .highlight :hover h4, .highlight :hover h6 {
-        color: white !important;
-    }
-
-/*.selectedNews{background-color:#7676b8!important}
-.selectedNews .newsHeadline{color:white!important}*/
 div:empty {
     display: none;
 }
@@ -389,62 +58,13 @@ div:empty {
     margin: 0 0 10px 20px;
 }
 
-.addLeft2 {
-    margin-left: 2px !important;
-}
-
-.addLeft5 {
-    margin-left: 5px !important;
-}
-
-.addLeft10 {
-    margin-left: 10px !important;
-}
-
-.addLeft15 {
-    margin-left: 15px !important;
-}
-
-.addLeft20 {
-    margin-left: 20px !important;
-}
-
-.addLeft30 {
-    margin-left: 30px !important;
-}
-
-.subLeft5 {
-    margin-left: -5px !important;
-}
-
-.subLeft10 {
-    margin-left: -10px !important;
-}
-
-.subLeft15 {
-    margin-left: -15px !important;
-}
-
-.subLeft20 {
-    margin-left: -20px !important;
-}
-
 .noHover:hover {
-    color: black !important;
     cursor: default;
     pointer-events: none;
 }
 
 .scrollbar {
     overflow: auto;
-    scrollbar-base-color: white;
-    scrollbar-face-color: #7676b8;
-    scrollbar-3dlight-color: #7676b8;
-    scrollbar-highlight-color: #ddddeb;
-    scrollbar-track-color: white;
-    scrollbar-arrow-color: #545487;
-    scrollbar-shadow-color: #7676b8 !important;
-    scrollbar-darkshadow-color: #545487 !important;
     border-radius: 10px !important;
 }
 
@@ -452,63 +72,30 @@ div:empty {
     .scrollbar::-webkit-scrollbar {
         width: .9em;
         height: .9em;
-        background-color: white;
     }
 
     .scrollbar::-webkit-scrollbar-track {
-        box-shadow: white; /*inset 0 0 6px rgba(221,221,235,0.3);*/
         -webkit-border-radius: 10px;
         border-radius: 10px;
-        background-color: white;
     }
 
     .scrollbar::-webkit-scrollbar-thumb {
         border-radius: 10px;
         -webkit-border-radius: 10px;
-        box-shadow: inset 0 0 6px rgba(221,221,235,.3);
-        background-color: #7676b8;
     }
-
-  
-.hiddenScrollbar {
-    scrollbar-base-color: white;
-    scrollbar-face-color: white;
-    scrollbar-3dlight-color: white;
-    scrollbar-highlight-color: white;
-    scrollbar-track-color: white;
-    scrollbar-arrow-color: white;
-    scrollbar-shadow-color: white;
-}
 
     /****** Mozilla Scrollbar */
     .hiddenScrollbar::-webkit-scrollbar {
         width: 10px;
-        background-color: white;
     }
-
-    .hiddenScrollbar::-webkit-scrollbar-track {
-        box-shadow: white; 
-        /*inset 0 0 6px rgba(221,221,235,0.3);*/
-        background-color: white;
-    }
-
-    .hiddenScrollbar::-webkit-scrollbar-thumb {
-        box-shadow: white;
-        background-color: white;
-    }
-
-/*************************/
 
 .homeLink {
     font-size: 1em;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white !important;
 }
 
     .homeLink:hover {
         text-decoration: none;
-        color: #7676b8 !important;
     }
 
 #msgBox h3 {
@@ -516,8 +103,6 @@ div:empty {
     top: -18px;
     left: 0;
     padding: 3px 0 0 5px;
-    background-color: #ddddeb;
-    color: black !important;
     width: 100%;
     height: 30px;
 }
@@ -540,49 +125,19 @@ div:empty {
 }
 
 /* ---- button ---- */
-
 .button, #savebutton1, #savebutton2, #gobackbutton1, #gobackbutton2, .ms-ButtonHeightWidth {
     position: relative;
     width: auto;
     display: inline-block !important;
-    /*padding: 0.5em 1.0em!important;*/
-    background: #545487 !important;
     border: none !important;
     border-radius: 7px !important;
-    /*background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );*/
-    color: white !important;
-    font-family: Arial !important;
     font-size: 1em !important;
     font-weight: bold;
-    text-shadow: 0 1px #666 !important;
 }
 
-    .tabButton:hover, .ms-ButtonHeightWidth:hover, .button:hover, #savebutton1:hover, #savebutton2:hover, #gobackbutton1:hover, #gobackbutton2:hover {
-        background-color: #7676b8 !important;
-        text-shadow: 0 1px hsla(0, 0%, 100%, 0.4);
-        color: white;
-    }
-
     .button:active {
-        background-color: #7676b8 !important;
-        color: white !important;
-        box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
         border-radius: 7px !important;
-        color: white !important;
     }
-
-    .button.is-checked {
-        color: white;
-        background-color: #7676b8;
-        text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
-    }
-
-/*.buttonOn {
-    background-color: #7676b8 !important;
-    color: white !important;
-    box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-    border-radius: 7px !important;
-}*/
 
 /* ---- button-group ---- */
 .button-group:after {
@@ -613,6 +168,14 @@ div:empty {
     padding: 2px 0 0 2px;
 }
 
+/*.buttonOn {
+    border-radius: 10px !important;
+    min-width: 50px;
+    max-width: inherit;
+    width: auto;
+}
+*/
+
 .ui-group {
     display: inline-block;
 }
@@ -630,11 +193,6 @@ div:empty {
         margin-right: 20px;
     }
 
-.nav-pills {
-    margin-left: 10px;
-    border: none;
-}
-
 .navTabContainer {
     padding-left: 5px !important;
     width: 100%;
@@ -644,17 +202,14 @@ div:empty {
 .headingText {
     position: relative;
     top: 18px !important;
-    background-color: #545487;
 }
 
     .headingText h2 {
         padding-top: 5px !important;
         margin-left: 8px;
-        color: white !important;
     }
 
 .navTabBar ul li {
-    color: black !important;
     height: 25px;
 }
 
@@ -668,7 +223,6 @@ div:empty {
     position: relative;
     height: 40px;
     width: 60vw;
-    background-color: white;
     top: 5px;
     overflow-y: scroll;
 }
@@ -687,126 +241,19 @@ div:empty {
 }
 
     .homeTab ul li {
-        color: black !important;
         height: 33px;
     }
-
         .homeTab ul li:hover,
         .homeTab > ul > li > a:hover {
-            background-color: #7676b8 !important;
-            color: white !important;
             text-decoration: none;
         }
-
-/*	homeTab table tr:nth-child(even) {
-		background-color: #ddddeb!important;
-	}*/
-
-/***************************************
- *********** Team Calendar *************
- ***************************************/
-
-#teamCal {
-    position: relative;
-    left: -16px;
-}
-
-.tabBarContainer {
-    top: 46px;
-    left: 95px;
-    width: 50%;
-    height: 58px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-    .tabBarContainer ul {
-        position: fixed;
-        width: 48%;
-        height: 60px;
-        list-style-type: none;
-        display: inline-block;
-        white-space: nowrap;
-        margin: 0 !important;
-        padding: 5px 0 5px 5px;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        scrollbar-base-color: white;
-        scrollbar-face-color: #7676b8;
-        scrollbar-3dlight-color: white;
-        scrollbar-highlight-color: white;
-        scrollbar-track-color: white;
-        scrollbar-arrow-color: white;
-        scrollbar-shadow-color: white;
-    }
-
-#teamCal .tabContent {
-    position: relative;
-    top: 5px !important;
-    height: 75vh;
-}
-
-#teamCal .ecl-calendar {
-    position: relative;
-    top: 5px;
-    left: 0;
-    width: 27% !important;
-}
-
-#teamCal .cal-listing {
-    position: absolute;
-    width: 45% !important;
-    top: 5px;
-    left: 28.5%;
-    margin-bottom: 10px;
-    color: #7676b8;
-}
-
-    #teamCal .cal-listing:hover, div .calListItem p:hover, div .calListItem a:hover {
-        color: white !important;
-    }
-
-#teamCal div .calListItem:hover {
-    background-color: #7676b8 !important;
-}
-
-.tipContent span ul li a:hover {
-    color: #7676b8 !important;
-}
-
-.buttonContainer {
-    position: absolute;
-    top: 0;
-    left: 62vw !important;
-    display: inline-block;
-    width: 42px;
-    z-index: 99;
-}
-
-.calendarNewButton, .calendarOutlookButton, .calendarEmailButton {
-    height: 30px;
-    width: 30px;
-    padding: 5px 0 0 8px;
-    margin: 0 5px 10px 5px;
-    border-radius: 10px !important;
-}
-
-    .calendarNewButton:hover, .calendarOutlookButton:hover, .calendarEmailButton:hover, .selectedTab {
-        background-color: #7676b8 !important;
-        color: white;
-        border-radius: 10px;
-    }
 
 /*************************************	
  *********** News Section ************
  *************************************/
-
 .newsTabs {
     width: 90%;
     height: 50px;
-    background-color: white;
     z-index: 9;
 }
 
@@ -826,20 +273,15 @@ div:empty {
 .newsMastContainer {
     top: 230px;
     left: 110px;
-    border: .5px #ddddeb solid;
 }
     .newsMastContainer .newsMast {
         position: relative;
         left: 7px;
         text-align: left;
         vertical-align: top;
-        border-bottom: .5px solid #7676b8;
         padding-bottom: 5px;
         width: 100%;
     }
-
-        /*.newsMast:hover {background-color:#ddddeb}*/
-
         .newsMastContainer .newsMast h3, .newsHeadline {
             position: relative;
             font-weight: bold;
@@ -856,7 +298,6 @@ div:empty {
         }
 
         .newsMastContainer .newsMast .newsHeadline {
-            color: #545487 !important;
             display: block;
             word-wrap: normal;
         }
@@ -867,373 +308,10 @@ div:empty {
     left: 30.5%;
     height: 74vh;
     width: 39vw;
-    border: .5px #ddddeb solid;
 }
     .newsDetailContainer #newsDetail {
         margin: 5px 5px 5px 5px !important;
     }
-
-/**************************************	
- *********** Forum Section ************
- **************************************/
-.postContainer {
-    position: relative;
-    top: 5px;
-    height: 80vh;
-}
-
-.postTabContainer {
-    left: auto;
-    width: 80% !important;
-    height: 55px;
-    overflow: hidden;
-    margin: 1px 0 5px 0;
-}
-
-    .postTabContainer ul {
-        position: fixed;
-        list-style-type: none;
-        display: inline-block;
-        white-space: nowrap;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        margin: 0 !important;
-        padding: 5px 0 5px 5px;
-        width: 50%;
-    }
-
-    .postTabContainer li {
-        display: inline-block;
-        height: 29px !important;
-        margin-right: 5px;
-        min-width: 50px;
-        max-width: 200px;
-        /*width: 100px;*/
-        padding: 3px 3px 3px 5px;
-    }
-
-        .postTabContainer li.active {
-            color: white !important;
-            background-color: #545487 !important;
-            box-shadow: 2px 2px 8px hsla(0, 0%, 0%, 0.5);
-            border-radius: 10px !important;
-            min-width: 50px;
-            max-width: 200px;
-            /*width: 100px;*/
-            padding: 3px 3px 3px 5px;
-        }
-
-            .postTabContainer li.active a p {
-                color: white !important;
-            }
-
-/*.buttonOn {
-    border-radius: 10px !important;
-    min-width: 50px;
-    max-width: inherit;
-    width: auto;
-    background-color: #545487;
-}
-    .buttonOn a p {color:white!important;}
-*/
-
-.tabButton {
-    border-radius: 10px !important;
-    color: white !important;
-    background-color: #545487;
-}
-
-    .tabButton :hover {
-        color: white !important;
-        background-color: #7676b8;
-        border-radius: 10px !important;
-        min-width: 50px;
-        max-width: 200px;
-        /*width: 100px;*/
-        padding: 3px 3px 3px 5px;
-        margin: -3px -3px 0 -5px;
-    }
-
-.forumButtonContainer {
-    position: absolute;
-    top: 5px;
-    left: 90%;
-    width: 125px;
-    z-index: 15;
-}
-
-.newPostBtn {
-    position: relative;
-    background-color: #545487 !important;
-    color: #fff !important;
-    font-weight: bold;
-}
-
-    .newPostBtn:hover {
-        background-color: #7676b8 !important;
-        color: white !important;
-    }
-
-#approvalButton {
-    position: relative;
-    font-weight: bold;
-    padding: 0 10px;
-}
-
-    #approvalButton h5 {
-        text-align: center;
-    }
-
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin: 0 auto;
-    left: 20%;
-}
-    /* Hide default HTML checkbox */
-    .switch input {
-        display: none;
-    }
-
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #545487;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-input:checked + .slider {
-    background-color: #7676b8;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #ddddeb;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-
-    .slider.round span {
-        left: 37px;
-        top: 8px;
-    }
-
-.postToolsContainer {
-    position: absolute !important;
-    top: 11px;
-    left: 68.3%;
-    height: 83vh;
-    width: 10% !important;
-    padding-left: 20px;
-    margin: 0;
-    z-index: 10;
-    float: right !important;
-    overflow: hidden;
-}
-
-.forumToolbox {
-    background-color: #ddddeb;
-    color: black !important;
-    height: 23%;
-    padding: 0 10px 0 10px;
-}
-
-    .forumToolbox h3 {
-        font-size: 1em !important;
-    }
-
-    .forumToolbox a {
-        color: black !important;
-    }
-
-        .forumToolbox a:hover {
-            background-color: #7676b8;
-            color: white !important;
-            width: 100% !important;
-            padding: 3px;
-        }
-
-.input.ms-button-emphasize, button.ms-button-emphasize {
-    background-color: #545487;
-}
-
-    .input.ms-button-emphasize, button.ms-button-emphasize :hover {
-        background-color: #7676b8;
-    }
-
-.postDetailContainer, .postMastContainer {
-    height: 100%;
-    scrollbar-base-color: white;
-    scrollbar-face-color: #7676b8;
-    scrollbar-3dlight-color: #7676b8;
-    scrollbar-highlight-color: #ddddeb;
-    scrollbar-track-color: white;
-    scrollbar-arrow-color: #545487;
-    scrollbar-shadow-color: #7676b8 !important;
-    scrollbar-darkshadow-color: #545487 !important;
-    border-radius: 10px !important;
-}
-
-.postMastContainer {
-    width: 28%;
-}
-
-.myBadge {
-    background-color: #ddcc68 !important;
-    color: black !important;
-}
-
-.postQuestion {
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: 12px !important;
-    color: white !important;
-    background-color: #545487 !important;
-    height: 18px;
-    width: 18px;
-    margin: 1px;
-    padding: 3px !important;
-}
-
-#postsIcon {
-    color: white !important;
-    position: fixed;
-    top: 80px;
-    left: 77.5%;
-    width: 30px;
-    z-index: 999 !important;
-}
-
-    #postsIcon a {
-        color: white !important;
-    }
-
-        #postsIcon a:hover {
-            color: #7676b8;
-        }
-
-div .postReplies :hover {
-    background-color: transparent;
-}
-
-.postReplies h3 .badge {
-    background-color: #7676b8 !important;
-}
-
-.postContentContainer {
-    top: 10px;
-}
-
-#newPost, #editPost {
-    height: 490px;
-    width: 100%;
-    border: none;
-    overflow: hidden !important;
-}
-
-.replyPostBtn {
-    background-color: #545487 !important;
-    color: #fff !important;
-    font-weight: bold;
-}
-
-.postDetailContainer {
-    left: 31%;
-    width: 39%;
-}
-
-    .postDetailContainer #postDetail {
-        width: 101%;
-    }
-
-.postBottomBorder {
-    position: relative;
-    top: 5px;
-    border-bottom: 2px solid #7676b8;
-}
-
-.expand {
-    height: 40px;
-    width: 85%;
-    padding: 3px;
-    -webkit-transition: all 1s linear;
-    -ms-transition: all 1s linear;
-    -moz-transition: all 1s linear;
-    transition: all 1s linear;
-    border: .5px solid #ddddeb;
-}
-
-    .expand:focus {
-        height: 150px;
-        -webkit-transition: all 1s linear;
-        -ms-transition: all 1s linear;
-        -moz-transition: all 1s linear;
-        transition: all 1s linear;
-        border: .5px solid #7676b8;
-    }
-
-.replyContainer {
-    position: relative;
-    width: 95%;
-}
-
-    .replyContainer textarea {
-        box-sizing: border-box;
-        width: 84% !important;
-    }
-
-    .replyContainer .btn {
-        position: absolute;
-        top: -1px;
-        left: 86%;
-        margin: 0 auto;
-        border-radius: 10px;
-    }
-
-        .replyContainer .btn :hover {
-            background-color: #7676b8;
-        }
-
-.postRow {
-    text-align: left;
-    width: 99%;
-}
-
-    .postRow h4 {
-        font-size: .95em !important;
-    }
-/******************* End Forum section **********************/
 
 .cultureContainer{position:relative;top:-9%;}
 .cultureImage {
@@ -1251,13 +329,11 @@ div .postReplies :hover {
     z-index: 10 !important;
     margin: 0;
     padding: 0;
-    background-color: white;
 }
 
 .tabBar {
     height: 50px;
     width: 80%;
-    background-color: white;
     position: fixed;
     top: 179px;
     left: 95px;
@@ -1267,14 +343,12 @@ div .postReplies :hover {
 .tabContent {
     position: relative;
     top: 5px !important;
-    /*left: 12px!important;*/
 }
 /***************** END Tab Section **********************/
 
 /*************************************
  **** Knowledge / Document Pages *****
  *************************************/
-
 .knowledgeTabContainer {
     position: relative;
     top: -10px !important;
@@ -1301,14 +375,6 @@ div .postReplies :hover {
     overflow-x: hidden;
 }
 
-.greyBorderRight {
-    border-right: .5px solid #ccc;
-}
-
-.greyBorderLeft {
-    border-left: .5px solid #ccc;
-}
-
 .editDoc {
     display: none;
 }
@@ -1316,17 +382,10 @@ div .postReplies :hover {
 .documentSection {
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 76vh;
+    height: 71vh;
     width: 40%;
     position: relative;
     left: 3px;
-    scrollbar-base-color: white;
-    scrollbar-face-color: #7676b8;
-    scrollbar-3dlight-color: white;
-    scrollbar-highlight-color: white;
-    scrollbar-track-color: white;
-    scrollbar-arrow-color: #7676b8;
-    scrollbar-shadow-color: white;
 }
 
     /* Webkit Browser Scrollbar */
@@ -1342,71 +401,51 @@ div .postReplies :hover {
     /* Handle */
     .documentSection::-webkit-scrollbar-thumb {
         border-radius: 5px;
-        background:var(--PrimaryMid);
     }
 
 .documentFolder {
     width:99%;
 }
-    .documentFolder .card-header:hover h5{
-        color: white !important;
-    }
 
-    .documentFolder .folderTitle:after {
-        font-family: "Font Awesome 5 Free"; 
-        font-weight: 900; 
-        content: "\f07b";
-        font-size: 1em;
-        float:left;
-        margin-right:10px;
-    }
-
-    .documentFolder .folderTitle.collapsed:after {
-        font-family: 'Font Awesome 5 Free';
-        font-size: 1em;
-        font-weight:900;
-        content: "\f07c";
-        float:left;
-        margin-right:10px;
-    }
+	.documentFolder .folderTitle:after {
+	    font-family: "Font Awesome 5 Free"; 
+	    font-weight: 900; 
+	    content: "\f07b";
+	    font-size: 1em;
+	    float:left;
+	    margin-right:10px;
+	}
+	
+	.documentFolder .folderTitle.collapsed:after {
+	    font-family: 'Font Awesome 5 Free';
+	    font-size: 1em;
+	    font-weight:900;
+	    content: "\f07c";
+	    float:left;
+	    margin-right:10px;
+	}
 
 .documentViewer {
     position: absolute;
-    top: 143px;
+    top: 120px;
     left:41%;
     width: 55%;
-    height: 75vh;
-    border: 1px solid #ddddeb;
+    height: 69vh;
     z-index: 999;
 }
-.documentViewer iframe {height:100%; width:100%}
-
-/*.documentFolder .panel-title:hover h5{color:white!important}*/
-
-/*.documentFolder {
-    overflow-y: scroll;
-    overflow-x:hidden!important;
-}*/
-
-/*.documentFolder .card-body {
-    padding: 5px 0 0 10px;
-    border: none;
-}*/
+.documentViewer iframe {height:100%; width:100%;}
 
 .docItem {
     position: relative;
     height:20px;
     width: 100%;
+    left:4%;
     float: left !important;
     margin: 5px 0 0 0 !important;
     font-size: 1em !important;
     font-weight: bold;
 }
-
-    .docItem a:hover {
-        background-color: #7676b8;
-        color: white !important;
-    }
+.docItem a:hover{padding:5px;}
 
 .iconContainer {
     display: inline-flex;
@@ -1427,43 +466,34 @@ div .postReplies :hover {
 }
 
 .teamDocumentSubfolders .docView, .docList .docView {
-    left: 41px;
+    left: 39px;
 }
 
 .teamDocumentSubfolders .docEdit, .docList .docEdit {
-    left: 56px;
+    left: 65px;
 }
 
 .teamDocumentSubfolders .docDelete, .docList .docDelete {
     float: right;
-    color: red;
 }
 
-/*.documentFolder .docIcon {
-    width: 30px;
-    padding-left: 30px !important
-}*/
 .nav-stacked > li + li {
     margin-right: 5px;
 }
 
-
-
 #teamDocs {
     position: absolute;
     height: 82vh;
-    width: 100%
+    width: 100%;
 }
 
 .teamDocumentTabs {
     top: 5px;
     width: 90%;
     height: 60px;
-    background-color: white;
     z-index: 99;
     overflow: hidden;
 }
-
     .teamDocumentTabs > ul {
         position: fixed;
         width: 54%;
@@ -1475,47 +505,27 @@ div .postReplies :hover {
         padding: 2px 0 0 0;
         overflow-x: scroll;
         overflow-y: hidden;
-        scrollbar-base-color: white;
-        scrollbar-face-color: #7676b8;
-        scrollbar-3dlight-color: #ddddeb;
-        scrollbar-highlight-color: #ddddeb;
-        scrollbar-track-color: white;
-        scrollbar-arrow-color: white;
-        scrollbar-shadow-color: #7676b8;
-        scrollbar-darkshadow-color: white;
     }
 
         .teamDocumentTabs > ul > li {
-            /*margin: 0 5px 0 3px;*/
             display: inline;
         }
 
-        /*.teamDocumentTabs > ul > li > a {color:white!important}*/
-
         .teamDocumentTabs > ul::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 6px rgba(221,221,235,0.3);
             border-radius: 10px;
-            background-color: #fff;
         }
 
         .teamDocumentTabs > ul::-webkit-scrollbar {
             width: 12px;
-            background-color: #fff;
         }
 
         .teamDocumentTabs > ul::-webkit-scrollbar-thumb {
             border-radius: 10px;
-            box-shadow: inset 0 0 6px rgba(221,221,235,.3);
-            background-color: #545487;
         }
 
     .teamDocumentTabs > li {
         margin: 0 5px 5px 3px;
         display: inline;
-    }
-
-    .teamDocumentTabs .active > a {
-        box-shadow: 2px 2px 7px #999 !important;
     }
 
 .teamDocuments {
@@ -1575,30 +585,6 @@ div .postReplies :hover {
     height: 60vh;
 }
 
-/*.teamDocEmailButton{position:relative;left:.5%;}
-			.teamDocNewButton{position:relative;left:3%;}
-			.teamDocMyButton{position:relative;left:5%;}*/
-
-.redIcon {
-    color: red;
-}
-
-.blueIcon {
-    color: blue;
-}
-
-.orangeIcon {
-    color: orange;
-}
-
-.greenIcon {
-    color: green;
-}
-
-.purpleIcon {
-    color: #545487;
-}
-
 .documents {
     position: absolute;
     top: 38px;
@@ -1608,7 +594,6 @@ div .postReplies :hover {
     height: 590px;
 }
 
-/***********************************************/
 /* used for Operational Excellence Awards page */
 #docs, #viewer {
     height: 540px;
@@ -1641,61 +626,24 @@ div .postReplies :hover {
     text-align: left;
 }
 
-/*.docViewer {
-    position: absolute;
-    top: 40px;
-    left: 8px;
-    width: 100%;
-    height: 100%;
-    margin: 10px 0 0 2px !important;
-    border: 1px solid #ddddeb;
-    z-index: 9;
-}*/
-
 object embed {
     height: 100% !important;
     width: 100% !important;
     z-index: 5 !important;
 }
 
-
-/* ---- Document Item ---- */
-.highlight:hover {
-    background-color: #7676b8 !important;
-    color: white !important;
+.docPreview {
+    position: absolute;
+    top: 38px;
+    width: 99.5%;
+    height: 590px;
+    z-index: 999;
 }
-
-    .highlight:hover p, .highlight:hover a {
-        color: white !important;
-    }
-
-.docUline {
-    margin-top: 6px;
-    padding-top: 5px;
-    color: black;
-    border-bottom: .7px solid silver;
-}
-
-    .docUline:hover {
-        background-color: #7676b8;
-    }
 
 .ms-vh2, .ms-vh-div {
     white-space: normal;
     font-weight: bold;
     font-size: 13px;
-}
-
-.ms-cellstyle, .ms-cellStyleNonEditable, .ms-cellStyleMenuHover, .ms-MenuCellStyle-TdHover, .ms-MenuCellStyle-MenuDivHover {
-    border: solid 1px white;
-}
-
-tr.ms-itmHoverEnabled {
-    background-color: #ddddeb;
-}
-
-tr.ms-alternating {
-    background-color: white;
 }
 
 /************************************************/
@@ -1725,10 +673,8 @@ tr.ms-alternating {
 }
 
 blockquote {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: .9em !important;
     font-weight: 600 !important;
-    border-left: 5px solid #545487;
     margin: 5px 0 5px;
     padding:5px;
 }
@@ -1736,9 +682,8 @@ blockquote {
 .bullets {
     position: relative;
     top: -1px !important;
-    color: #000 !important;
     font-size: 10px;
-    font-family: 'Glyphicons Halflings';
+    font-family: 'Font Awesome 5 Free';
     content: "\e165";
 }
 
@@ -1748,24 +693,17 @@ blockquote {
         left: 15px;
         margin-bottom: -10px;
         font-size: 14px;
-        font-family: Arial, Helvetica, sans-serif;
     }
 
 .profileEditBtn {
-    color: white;
-    background-color: #545487;
     border-radius: 8px !important;
 }
-
     .profileEditBtn:hover {
-        color: white !important;
-        background-color: #7676b8;
         border-radius: 8px;
     }
 
 .profileName {
     position: relative;
-    /*left:15px;*/
 }
 
 .profileAbout {
@@ -1793,6 +731,16 @@ blockquote {
     font-size: .9em;
 }
 
+.faqContainer {
+    margin-top: 5px !important;
+    z-index: 5;
+}
+
+.faqQuestion {
+    font-size: .9em;
+    margin-bottom:5px;
+}
+
 .contactsContainer {
     position: relative;
     height: 75vh;
@@ -1814,25 +762,21 @@ blockquote {
 
 .contactsContent {
     margin: 0 0 0 10px;
-    background-color: transparent !important;
     width: 44vw;
     height: 100%;
     overflow: auto;
 }
-
     .contactsContent .contactTitle {
         padding-left: 10px;
         margin: 0;
         width: 100% !important;
         height: 40px;
-        background: #ddddeb;
         border-radius: 10px 10px 0 0;
     }
 
     .contactsContent h3 {
         position: relative;
         top: -10px !important;
-        color: black !important;
         font-weight: bold;
         vertical-align: middle;
     }
@@ -1855,7 +799,6 @@ blockquote {
 .officeAddr {
     border: none;
     margin-left: -5px;
-    color: black;
 }
 
 .googleMap {
@@ -1864,15 +807,14 @@ blockquote {
 }
 /******************************************/
 
-/********************************
- ***** About Locations Page *****
- ********************************/
+/*************************
+ ***** Locations App *****
+ *************************/
 .locationFrame {
     position: relative;
     top: 10px;
     z-index: 3;
     padding-bottom: 10px;
-    border-bottom: thin solid #999;
 }
 
 .CHDACentres {
@@ -1880,7 +822,6 @@ blockquote {
     left: 0;
     height: 265px;
     width: 98%;
-    color: black !important;
 }
 
     .CHDACentres h3 {
@@ -1898,34 +839,30 @@ blockquote {
 .rowLocation {
     position: absolute;
     left: 30px;
-    color: red;
-    border: 2px solid black;
     height: 200px;
     width: 100%;
 }
 
 .colLocation {
-    border: 1px solid red;
     height: 100%;
 }
 /**************************************************/
 
-/*****************************************
- ***** About Suggestions & Team FAQs *****
- *****************************************/
+/*********************************************
+ ***** About Suggestion & Team FAQs Page *****
+ *********************************************/
 .suggestionContainer, .faqContainer {
-    position: absolute;   
-    height: 85vh!important;
+    position: absolute;
+    height: 79vh!important;
     width: 100%;
-    z-index: 5;
+    z-index:5;
 }
-.suggestionContainer {top: 7vh;}
+.suggestionContainer {top: 8vh;}
 .faqContainer {margin-top: 5px !important;}
 
 .suggestionTabs, .suggestionContent, .faqTabs, .faqContent{
     position:absolute;
 }
-.suggestionTabs, .suggestionContent{top:6%;}
 
 .suggestionTabs, .faqTabs {
     overflow-y: scroll;
@@ -1934,24 +871,18 @@ blockquote {
     text-align: left;
 }
     .suggestionTabs .nav-tabs li > a, .faqTabs .nav-tabs li > a  {
-        color: black;
         font-weight: bold;
         font-size: 1.1em;
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 10px;
     }
-
         .suggestionTabs .nav-tabs li > a:active, .faqTabs .nav-tabs li > a:active {
-            color: white !important;
-            background-color: #7676b8 !important;
             font-size: 1.1em;
             height: 20px;
-            border-radius: 10px 10px 10px 10px;
+            border-radius: 10px;
         }
 
     .suggestionTabs a:hover, .faqTabs a:hover {
-        color: white !important;
-        background-color: #7676b8 !important;
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 10px;
     }
 
 .suggestionContent, .faqContent {
@@ -1960,7 +891,6 @@ blockquote {
     height: 99%;
     padding: 10px;
     overflow: scroll;
-    background-color: transparent !important;
 }
 .suggestionContent::-webkit-scrollbar, .faqContent::-webkit-scrollbar{display:none;}
 .suggestionTabs::-webkit-scrollbar, .faqTabs::-webkit-scrollbar{display:none;}
@@ -1971,38 +901,10 @@ blockquote {
     }
 
     .suggestionContent .panel-group, .faqContent .panel-group {
-        margin-right: 5px
+        margin-right: 5px;
     }
-    
-    /*    .faqTabs .nav-tabs li > a {
-            color: black;
-            font-weight: bold;
-            font-size: 1.1em;
-            border-radius: 10px 10px 10px 10px;
-        }
-    
-            .faqTabs .nav-tabs li > a:active {
-                color: white !important;
-                background-color: #ddddeb !important;
-                font-size: 1.1em;
-                height: 20px;
-                border-radius: 10px 10px 10px 10px;
-            }
-    
-        .faqTabs a:hover {
-            color: white !important;
-            background: #7676b8 !important;
-            border-radius: 10px 10px 10px 10px;
-        }
-    
-    .faqContent {
-        overflow-y: auto;
-        background-color: transparent !important;
-    }
-    */
-    
+
 .faqQuestion {
-    /*padding: 0 35px 0 10px!important;*/
     font-size: .9em;
     margin-bottom:5px;
 }
@@ -2020,22 +922,17 @@ blockquote {
     margin: 5px auto;
     overflow: hidden;
     padding: 0;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    background-color: #ddddeb;
     border-radius: 8px;
-    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
     width: 100%;
     height: 100%;
 }
 
 /*** Content ***/
 .smtValues-container {
-    color: #545487;
     margin: 0 auto;
     padding: 15px;
-    width: 100%; /*430px;*/
+    width: 100%;
     min-height: 200px;
-    border-bottom: 1px solid #ccc;
     overflow-x: auto;
 }
 
@@ -2043,7 +940,7 @@ blockquote {
         height: 100%;
         width: 100%;
         padding: 9px;
-        background: url("https://intranet-test.chda.maxuk.co.uk/PublishingImages/Culture/PerformanceValue1-01.png") no-repeat;
+        background: url("/PublishingImages/Culture/PerformanceValue1-01.png") no-repeat;
         opacity: 0.8;
     }
 
@@ -2051,13 +948,8 @@ blockquote {
         height: 100%;
         width: 100%;
         padding: 9px;
-        background-image: url("https://intranet-test.chda.maxuk.co.uk/PublishingImages/Culture/CommitmentValue1-01.png");
+        background-image: url("/PublishingImages/Culture/CommitmentValue1-01.png");
         opacity: 0.8;
-    }
-
-    .smtValues-container h3 {
-        color: #545487;
-        text-shadow: -1px 0px 0px rgba(0, 0, 0, 0.50);
     }
 
 .smtBanner > h3 {
@@ -2066,10 +958,6 @@ blockquote {
 
 .smtValues-container h2, .smtValues-container h3, .smtValues-container h4 {
     font-size: .9em;
-}
-
-.smtValues-container h4 {
-    color: #545487;
 }
 
 .smtValues-container p {
@@ -2084,7 +972,6 @@ blockquote {
     left: 1px;
     height: 32px;
     width: 100%;
-    background-color: white;
     font-size: .9em;
 }
 
@@ -2094,7 +981,6 @@ blockquote {
     width: 100% !important;
     margin: -6px 0 15px 0 !important;
 }
-
     .smtTabContainer img {
         width: 90%;
         margin: 0 auto;
@@ -2102,20 +988,11 @@ blockquote {
         position: relative;
     }
 
-.nav-tabs {
-    background-color: transparent !important;
-    color: #545487;
-}
-
 .smtBanner {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #7676b8;
     width: 100%;
     height: 35px;
 }
-
     .smtBanner > h3 {
-        color: white !important;
         margin-left: 10px;
         margin-top: 10px;
     }
@@ -2148,17 +1025,9 @@ blockquote {
     display: inline-block;
     width: 144px;
     height: 200px;
-    border: 1px solid #ddddeb;
     margin: 5px 8px 5px 8px;
-    background-color: transparent;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
 }
-
-    .contactCard:hover {
-        box-shadow: 0 8px 16px 0 #7676b8;
-    }
-
     .contactCard img {
         width: 130px;
         height: 130px;
@@ -2168,15 +1037,7 @@ blockquote {
     .contactCard div {
         margin: 7px 0 0 8px !important;
     }
-
     .contactCard .jobTitle {
         margin-top: -5px;
         font-size: .9em;
-        color: #545487;
     }
-
-        .contactCard .jobTitle:hover {
-            color: #7676b8;
-        }
-
-/***********************************/

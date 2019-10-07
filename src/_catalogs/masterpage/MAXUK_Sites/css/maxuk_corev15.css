@@ -30,7 +30,6 @@ html > .ms-core-needIEFilter {
     padding-bottom: 35px;
     z-index: 1;
     overflow: auto !important;
-    */
 }
 
 h1, h2, h3, h4, h5, h6, .ms-h1, .ms-h2, .ms-h3, .ms-h4, .ms-h5, .ms-h6 {
@@ -41,14 +40,12 @@ h1, h2, h3, h4, h5, h6, .ms-h1, .ms-h2, .ms-h3, .ms-h4, .ms-h5, .ms-h6 {
 h1, .ms-h1 {
     /* [ReplaceFont(themeFont:"large-heading")] */ font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
     font-size: 2.3em; /* [ReplaceColor(themeColor:"SubtleBodyText")] */
-    ;
     color: #777;
     font-weight: 200;
 }
 
 h2, h3, .ms-h2, .ms-h3, .ms-headerFont {
     /* [ReplaceFont(themeFont:"heading")] */ font-family: "Segoe UI Semilight","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif; /* [ReplaceColor(themeColor:"StrongBodyText")] */
-    ;
     color: #262626;
     font-weight: 300;
 }
@@ -67,7 +64,6 @@ h4, h5, h6, .ms-h4, .ms-h5, .ms-h6 {
 
 h4, .ms-h4 {
     font-size: 1em; /* [ReplaceColor(themeColor:"StrongBodyText")] */
-    ;
     color: #262626;
 }
 
@@ -330,18 +326,18 @@ div.ms-cui-TabRowRight {
 }
 
 .ms-promotedActionButton-text {
-    display: inline-block; /* [ReplaceColor(themeColor:"TopBarText")] */
-    ;
+    display: inline-block; /* [ReplaceColor(themeColor:"TopBarText")] */    
     color: black;
     text-transform: uppercase;
     font-size: 8pt;
 }
-
+/*
 ;
 color: black;
 text-transform: uppercase;
 font-size: 8pt;
 }
+*/
 
 .ms-promotedActionButton:hover .ms-promotedActionButton-text {
     /* [ReplaceColor(themeColor:"TopBarHoverText")] */
@@ -7236,14 +7232,14 @@ ul.ms-breadcrumbRootNode, ul.ms-breadcrumbNode {
 }
 
 .ms-core-listMenu-horizontalBox {
-    /* [ReplaceColor(themeColor:"Navigation")] */ color: #666666;
+    color: #666666;
     display: inline-block;
     vertical-align: middle;
     z-index: 999 !important;
 }
 
 .ms-core-header .ms-core-listMenu-horizontalBox {
-    /* [ReplaceColor(themeColor:"HeaderNavigationText")] */ color: #666;
+    color: #666;
 }
 
 .ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
@@ -7266,8 +7262,7 @@ ul.ms-breadcrumbRootNode, ul.ms-breadcrumbNode {
 
 .ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenu-item, .ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenuEdit, .ms-core-listMenu-heading, .ms-tv-header {
     font-size: 1em;
-    vertical-align: middle; /* [ReplaceFont(themeFont:"navigation")] */
-    ;
+    vertical-align: middle;     
     font-family: "Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
     display: block;
 }

@@ -146,11 +146,13 @@
                             '<div class="col-sm-2 col-md-2 col-lg-2 iconContainer">' +
                             '<nobr>' +  // document tool kit goes here
                             '<div class="docIcon">' + icon + '</div>' +
-                            '<div class="docView"><a href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\',\''+docName+'\',\''+docType+'\');"><i class="fa fa-eye"></i></a></div>' +
+                            '<a class="docView" href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\',\''+docName+'\',\''+docType+'\');return false;" title="view document"><i class="fa fa-eye"></i></a>' +
+                            '<a class="docEdit" id="docEdit" href="#" onclick="editDoc(\''+list+'\',\''+docName+'\');return false;" title="edit document"><i class="fa fa-edit"></i></a>' +
                             '</nobr>' +
                             '</div>' +
                             '<div class="col-sm-10 col-md-10 col-lg-10 text-left docItem">' +
-                            '<p><a href="' + listURL + '_layouts/15/download.aspx?SourceUrl=' + docFQN + '" target="_blank">' + docTitle + '</a></p>' +
+                            //'<p><a href="' + listURL + '_layouts/15/download.aspx?SourceUrl=' + docFQN + '" target="_blank" title="download document">' + docTitle + '</a></p>' +
+                            '<p><a href="#" onclick="openDoc(\''+list+'\',\''+docName+'\',\''+docType+'\',\''+docID+'\');return false" title="open document">' + docTitle + '</a></p>' +
                             '</div>' +
                             '</div>';                                                
 
@@ -174,9 +176,6 @@
                                     '</div>' +
                                     '</div>';
                                 
-                                console.log("docCat 1="+docCat);
-                                console.log(folderString);
-
                                 $('#' + docCat).append(folderString);
                                 docFlag = true;
                                 fCount++;
@@ -205,11 +204,13 @@
                                         '<div class="col-sm-2 col-md-2 col-lg-2 iconContainer">' +
                                         '<nobr>' +
                                         '<div class="docIcon">' + icon + '</div>' +
-                                        '<div class="docView"><a href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\');"><i class="fa fa-eye"></i></a></div>' +
+                                        '<a class="docView" href="#" onclick="viewDoc(\''+list+'\',\''+docID+'\'); return false;" title="view document"><i class="fa fa-eye"></i></a>' +
+                                        '<a class="docEdit" id="docEdit" href="#" onclick="editDoc(\''+list+'\',\''+docName+'\');return false;" title="edit document"><i class="fa fa-edit"></i></a>' +
                                         '</nobr>' +
                                         '</div>' +
                                         '<div class="col-sm-8 col-md-8 col-lg-8 text-left docItem">' +
-                                        '<p><a href="' + listURL + '_layouts/15/download.aspx?SourceUrl=' + docFQN + '" target="_blank">' + docTitle + '</a></p>' +
+                                        //'<p><a href="' + listURL + '_layouts/15/download.aspx?SourceUrl=' + docFQN + '" target="_blank">' + docTitle + '</a></p>' +
+                                        '<p><a href="#" onclick="openDoc(\''+list+'\',\''+docName+'\');return false" title="open document">' + docTitle + '</a></p>' +
                                         '</div>' +
                                         '</div>' +
                                         '</div>' +
@@ -228,13 +229,10 @@
                                 subFolderPrev = subFolderName;
 
                             } else if (docName !== docNamePrev) {
-                                //console.log(docName);
                                 $('#' + listFolder + 'Doc').append(documentString);
                             }
                             folderNamePrev = folderName;
                         } else {
-                            //console.log(documentString);
-                            console.log("docCat 2="+docCat);
                             $('#' + docCat).append(documentString);
                         }
                         docNamePrev = docName;
@@ -255,7 +253,6 @@
                 }
 
                 if (docFlag==false) {
-                    console.log("docCat 3="+docCat);
                     $("#" + docCat).append('<h4>There are no documents in this library</h4>');
                 }
             }
@@ -292,6 +289,120 @@ function viewDoc(list,docID,docName,docType){
 */
     $('#docViewer').prop('src',listURL+'/'+list+'/'+docName+'?web=1&action=view');
 }
+
+function openDoc(list,docName,docType,id){
+    var listURL = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
+    var relURL = "/"+siteURL.split('/')[3]+"/"+siteURL.split('/')[4]+"/"+siteURL.split('/')[5]+"/"+list+"/"+docName;
+    var docLink = "";
+    //var docRelURL = replace("/","%2F");
+
+    //console.log(docRelURL);
+    //console.log(listURL+" "+relURL);
+/*
+    switch (docType) {
+        case 'pdf':
+            docLink=listURL + "/Forms/AllItems.aspx?id=%2Fsites%2FCHDA%2Fknowledge%2FDocuments%2FSPO%20Development%20Decision%20Tree%2Epdf&parent=%2Fsites%2FCHDA%2Fknowledge%2FDocuments";
+            "
+            break;
+        case 'doc':
+        case 'docx':
+            icon = wordIcon;
+            break;
+        case 'xls':
+        case 'xlsx':
+        case 'xlsm':
+            icon = xlIcon;
+            break;
+        case 'ppt':
+        case 'pptx':
+            icon = ppIcon;
+            break;
+        case 'xsn':
+            icon = docIcon;
+            break;
+        case 'msg':
+            icon = emailIcon;
+            break;
+        case 'zip':
+        case 'rar':
+            icon = zipIcon;
+            break;
+        default:
+            icon = docIcon;
+            break;
+    }
+*/
+    //PDF link
+    //https://maximusukdev.sharepoint.com/sites/CHDA/knowledge/Documents/Forms/AllItems.aspx?id=%2Fsites%2FCHDA%2Fknowledge%2FDocuments%2FSPO%20Development%20Decision%20Tree%2Epdf&parent=%2Fsites%2FCHDA%2Fknowledge%2FDocuments
+
+    $.ajax({ 
+        url:  listURL + "/_api/web/GetFileByServerRelativeUrl('"+relURL+"')",
+        method: "GET",
+        async: false,
+        contentType: "application/json; odata=verbose",
+        headers: { 
+            "Accept": "application/json; odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val()
+        },
+        success: function (data) {
+            //console.log(data);
+            var docGUID=data.d.UniqueId;            
+            var linkURL=data.d.LinkingUrl;
+            var docTitle = data.d.Title;
+
+           if (linkURL) {
+                // can open with office web apps
+                var owaurl = listURL + "/_layouts/15/Doc.aspx?sourcedoc={" + docGUID + "}&file=" + encodeURIComponent(docTitle) + "&action=view";                   
+                window.open(owaurl);
+            } else {                
+                // can not open with office web apps (ex:txt)
+                alert('not a supported Office 365 document')
+            }
+        },
+        error: function (data, errorCode, errorMessage) {
+        // error
+        }
+    });
+}
+
+function editDoc(list,docName){
+    var listURL = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
+    var relURL = "/"+siteURL.split('/')[3]+"/"+siteURL.split('/')[4]+"/"+siteURL.split('/')[5]+"/"+list+"/"+docName;
+    //console.log(listURL+" "+relURL);
+
+    //PDF link
+    //https://maximusukdev.sharepoint.com/sites/CHDA/knowledge/Documents/Forms/AllItems.aspx?id=%2Fsites%2FCHDA%2Fknowledge%2FDocuments%2FSPO%20Development%20Decision%20Tree%2Epdf&parent=%2Fsites%2FCHDA%2Fknowledge%2FDocuments
+
+    $.ajax({ 
+        url:  listURL + "/_api/web/GetFileByServerRelativeUrl('"+relURL+"')",
+        method: "GET",
+        async: false,
+        contentType: "application/json; odata=verbose",
+        headers: { 
+            "Accept": "application/json; odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val()
+        },
+        success: function (data) {
+            //console.log(data);
+            var docGUID=data.d.UniqueId;            
+            var linkURL=data.d.LinkingUrl;
+            var docTitle = data.d.Title;
+
+           if (linkURL) {
+                // can open with office web apps
+                var owaurl = listURL + "/_layouts/15/Doc.aspx?sourcedoc={" + docGUID + "}&file=" + encodeURIComponent(docTitle) + "&action=default";                   
+                window.open(owaurl);
+            } else {                
+                // can not open with office web apps (ex:txt)
+                alert('not a supported Office 365 document')
+            }
+        },
+        error: function (data, errorCode, errorMessage) {
+        // error
+        }
+    });
+}
+
 
 function getDocTabs(){
     var inc =0;

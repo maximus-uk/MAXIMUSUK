@@ -3,7 +3,7 @@
      Page   	: Any for UK Business Units Front Door area
      Author 	: Jason Clark
      Date   	: Feb 2019
-     Purpose	: Master CSS file for Custom Master page [company].master 
+     Purpose	: Master CSS file for Custom Master page [company].master - Contains no branding colours just positioning and font CSS
     
      Modified By: 
      Date		: 
@@ -14,36 +14,6 @@
      Notes		:
 
     ************************************************** */
-    /***** Brand Colours & Fonts *****/
-    :root {
-        --PrimaryDark: #545487;
-        --PrimaryMid: #7676b8;
-        --PrimaryLight: #dbdcf4;
-        --SecondaryDark1: #4f7b39;
-        --SecondaryMid1: #9cc487;
-        --SecondaryLight1: #d9eccd;
-        --SecondaryDark2: #c95828;
-        --SecondaryMid2: #f9ad86;
-        --SecondaryLight2: #fae8d6;
-        --SecondaryDark3: #036e62;
-        --SecondaryMid3: #66bbb0;
-        --SecondaryLight3: #cee4e1;
-        --SecondaryDark4: #878a8f;
-        --SecondaryMid4: #b2b2b2;
-        --SecondaryLight4: #e2e1df;    
-        --AccentDark1: #205794;
-        --AccentMid1: #6e96cf;
-        --AccentLight1: #e5eaf6;
-        --AccentDark2:#8a742e;
-        --AccentMid2:#ddcc68;
-        --AccentLight2:#f2e5b6;
-        --AccentDark3:#5f295f;
-        --AccentMid3:#cfaccc;
-        --AccentLight3:#f2ddec;
-        --TextColour: black;
-        --ForeColour: white;
-        --UsefulLinkBG: lightgrey;
-    } 
     
     @font-face {
         font-family: Avenir;
@@ -54,7 +24,7 @@
     @font-face {
         font-family: Avenir;
         font-weight: bolder;
-        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Heavy.oft") format("opentype");
+        src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Heavy.otf") format("opentype");
     }
 
     @font-face {
@@ -67,7 +37,8 @@
         font-family: Avenir;
         src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Light.otf") format("opentype");
     }
-/*    
+
+   
     @font-face {
         font-family: Avenir;
         src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Roman.otf") format("opentype");
@@ -77,7 +48,7 @@
         font-family: Avenir;
         src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Book.otf") format("opentype");
     }
-*/    
+   
     @font-face {
         font-family: FS ME;  
         font-weight: bolder;
@@ -106,12 +77,14 @@
         height: 100%;
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         overflow: hidden !important;
+        font-size: 1em;
+        font-weight: normal;
+        text-decoration: none;
+        white-space: normal;
+        word-break: normal;
+        line-height: normal;
     }
-    
-    body {
-        min-height: 100%;
-    }
-    
+        
     /*****************************/
     /***** Page Header Start *****/
     /*****************************/
@@ -139,6 +112,10 @@
         width: 100%;
         /*border: none;*/
         z-index: 9999 !important;
+    }
+
+    .s4-ribbonrowhidetitle {
+        display: none;
     }
     
     .headerLeftContainer, .headerRightContainer {
@@ -174,7 +151,8 @@
         position: absolute;
         font-weight: bold !important;
         text-align: left;
-        left: 30px;
+        left: 15px;
+        top:32px;
         margin: 0 !important;
         z-index: 15 !important;
         font-size: .9em;
@@ -183,7 +161,10 @@
         .pageTitle h1 {
             font-size: 1.5em !important;
         }
-    
+
+    /***********************************/
+    /****** Top Navigation Section *****/
+    /***********************************/            
     .nav-section {
         position: absolute;
         left: 195px;
@@ -200,7 +181,7 @@
     }
     
     .navbar-collapse, .collapse.navbar-collapse {
-        position: relative;
+        position: absolute;
         top: 0;
         left: 0;
         padding: 0;
@@ -211,121 +192,38 @@
         left: 150px;
     }
     
-    .nav > li > a {
+    .nav .nav-link {
         padding: 5px;
     }
-    
-    .nav-tabs > li > a {
-        color: var(--PrimaryDark);
-        line-height: .8;
-        border-bottom: none;
-        border-radius: 0;
-    }
-    
-        .nav-tabs .nav-link:hover {
-            border-top: 0;
-            border-left: 0;
-            border-right: 0;
-            background-color: transparent;
-            border-bottom:5px solid var(--PrimaryMid);
-        }
 
-    .nav-tabs .nav-link:active{border-bottom:5px solid var(--PrimaryDark);}
-    
-    .nav-tabs .nav-link.active,
-    .nav-tabs > li.active > a:hover,
-    .nav-tabs > li.active > a:focus {
-        cursor: pointer;
-        background-color: transparent;
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-radius: 3px;
-    }
-    
-    .nav-tabs > li {
-        width: auto;
-    }
-    
-    .nav-pills .nav-link {
-        border-radius: 10px;
-    }
-    
-        .nav-pills > .nav-link:hover, .nav-pills .nav-link.active:hover {
-            border-radius: 10px;
-        }
-    
-    .nav-pills .nav-link.active,
-    .nav-pills .nav-link.active:focus {
-        border: none;
-        text-decoration: none;
-        color:white;
-        background-color:var(--PrimaryMid);
-    }    
-
-    /*
-    .teamSelected {
-        color: white !important;
-        background-color: #ddddeb !important;
-        padding: 0 0 2px 0;
-        border-radius: 10px !important;
-        border: .5px solid #545487;
-        height: 26px;
-    }
-    
-        .teamSelected:hover {
-            padding: 0 0 2px 0;
-            color: white !important;
-            background-color: #7676b8 !important;
-            border-radius: 10px 10px 0 0 !important;
-        }
-    */
-    
-        .ms-core-listMenu-horizontalBox .ms-core-listMenu-item {
-            left: 0 !important;
-        }
-    
-       /* .ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
-            margin-right: 5px;
-            padding: 0;
-        }*/
-    
-            .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
-                padding: 2px 0 2px 13px;
-                font-size: 1em !important;
-                font-weight: bold;
-                text-transform: capitalize;
-                /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
-                width: 100%;
-            }
-    
-                .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover {
-                    padding: 2px 0 2px 14px;
-                    border-radius: 10px 10px 0 0 !important;
-                    width: 85%!important;
-                }
-    
-            .ms-core-listMenu-horizontalBox li.selected a.selected {
-                padding: 2px 0 2px 13px;
-                border-radius: 10px !important;
-                width: 85%;
-            }
-    
-                .ms-core-listMenu-horizontalBox li.selected a.selected:hover {
-                    padding: 2px 0 2px 13px;
-                    border-radius: 10px 10px 0 0 !important;
-                    width: 85%!important;
-                }
-    
-    /*.ms-navedit-flyoutArrow{
-                    background-image:none;
-                    float:right;
-                }
-    
-                .additional-background .ms-navedit-flyoutArrow .dynamic-children:after {
-                    font-family: FontAwesome;
-                    content:"\f107";          
-                }*/
+    /***** Custom SharePoint Navigation menu *****/             
+     .ms-core-listMenu-horizontalBox .ms-core-listMenu-item {
+         left: 0 !important;
+     }
+     
+         .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+             padding: 2px 0 2px 13px;
+             font-size: 1em !important;
+             font-weight: bold;
+             text-transform: capitalize;
+         }
+ 
+             .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover {
+                 padding: 2px 0 3px 14px;
+                 border-radius: 10px 10px 0 0 !important;
+             }
+ 
+         .ms-core-listMenu-horizontalBox li.selected a.selected {
+             padding: 2px 0 2px 13px;
+             border-radius: 10px !important;
+             width: 85%;
+         }
+ 
+             .ms-core-listMenu-horizontalBox li.selected a.selected:hover {
+                 padding: 2px 0 2px 13px;
+                 border-radius: 10px 10px 0 0 !important;
+                 width: 85%;
+             }
     
     /***** Custom Bootstrap Nav menu *****/
     #custom-bootstrap-menu {
@@ -343,7 +241,6 @@
             #custom-bootstrap-menu ul a {
                 text-decoration: none;
                 vertical-align: middle;
-                width: 85%;
                 text-align: center;
                 /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
             }
@@ -351,8 +248,8 @@
             #custom-bootstrap-menu ul.dynamic {
                 border-radius: 0 10px 10px 10px;
                 vertical-align: middle;
-                min-width: 200px !important;
-                max-width: 200% !important;
+                min-width: 220px !important;
+                max-width: 250px !important;
                 left: 0 !important;
                 padding: 4px;
                 margin: -1px 0 0 0;
@@ -370,6 +267,7 @@
                         opacity: 1;
                         visibility: visible;
                         border-radius: 0;
+												width:95%;
                     }
     
             #custom-bootstrap-menu ul li {
@@ -381,12 +279,14 @@
                 #custom-bootstrap-menu ul li a {
                     text-align: left;
                 }
+                    #custom-bootstrap-menu ul li a:focus{
+                        border-radius: 10px!important;
+                    }    
     
                     #custom-bootstrap-menu ul li a:hover,
                     #custom-bootstrap-menu ul li a:focus {
-                        width: 100%;
+                        width: 85%;
                         text-decoration: none;
-                        border-radius: 0;
                     }
     
                 #custom-bootstrap-menu ul li.selected:hover {
@@ -410,21 +310,21 @@
             visibility: hidden;
             transition: opacity .35s ease;
             -webkit-transition: opacity .35s ease;
+						width:250px;
         }
-            #custom-bootstrap-menu ul ul li a {
-                text-decoration: none;
-                vertical-align: middle;
-                width: 100%;
-                /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
-            }
-    
             #custom-bootstrap-menu ul ul li {
                 float: none;
             }
+	            #custom-bootstrap-menu ul ul li a {
+	                text-decoration: none;
+	                vertical-align: middle;
+	                width: 100%;
+	            }
     
             #custom-bootstrap-menu ul ul ul {
                 top: 0%;
                 left: 150%;
+								width:250px;
             }
     
             #custom-bootstrap-menu ul ul li:hover > ul {
@@ -544,9 +444,6 @@
 
     /***** Site Actions Cog *****/
     .siteActions {
-      /*  font-family: 'Font Awesome 5 Free';
-        content: "\f013";
-        font-weight: 900;*/
         font-size: 1rem;  
         position: relative;
         top: -1px !important;
@@ -590,7 +487,6 @@
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 20px !important;
         font-weight: bold;
-        /*text-shadow: .2em .2em .3px #545487 !important;*/
     }
     
     h3 {
@@ -616,21 +512,16 @@
     
     h6, p {
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
-        font-size: 12px !important;
+        font-size: 13px !important;
         font-weight: 700;
         text-shadow: none !important;
     }
 
-    h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, p > a, a {
+    h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, p > a, a, a:focus, a:hover {
         text-decoration: none;
     }
 
-    h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {background-color:var(--PrimaryMid); color:white!important; border-radius:5px; padding:3px 0 3px 0}
-    h1 > a .active, h2 > a .active, h3 > a .active, h4 > a .active, h5 > a .active, h6 > a .active {background-color:var(--PrimaryDark); color:white!important}
-
-    .navbar-search ul > li > a {
-        color: black !important;
-    } 
+    h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {border-radius:5px; padding:3px 0 3px 0;text-decoration: none;}
     
     /* Focus on Content button */
     Span#fullscreenmodebox {
@@ -642,9 +533,19 @@
     /***************************/
     /***** Page Body Start *****/
     /***************************/
-    .msgBannerAdjust {
-        margin-top: -40px;
+    body {
+        min-height: 100%;
+        padding-top: 0;
+        line-height: 1.40;
+        margin: 0;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        text-decoration: none !important;
     }
+
+    /*.msgBannerAdjust {
+        margin-top: -40px;
+    }*/
     
     .mainContainer {
         position: fixed;
@@ -669,11 +570,13 @@
         top: 70vh;
         opacity: 0.15;
     }
+
+    .hidden{display:none;}
         
     /*************************************/
     /***** Important Messages ticker *****/
     /*************************************/
-    .notifications {
+    /*.notifications {
         position: fixed;
         z-index: 15;
         width: 95.9%;
@@ -714,7 +617,7 @@
     .ti_news {
         float: left;
         font-weight: 500;
-    }
+    }*/
     
     /*
     #stop-resume {
@@ -740,15 +643,15 @@
     /****************************/
     .pageLeftContainer {
         position: relative !important;
-        top: 45px;
+        /*top: 45px;*/
         flex: 0 0 97%;
         max-width: 97%;
-        height:87vh;
-        max-height:87vh;
+        min-height:60vh;
+        height:89vh;
         overflow-y:auto;
         overflow-x:hidden;
         z-index: 1 !important;
-    }   
+    }  
 
         /* Webkit Browser Scrollbar */
         .pageLeftContainer::-webkit-scrollbar {
@@ -764,8 +667,27 @@
         /* Handle */
         .pageLeftContainer::-webkit-scrollbar-thumb {
             border-radius: 5px;
-            background:var(--PrimaryMid);
         }
+
+    /***** Page Content Loader *****/
+    .pageLoader {
+        position: relative;
+        top: 30%;
+        left: 40%;
+    }
+        .pageLoader .loader {
+            border-radius: 70%;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            position: relative;
+            left: 50px;
+        }
+
+    .collapsing {
+        width: 100%;
+    }
 
     /* bootstrap 4 slideshow Carousel Customization */   
     .carousel {border-radius:20px;height: 50% !important;}
@@ -778,49 +700,120 @@
         font-size:1.3em!important;
     }
     .carousel-caption h4 {font-size:3rem!important}   
-    .carousel-caption span {font-size:1.3em}
+    .carousel-caption h5 span {font-size:1.3rem!important}
     
     .fill {
         width: 100%;
         min-height: 100px !important;
         background-position: center;
         background-size: cover;
-    }    
+    }  
+		  
+    /* nav tabs & pills customisation */
+    .nav-tabs .nav-link {
+        line-height: .8;
+        border-bottom: none;
+        border-radius: 0;
+    }
+    
+        .nav-tabs .nav-link:hover {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-bottom:5px solid var(--PrimaryMid);
+        }
+    .nav-tabs .nav-link:active{border-bottom:5px solid var(--PrimaryDark);}
+    
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-link:hover,
+    .nav-tabs .nav-link:focus {
+        cursor: pointer;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 3px;
+    }
+    
+    .nav-tabs > li {
+        width: auto;
+    }
+    
+    .nav-pills .nav-link {
+        border-radius: 10px;
+				margin:0 4px 3px 4px;
+    }
+    
+        .nav-pills > .nav-link:hover, .nav-pills .nav-link.active:hover {
+            border-radius: 10px;
+        }
+    
+    .nav-pills .nav-link.active,
+    .nav-pills .nav-link.active:focus {
+        border: none;
+        text-decoration: none;
+				margin:0 4px;
+    }  
 
-    /* Sidebar app container */     
+    /*******************************/
+    /**** Sidebar app container ****/     
+    /*******************************/
+    .restricted {
+        opacity: 0.8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 56%;
+        height: 100%;
+        z-index: 99 !important;
+    }    
+        .restricted:before {
+            position: absolute;
+            top: -5%;
+            left: 15%;
+            opacity: 0.8;
+            font-family: 'Font Awesome 5 Free';
+            font-size: 15em;
+            content: "\e090";
+        }
+
+    .appContainer{
+        position:absolute;
+        top:340px;
+        width:320px;
+        margin-left:0;
+        overflow-x:hidden;
+    }
+
+    .sidebar {
+        margin-top: 0;
+    }
+        .sidebar ul {
+            border-radius: 3px;
+            padding: 5px;
+            list-style: none;
+        }
+            .sidebar ul li ul {
+                border: 0 !important;
+            }
+										    
     #slider{top:100px!important; right:0; height: 100%!important; width:35vw!important; transition: all 300ms ease 0s;z-index:100}
     #trigger {
-        background-color: #ddddeb;                
         padding: 5px 0 0 10px;                
         position: absolute;
         top: 10px;
         left:-86px;
         width: 75px;
         cursor: pointer;
-        border:1px solid #7676b8;
         border-radius:10px 0 0 10px;
-        box-shadow: -4px 2px 5px 2px #666;
-        color:#545487;
         z-index: 1002;
         font-weight:bold;
     }
-        #trigger:hover{background-color:#7676b8;color:white} 
       
-    .sidebar .appContent {border:3px solid #7676b8;position:relative;top:3px;background-color:#fff;height:84vh;width:63%;padding:5px 5px 0 5px}
-    .sidebar .appTabs {height:84vh;padding-top:3px;margin-top:3px;border:2px solid #7676b8;box-shadow: -5px 5px 10px 3px #666;z-index:9999;position:relative;background-color:white;}
-    .sidebar .appTabs .nav-link {color:#545487}
-    .sidebar .appTabs .nav-link:hover{background-color:#7676b8;color:white!important}
-    .sidebar .nav-pills .nav-link.active{background-color:#545487;color:white}
+    .sidebar .appContent {position:relative;top:3px;height:84vh;width:63%;padding:5px 5px 0 5px}
+    .sidebar .appTabs {height:84vh;padding-top:3px;margin-top:3px;z-index:9999;position:relative;}
     .scrollbar{overflow-y:scroll;overflow-x:hidden;height:100%}
-    .scrollbar::-webkit-scrollbar{background-color:#ddddeb}
-    .scrollbar::-webkit-scrollbar-track{background-color:#ddddeb}
-    .scrollbar::-webkit-scrollbar-thumb{background-color:#7676b8}
     .usefulLinks .card{margin-bottom:5px}
-    .usefulLinks .card-header{background-color:#ddddeb;border:2px solid #7676b8; border-radius:10px 10px 0 0; box-shadow: 1px 2px 5px #666;text-decoration: none}
-    .usefulLinks .card-header:hover{background-color:#7676b8;}
-    .usefulLinks .card-header:hover .card-link{color:white!important}
-    .usefulLinks .card-header .card-link{color:#545487!important}
-    .usefulLinks .card-body{border:1px solid #7676b8;background:none; color:#545487}
+    .usefulLinks .card-header{border-radius:10px 10px 0 0;text-decoration: none}
     .metrotiles {left:10px;position:relative}
 
     .faqCategory, .faqData{height:69vh;}
@@ -829,51 +822,15 @@
         top:50vh;
         padding:0 0 0 15px; 
     }
-    #faqQuestion{margin:0}
+    #faqQuestion{margin:0;}
     .faqNewQuestion a {margin-top: 5px;}
-    .qText{margin:0}
-    #faqCategory{padding:0}
-    #faqQuestionText{resize:none;width:95%}
-
-    /*******************************/
-    /******* MiddleContainer *******/
-    /*******************************/
-    /*.pageMiddleContainer {
-        position: relative !important;
-        display:flex;
-        top:40px;
-        left:1%;
-        flex: 0 0 23%;
-        max-width: 320px;  
-        z-index: 10 !important;
-        overflow: hidden;
-        padding:0;
-        margin:0 20px 0 0;
-    }*/
-
-    .appContainer{
-        position:absolute;
-        top:340px;
-        width:320px;
-        margin-left:0;
-        overflow-x:hidden;
-    }    
-
-    /**************************/
-    /****** Useful Links ******/
-    /**************************/
-    /*.pageRightContainer {
-        position: relative !important;
-        top: 40px;
-        left:0.5%;
-        flex: 0 0 14%;
-        max-width: 220px;
-        height:90vh;
-        z-index: 10;
-        margin: 0;
-        padding: 0;
-    }*/
-    
+    .qText{margin:0;}
+    #faqCategory{padding:0;}
+    #faqQuestionText{resize:none;width:95%;}
+  
+    /******************************/
+    /****** Useful Links app ******/
+    /******************************/
     .usefulLinksSection {
         position: relative !important;
         height: 100%;
@@ -892,7 +849,7 @@
     }
     
         /*.linkContainer .card {
-            width: 220px
+            width: 220px;
         }*/
     
         .linkContainer::-webkit-scrollbar {
@@ -999,6 +956,7 @@
     /**********************************/
     /***** Page Other Parts Start *****/
     /**********************************/
+    /*.item, .active  {height: auto;} */ 
     
     .ms-webpartPage-root {
         border-spacing: 0px !important;
@@ -1360,7 +1318,7 @@
         }
     
         .welcomeText {
-            font-size: .9em
+            font-size: .9em;
         }
     }
     
@@ -1389,9 +1347,9 @@
         /*.pageLeftContainer {
             flex: 0 0 57%;
             max-width: 65%;
-        }*/
+        }
     
-        /*.pageRightContainer {
+        .pageRightContainer {
             left:3%;
             max-width: 15%;
             height:80vh;
@@ -1411,9 +1369,9 @@
         /*.pageLeftContainer {
             flex: 0 0 57.6%;
             max-width: 65%;
-        }*/
+        }
     
-        /*.pageRightContainer {
+        .pageRightContainer {
             max-width: 16%;
         }*/
 
@@ -1428,9 +1386,10 @@
             flex: 0 0 59.7%;
             max-width: 65%;
             max-height: 82vh;
-        }*/
+        }
 
-        /*.pageMiddleContainer{max-width: 23%;flex:0 0 21%;}*/
+        .pageMiddleContainer{max-width: 23%;flex:0 0 21%;}
+				*/
         
         .adminTools {
             left: 69%;
@@ -1442,9 +1401,9 @@
         /*.pageLeftContainer {
             flex: 0 0 60%;
             max-width: 65%;
-        }*/
+        }
     
-        /*.pageRightContainer {
+        .pageRightContainer {
             left:0.5%;
             flex: 0 0 14%;
             max-width: 14%;
@@ -1460,9 +1419,9 @@
         /*.pageLeftContainer {
             flex: 0 0 63.5%;
             max-width: 65%;
-        }*/
+        }
     
-        /*.pageRightContainer {
+        .pageRightContainer {
             left:0.5%;
             flex: 0 0 14%;
             max-width: 14%;
@@ -1494,7 +1453,6 @@
     }
     
     @media screen and (min-width: 2000px) and (max-width:2099px) {
-
         
         /****************************/
         /******* Page Content *******/
