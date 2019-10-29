@@ -272,13 +272,13 @@ a, .ms-link:visited {
 }
 
     .ms-welcome-root > .ms-core-menu-box.ms-core-menu-box, .ms-siteactions-hover > .ms-core-menu-box.ms-core-menu-box {
-        box-shadow: 3px 3px 6px -4px rgba(0,0,0,0.3),-3px 3px 6px -4px rgba(0,0,0,0.3);
+        box-shadow: 3px 3px 6px -2px rgba(0,0,0,0.9),-3px 3px 6px -4px rgba(0,0,0,0.3);
         border-top: 0px solid transparent;
     }
 
-    .ms-core-suiteLink > .ms-core-menu-box, .ms-core-suiteLink > .ms-core-menu-boxBig, .ms-siteactions-hover > .ms-core-menu-box, .ms-siteactions-hover > .ms-core-menu-boxBig, .ms-welcome-root > .ms-core-menu-box, .ms-welcome-root > .ms-core-menu-boxBig {
+/*    .ms-core-suiteLink > .ms-core-menu-box, .ms-core-suiteLink > .ms-core-menu-boxBig, .ms-siteactions-hover > .ms-core-menu-box, .ms-siteactions-hover > .ms-core-menu-boxBig, .ms-welcome-root > .ms-core-menu-box, .ms-welcome-root > .ms-core-menu-boxBig {
         padding-top: 24px;
-    }
+    }*/
 
 /*
 #ms-help {

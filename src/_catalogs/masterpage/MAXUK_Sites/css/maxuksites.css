@@ -461,7 +461,8 @@
     }
     
     .ms-core-menu-box, .ms-core-menu-root {
-        width: 180px !important
+        width: 180px !important;
+        top: 45px!important;
     }
     
         .ms-core-menu-box .ms-core-defaultFont .ms-shadow {
