@@ -16,7 +16,7 @@
     var method = "GetListItems";
     var listURL = siteURL.split("sites/")[0]+"sites/"+siteURL.split("/")[4] + "/knowledge/";
     
-    for (var count = 0; count <= library.length; count++) {
+    for (var count = 0; count < library.length; count++) {
         var list = library[count];
         var docCount = 0;
         var docFlag = false;
@@ -423,8 +423,8 @@ function getDocTabs(){
     var termStore = termStores.getByName("Taxonomy_HF+Tg/S5P5zRiGE5lqCPEw==");
     
     //GUID of Term Set from which to get the Terms.
-    var termSet = termStore.getTermSet("65bde35b-d397-4de0-b69f-829df04dd9ce");
-    var parentTerm = termSet.getTerm('1e4b7e55-bfdb-4cb9-af87-fd068f3645b0');
+    var termSet = termStore.getTermSet("65bde35b-d397-4de0-b69f-829df04dd9ce"); // *** Knowledge Library
+    var parentTerm = termSet.getTerm('1e4b7e55-bfdb-4cb9-af87-fd068f3645b0'); // *** Documents set
     var terms = parentTerm.get_terms();
     
     context.load(terms);

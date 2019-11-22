@@ -1,161 +1,72 @@
-﻿<%@ Register TagPrefix="WpNs0" Namespace="Microsoft.SharePoint.Portal.WebControls" Assembly="Microsoft.SharePoint.Portal, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
-<%@ Assembly Name="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
-<%@ Page Language="C#" Inherits="Microsoft.SharePoint.WebPartPages.WikiEditPage" MasterPageFile="~masterurl/custom.master"      MainContentID="PlaceHolderMain" meta:progid="SharePoint.WebPartPage.Document" %>
-<%@ Import Namespace="Microsoft.SharePoint.WebPartPages" %>
-<%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+﻿<%@ Page Language="C#" masterpagefile="../_catalogs/masterpage/maxuk_sites/maxuk.master" inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" meta:progid="SharePoint.WebPartPage.Document" %>
+<%@ Register tagprefix="SharePoint" namespace="Microsoft.SharePoint.WebControls" assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+
+<%-- **************************************************
+     Site   	: MAXIMUS UK Intranet
+     Page   	: Home
+     Author 	: Jason Clark     
+     Date   	: March 2019
+     Notes		: Updated page to work on SPO and Bootstrap 4
+          
+     Modified By: 
+     Date		: 
+     Notes		: 
+     ************************************************** --%>
+
+<%@ Register TagPrefix="WpNs2" Namespace="Microsoft.SharePoint.Publishing.WebControls" Assembly="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="WpNs1" Namespace="Microsoft.SharePoint.Portal.WebControls" Assembly="Microsoft.SharePoint.Portal, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="WpNs0" Namespace="Microsoft.Office.Server.Search.WebControls" Assembly="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+
+<%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Import Namespace="Microsoft.SharePoint" %>
-<%@ Assembly Name="Microsoft.Web.CommandUI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Assembly Name="Microsoft.Web.CommandUI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 
-<asp:Content ContentPlaceHolderId="PlaceHolderAdditionalPageHead" runat="server">
-	<style>
-		#suiteBarTop, #s4-ribbonrow{display:none}
-	</style>
-</asp:Content>
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="PlaceHolderAdditionalPageHead">
 
-<asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
+    <!-- STYLES -->
+    <style type="text/css">
 
-	<div class="row sectionTitles">
-		<div class="col-7 ml-4">
-			<div class="row float-left pb-2">
-				<h3 class="ml-2">Today's News</h3>
-			</div>
-		</div>
-		<div class="col-4">
-			<div class="row float-left pb-2">
-				<h3 class="ml-4">Access your business unit intranet</h3>
-			</div>
-		</div>			
-	</div>	
-
-
-	<div class="row">	
-		<!-- ***** Slideshow ***** -->
-		<div class="col-7 ml-2">		
-			<div class="carousel slide" id="slideshowApp" data-ride="carousel">                                   
-				<div class="carousel-inner">
-					<div id="slideItems"></div>
-					<ul class="carousel-indicators" id="indicators"></ul>                                       
-					<a class="carousel-control-prev" href="#slideshowApp" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#slideshowApp" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>                                                                                                 
-				</div>	
-			</div>
-		</div>
-
-		<!-- ***** Company Logos ***** -->
-		<div class="col-4">
-			<section class="p-0" id="portfolio">
-				<div class="container-fluid p-0">
-					<div class="row no-gutters">
-
-						<div class="logoContainer CHDA">	
-							<a class="portfolio-box" href="/sites/chda" target="_blank">
-								<div class="borders">
-										<img class="img-fluid" src="/publishingimages/logos/chda_logo.png" alt="" />
-								</div>									
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											CHDA Intranet
-										</div>
-									</div>
-								</div>
-							</a>							
-						</div>		
-
-						<div class="logoContainer HML">
-							<a class="portfolio-box" href="/sites/HML" target="_blank">
-								<div class="borders">
-									<img class="img-fluid" src="/publishingimages/logos/hml_logo.png" alt="" />
-								</div>
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											HML Intranet
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="logoContainer MPS">
-							<a class="portfolio-box" href="/sites/mps" target="_blank">
-								<div class="borders">
-									<img class="img-fluid" src="/publishingimages/logos/mps_logo.png" alt="" />
-								</div>
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											MPS Intranet
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>						
-					</div>
-
-					<div class="row no-gutters">	
-						<div class="logoContainer Remploy">
-							<a class="portfolio-box" href="/sites/remploy" target="_blank">
-								<div class="borders">
-									<img class="img-fluid" src="/publishingimages/logos/remploy_logo.png" alt="" />
-								</div>
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											Remploy Intranet
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="logoContainer Revitalise">
-							<a class="portfolio-box" href="/sites/revitalise" target="_blank">
-								<div class="borders">
-									<img class="img-fluid revitalisedLogo" src="/publishingimages/logos/revitalised_logo.png" alt="" />
-								</div>
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											Revitalised Intranet
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="logoContainer MaxUK">
-							<a class="portfolio-box" href="/sites/maxuk" target="_blank">
-								<div class="borders">								
-									<img class="img-fluid" src="/publishingimages/logos/maximus_logo.png" alt="" />
-								</div>
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											MAXIMUS UK Intranet
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>						
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
-
-	<!-- SCRIPTS --> 
-	<script src="/Style%20Library/maxuk/js/maxukSlider.js" type="text/javascript"></script>	   
-	<script type="text/javascript"> 		
-		
-	</script>
+    </style> 
 
 </asp:Content>
+
+<%-- ***** For content to be added to the left container ***** --%>
+<asp:Content ContentPlaceHolderID="PlaceHolderPageContent" runat="server"> 
+    <div id="thisContent">
+    </div>
+</asp:Content>
+
+<%-- ***** For code to be added at the end of the page body ***** --%>
+<asp:Content ContentPlaceHolderID="PlaceHolderPageCode" runat="server">  
+
+    <!-- SCRIPTS -->    
+    <script type="text/javascript" src="/Style%20Library/maxuk/js/siteSlider.js"></script>    
+    <script type="text/javascript"> 	            
+
+        $(function(){
+            $('#slideshow').append('<div class="carousel slide" id="slideshowApp" data-ride="carousel">' +                                    
+                                '<div class="carousel-inner">' +
+                                    '<div id="slideItems"></div>'+
+                                    '<ul class="carousel-indicators" id="indicators">'+
+                                    '</ul>'+                                       
+                                    '<a class="carousel-control-prev" href="#slideshowApp" role="button" data-slide="prev">'+
+                                        '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'+
+                                        '<span class="sr-only">Previous</span>'+
+                                    '</a>'+
+                                    '<a class="carousel-control-next" href="#slideshowApp" role="button" data-slide="next">'+
+                                        '<span class="carousel-control-next-icon" aria-hidden="true"></span>'+
+                                        '<span class="sr-only">Next</span>'+
+                                    '</a>'+                                                                                                  
+                                '</div>'+	
+                            '</div>');            
+
+            getSlideData();
+        });
+        
+        $(window).on('load',function () {           					 	                 	
+        });
+
+    </script>
+</asp:Content>                      
