@@ -76,7 +76,7 @@ function getSlideData() {
                                                 '<img src="'+slideImage+'" alt="'+slideName+'">' +
                                                 '<div class="carousel-caption">' +
                                                     '<h4 class="display-4 text-white font-weight-bolder">'+slideTitle+'</h4>' +
-                                                    '<span>'+slideHeadline+'</span>' +
+                                                    '<h5 class="display-3 text-white font-weight-bolder">'+slideHeadline+'</h5>' +
                                                 '</div>' +
                                                 '</a>' +                                        
                                                 '</div>');
@@ -89,7 +89,7 @@ function getSlideData() {
                                                 '<img src="'+slideImage+'" alt="'+slideName+'">' +
                                                 '<div class="carousel-caption">' +
                                                     '<h4 class="display-4 text-white font-weight-bolder">'+slideTitle+'</h4>' +
-                                                    '<span>'+slideHeadline+'</span>' +
+                                                    '<h5 class="display-3 text-white font-weight-bolder">'+slideHeadline+'</h5>' +
                                                 '</div>' +
                                                 '</a>' +                                        
                                                 '</div>');
@@ -140,7 +140,7 @@ function getTempSlides(slideID) {
                     '<img src="'+tempImage+'" alt="'+tempName+'">' +
                     '<div class="carousel-caption">' +
                         '<h4 class="display-4 text-white font-weight-bolder">'+tempTitle+'</h4>' +
-                        '<p>'+tempHeadline+'</p>' +
+                        '<h5>'+tempHeadline+'</h5>' +
                     '</div>' +
                     '</a>' +                                        
                     '</div>');

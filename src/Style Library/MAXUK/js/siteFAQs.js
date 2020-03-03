@@ -1,7 +1,7 @@
 ﻿var categories = [];
 var tabNum = [];
 
-function getTabs(siteURL) {
+function getFAQTabs(siteURL) {
 
     var method = "GetList";
     var url = siteURL + "/";
@@ -28,28 +28,28 @@ function getTabs(siteURL) {
     if (categories.length === 0) {
         $("#tabData").append('There currently are no FAQs to display');
     } else {
-        for (var i = 1; i <= categories.length; i++) {
+        for (var i = 0; i < categories.length; i++) {
 
-            if (i === 1) {
-                $("#tabNames").append("<li class='nav-item'>" +
-                    "<a class='nav-link active' data-toggle='pill' href='#tab0' role='tab'>" + categories[0] + "</a>" +
-                    "</li>");
-                $("#tabData").append("<div id='tab0' class='tab-pane fade show active' role='tabpanel'>" +
-                    "<div class='row' style='margin-bottom: 10px;' id='faq0'>" +
-                    "<div id='C0' class='card'>" +
+            if (i === 0) {
+                $("#tabNames").append(
+                    "<a class='nav-link active show' data-toggle='tab' href='#faqtab"+i+"' role='tab'>" + categories[0] + "</a>");
+                    //"<li class='nav-item'>" +"</li>");
+                $("#tabData").append("<div id='faqtab"+i+"' class='tab-pane fade active show faqAnswersAccordion' role='tabpanel'>" +
+                    "<div class='row' style='margin-bottom: 10px;' id='faq"+i+"'>" +
+                    "<div id='C"+i+"' class='card'>" +
                     "</div>" +
                     "</div>" +
                     "</div>");
             }
 
-            if (i >= 2) {
-                var x = i - 1;
-                $("#tabNames").append("<li class='nav-item'>" +
-                    "<a class='nav-link' data-toggle='pill' href='#tab" + x + "' role='tab'>" + categories[x] + "</a>" +
-                    "</li>");
-                $("#tabData").append("<div id='tab" + x + "' class='tab-pane fade' role='tabpanel'>" +
-                    "<div class='row' style='margin-bottom: 10px;' id='faq" + x + "'>" +
-                    "<div id='C" + x + "' class='card'>" +
+            if (i >= 1) {
+                //var x = i - 1;
+                $("#tabNames").append(
+                    "<a class='nav-link' data-toggle='pill' href='#faqtab" + i + "' role='tab'>" + categories[i] + "</a>");
+                    //"<li class='nav-item'>" +"</li>");
+                $("#tabData").append("<div id='faqtab" + i + "' class='tab-pane fade faqAnswersAccordion' role='tabpanel'>" +
+                    "<div class='row' style='margin-bottom: 10px;' id='faq" + i + "'>" +
+                    "<div id='C" + i + "' class='card'>" +
                     "</div>" +
                     "</div>" +
                     "</div>");
@@ -58,14 +58,14 @@ function getTabs(siteURL) {
     }
 }
 
-function getItems(siteURL) {
+function getFAQItems(siteURL) {
 
     var method = "GetListItems";
     var list = "FAQs";
-    var url = siteURL;
+    var url = siteURL + "/";
     var fields = "<ViewFields>" +
         "<FieldRef Name='ID' />" +
-        "<FieldRef Name='Title' />" +
+        "<FieldRef Name='Question' />" +
         "<FieldRef Name='Category' />" +
         "<FieldRef Name='Answer' />" +
         "</ViewFields>";
@@ -74,26 +74,25 @@ function getItems(siteURL) {
     $().SPServices({
         operation: method,
         async: false,
-        webURL: siteURL,
+        webURL: url,
         listName: list,
         CAMLViewFields: fields,
         completefunc: function (xData, Status) {
-
             $(xData.responseXML).SPFilterNode("z:row").each(function () {
 
                 // assign SP list item
                 var ID = ($(this).attr("ows_ID"));
-                var faqQuestion = ($(this).attr("ows_Title"));
+                var faqQuestion = ($(this).attr("ows_Question"));
                 var faqCategory = ($(this).attr("ows_Category"));
                 var faqAnswer = ($(this).attr("ows_Answer"));
                 var tabName = "";
                 var accordName = "";
-                var parentName = "";
 
-                for (count = 0; count <= categories.length - 1; count++) {
+                for (count = 0; count < categories.length; count++) {
                     if (faqCategory === categories[count]) {
                         tabName = '#C' + tabNum[count];
                         accordName = '#faq' + tabNum[count];
+                        console.log(tabName);
                         //parentName = '#accordion' + count;
                         //alert(categories[count]+" : "+faqCategory + " : " + tabName);                    		
                     }

@@ -5,8 +5,8 @@
 	var archiveNewsCount = 0;
 
     var url = _spPageContextInfo.webAbsoluteUrl;
-    var rootURL = url.split(".chda.maxuk.co.uk/")[0]+".chda.maxuk.co.uk/";
-    var siteURL = url.split(".chda.maxuk.co.uk/")[0]+".chda.maxuk.co.uk/about/"; 
+    var rootURL = url.split("/")[4];
+    var siteURL = url.split("/")[5]; 
 	
     //SP Services Variables
     var method = "GetListItems";

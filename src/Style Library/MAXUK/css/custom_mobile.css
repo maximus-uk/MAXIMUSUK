@@ -1,0 +1,123 @@
+﻿/**************************/
+/****** Mobile Screen *****/
+/**************************/
+@media (max-width: 1200px) {
+    .pageLeftContainer{left:0;width:93vw;}
+    .slider-wrapper {
+        width: 100%
+    }        
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-left, .navbar-right {
+        float: none !important;
+    }
+
+    .navbar-toggle {
+        display: block;
+        margin: 0;
+        padding: 6px 10px;
+        border-radius: 5px;
+        margin: 0 !important;
+        left: 0;
+        height: 30px !important;
+    }
+    
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+        margin-left: 5px;
+    }
+
+        .navbar-nav > li {
+            float: none;
+        }
+
+            .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+    .collapse.in {
+        display: block !important;
+    }
+
+    .headerLeftContainer {
+        left: 0;
+        width: 45%;
+    }
+
+    .pageLogo {
+        position: relative;
+        left: 0;
+        height: 0;
+        width: 0;
+        padding: 0;
+    }
+
+        .pageLogo img {
+            height: 50px;
+            width: 120px;
+        }
+
+    .nav-section {
+        top: 35px;
+        left: 140px;
+        width: 10%;
+        height: 35px;
+        padding: 0;
+    }
+
+    .pageTitle {
+        float: left;
+        left: 13px;
+        top: 90px;
+        font-size: inherit;
+    }
+
+        .pageTitle h1 {
+            font-size: .9em !important;
+            margin: 0;
+        }
+
+    .navbar-search {
+        position: fixed;
+        top: 35px;
+        left: 49%;
+        width: 50%;
+    }
+
+    .welcomeText {
+        position: fixed;
+        left: 190px !important;
+        top: 40px !important;
+        width: 45% !important;
+        font-size: .9em;
+        margin: 0 !important;
+    }
+
+    .adminTools {
+        top: 33px;
+        left: 7%;
+    }
+
+    .mainContainer {
+        left: 0 !important;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pageLoader {
+        left: 20%;
+    }
+}

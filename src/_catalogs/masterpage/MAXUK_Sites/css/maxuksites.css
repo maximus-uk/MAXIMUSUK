@@ -1,5 +1,5 @@
 ﻿/*   **************************************************
-     Site   	: MAX UK Intranets
+     Site   	: MAXIMUS UK Intranets
      Page   	: Any for UK Business Units Front Door area
      Author 	: Jason Clark
      Date   	: Feb 2019
@@ -110,7 +110,6 @@
         top: 0;
         left: 1px;
         width: 100%;
-        /*border: none;*/
         z-index: 9999 !important;
     }
 
@@ -174,187 +173,45 @@
         display: inline-block;
         z-index: 9999 !important;
     }
-    
     .navbar-nav {
         padding-left: 0 !important;
         margin: 0;
     }
     
-    .navbar-collapse, .collapse.navbar-collapse {
+/*    .navbar-collapse, .collapse.navbar-collapse {
         position: absolute;
         top: 0;
         left: 0;
         padding: 0;
-    }
-    
-    .navbar-fixed-top,
-    .navbar-fixed-bottom {
-        left: 150px;
-    }
-    
-    .nav .nav-link {
-        padding: 5px;
-    }
+    }*/
 
-    /***** Custom SharePoint Navigation menu *****/             
-     .ms-core-listMenu-horizontalBox .ms-core-listMenu-item {
-         left: 0 !important;
-     }
-     
-         .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
-             padding: 2px 0 2px 13px;
-             font-size: 1em !important;
-             font-weight: bold;
-             text-transform: capitalize;
-         }
- 
-             .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover {
-                 padding: 2px 0 3px 14px;
-                 border-radius: 10px 10px 0 0 !important;
-             }
- 
-         .ms-core-listMenu-horizontalBox li.selected a.selected {
-             padding: 2px 0 2px 13px;
-             border-radius: 10px !important;
-             width: 85%;
-         }
- 
-             .ms-core-listMenu-horizontalBox li.selected a.selected:hover {
-                 padding: 2px 0 2px 13px;
-                 border-radius: 10px 10px 0 0 !important;
-                 width: 85%;
-             }
-    
-    /***** Custom Bootstrap Nav menu *****/
-    #custom-bootstrap-menu {
-        border-bottom-width: 0;
-        vertical-align: middle;
-        margin: 0 0 10px 0;
-        padding: 0;
+    .navbar-collapse, .collapse.navbar-collapse{position: absolute; top:-10px;left:-5px; padding: 0;}
+    .dropdown-item {font-weight:bold}
+    .dropdown-item:focus, .dropdown-item:hover{
+        width:auto;       
+        padding:.25rem 1.5rem;
     }
-    
-        #custom-bootstrap-menu ul {
-            list-style: none;
-            padding-left: 0px;
-        }
-    
-            #custom-bootstrap-menu ul a {
-                text-decoration: none;
-                vertical-align: middle;
-                text-align: center;
-                /*text-shadow: 0 -1px 0 rgba(0,0,0,.2);*/
-            }
-    
-            #custom-bootstrap-menu ul.dynamic {
-                border-radius: 0 10px 10px 10px;
-                vertical-align: middle;
-                min-width: 220px !important;
-                max-width: 250px !important;
-                left: 0 !important;
-                padding: 4px;
-                margin: -1px 0 0 0;
-            }
-    
-                #custom-bootstrap-menu ul.dynamic .ms-core-listMenu-item {
-                    padding: 3px;
-                    left: 0 !important;
-                }
-    
-                    #custom-bootstrap-menu ul.dynamic .ms-core-listMenu-item:hover {
-                        margin: 0;
-                        /*top: .8%;
-                        left: 90%;*/
-                        opacity: 1;
-                        visibility: visible;
-                        border-radius: 0;
-												width:95%;
-                    }
-    
-            #custom-bootstrap-menu ul li {
-                margin: -3px 4px 0 0;
-                cursor: pointer;
-                text-decoration: none;
-            }
-    
-                #custom-bootstrap-menu ul li a {
-                    text-align: left;
-                }
-                    #custom-bootstrap-menu ul li a:focus{
-                        border-radius: 10px!important;
-                    }    
-    
-                    #custom-bootstrap-menu ul li a:hover,
-                    #custom-bootstrap-menu ul li a:focus {
-                        width: 85%;
-                        text-decoration: none;
-                    }
-    
-                #custom-bootstrap-menu ul li.selected:hover {
-                    border-radius: 10px 10px 0 0;
-                }
-    
-        #custom-bootstrap-menu li.dynamic {
-            list-style: none !important;
-        }
-    
-        #custom-bootstrap-menu li.hover {
-            z-index: 9999 !important;
-            margin-right: 4px;
-        }
-    
-        #custom-bootstrap-menu ul ul {
-            position: absolute;
-            top: 100%;
-            margin: -3px 0 0 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity .35s ease;
-            -webkit-transition: opacity .35s ease;
-						width:250px;
-        }
-            #custom-bootstrap-menu ul ul li {
-                float: none;
-            }
-	            #custom-bootstrap-menu ul ul li a {
-	                text-decoration: none;
-	                vertical-align: middle;
-	                width: 100%;
-	            }
-    
-            #custom-bootstrap-menu ul ul ul {
-                top: 0%;
-                left: 150%;
-								width:250px;
-            }
-    
-            #custom-bootstrap-menu ul ul li:hover > ul {
-                top: 0%;
-                left: 90% !important;
-                opacity: 1;
-                visibility: visible;
-            }
-    
-        #custom-bootstrap-menu ul li:hover > ul {
-            opacity: 1;
-            top: 100%;
-            visibility: visible;
-        }
-        
-        /***** Bootstrap Custom Mobile Menu *****/
-        #custom-bootstrap-menu .navbar-toggle {
-            float: none;
-            min-width: 40px !important;
-        }
-    
-        #custom-bootstrap-menu .in.navbar-collapse {
-            overflow-x: hidden;
-            overflow-y: auto;
-            width: 150%;
-            border-radius: 10px;
-            z-index: 99;
-        }
-        
-    
+    #customNav .megamenu-li {
+        position: static;
+    }       
+    #customNav .nav-item a {padding-bottom:0}
+    .nav-item.dropdown.show a, #customNav .nav-item.dropdown.megamenu-li.show a{padding-bottom:0;}
+    #customNav .megamenu.show {
+        position: absolute;
+        width: 70vw;
+        /*left: 5px;*/
+        /*right: 0;*/
+        /*top:75px;*/
+        padding: 15px;
+    }
+    .dropdown-menu.show, .megamenu.show{
+        border-radius:0 10px 10px 10px;
+        margin-top:7px;
+    }          
+    .navSectionHeader{margin:0 0 0 15px;}
+    .teamSection{margin-top:10px;}
+    .teamTitle{margin-left:5px}
+
     /***** END Top Navigation Menu *****/
     
     /***** END Left Header Items   *****/    
@@ -374,8 +231,9 @@
     .navbar-search {
         position: relative;
         top: 5px;
-        left: 0;
+        left: -15px;
         width: 100%;
+        height:50px;
     }
     
     .ms-srch-sb-border, .ms-srch-sb-borderFocused {
@@ -386,24 +244,37 @@
         width: 85% !important;
         padding: 0 5px;
         margin-top: 5px;
+        height:22px;
     }
     
     .welcomeText {
-        position: relative;
-        left: 0 !important;
-        width: 74%;
-        margin-top: 43px !important;
+        position: absolute;
+        left: 7px !important;
+        top:40px;
+        width:65%;
         font-size: 1.1em;
         font-weight: bold;
         z-index: 10;
-    }
         
-            .welcomeText a:hover {
-                text-decoration: none;
-                padding: 2px 5px 2px 5px;
-                border-radius: 5px;
+    }       
+        .welcomeText .nav-item a {position:relative}
+            .welcomeText .dropdown.show .nav-link:hover{padding-bottom:2px;}
+            .welcomeText .nav-item .nav-link:hover {
+                text-decoration: none;                
+                position:relative;
+                top:8px;
+                padding: 0 .5rem 1px .5rem;
             }
-    
+        .welcomeText .dropdown.show{
+           padding-bottom:2px; 
+           position: relative;
+           z-index:999;
+        }
+        .welcomeText .dropdown-menu.show{margin-top:9px;top:40px}        
+        .welcomeText .dropdown-item a:hover{
+            position: relative;
+        }
+
     #suiteBarRight {
         position: fixed;
         top: 110px !important;
@@ -446,7 +317,7 @@
     .siteActions {
         font-size: 1rem;  
         position: relative;
-        top: -1px !important;
+        top: -3px !important;
         left: -10px;
         z-index: 999 !important;
     }
@@ -481,7 +352,6 @@
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size: 24px !important;
         font-weight: bolder;
-        /*text-shadow: .2em .2em .3px #545487 !important;*/
     }
     
     h2 {
@@ -506,27 +376,52 @@
     
     h5 {
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
-        font-size: 14px !important;
+        font-size: 1rem !important;
         font-weight: 800;
         text-shadow: none !important;
     }
     
-    h6, p {
+    h6 {
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
-        font-size: 13px !important;
+        font-size: 1em !important;
         font-weight: 700;
         text-shadow: none !important;
     }
 
+    p {
+        font-family: "Avenir", "FS ME", Arial, sans-serif !important;
+        font-size: .9em !important;
+        font-weight:normal;
+        text-shadow: none !important;
+    } 
+
     h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, p > a, a, a:focus, a:hover {
         text-decoration: none;
+        font-weight:bold;
     }
 
-    h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {border-radius:5px; padding:3px 0 3px 0;text-decoration: none;}
+    h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {border-radius:5px; text-decoration: none;} /*padding:3px;*/
     
     /* Focus on Content button */
     Span#fullscreenmodebox {
         display: none;
+    }
+
+    .pulsate {
+        -webkit-animation: pulsate 3s ease-out;
+        -webkit-animation-iteration-count: infinite; 
+        opacity: 0.5;
+    }
+    @-webkit-keyframes pulsate {
+        0% { 
+            opacity: 0.5;
+        }
+        50% { 
+            opacity: 1.0;
+        }
+        100% { 
+            opacity: 0.5;
+        }
     }
     
     /***** END Header Section *****/
@@ -543,10 +438,6 @@
         background-repeat: no-repeat;
         text-decoration: none !important;
     }
-
-    /*.msgBannerAdjust {
-        margin-top: -40px;
-    }*/
     
     .mainContainer {
         position: fixed;
@@ -560,8 +451,6 @@
         
     .watermark {
         font-size: 15em;
-        /*-webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);*/
         position: fixed;
         width: 100%;
         height: 100px;
@@ -573,72 +462,7 @@
     }
 
     .hidden{display:none;}
-        
-    /*************************************/
-    /***** Important Messages ticker *****/
-    /*************************************/
-    /*.notifications {
-        position: fixed;
-        z-index: 15;
-        width: 95.9%;
-        height: 40px;
-        left:48px;
-        padding: 5px;
-        font-size: 1.2em;
-    }
-    
-    .TickerNews {
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
-    }
-    
-    .ti_wrapper {
-        width: 101%;
-        position: relative;
-        overflow: hidden;
-        height: 40px;
-        top: -5px;
-        left: -5px;
-    }
-    
-    .ti_slide {
-        width: 30000px;
-        position: relative;
-        left: 0;
-        top: 0;
-    }
-    
-    .ti_content {
-        width: 8000px;
-        position: relative;
-        float: left;
-    }
-    
-    .ti_news {
-        float: left;
-        font-weight: 500;
-    }*/
-    
-    /*
-    #stop-resume {
-        display: block;
-        padding: 10px;
-        margin: 10px;
-        width: 70px;
-        text-align: center;
-        border: solid 1px white;
-        text-transform: uppercase;
-        font-family: sans-serif;
-        text-decoration: none;
-    }
-    
-        #stop-resume:active {
-            border: solid 1px #f1f1f1;
-            color: blue;
-        }
-    */
-    
+            
     /****************************/
     /******* Page Content *******/
     /****************************/
@@ -646,29 +470,30 @@
         position: relative !important;
         /*top: 45px;*/
         flex: 0 0 97%;
-        max-width: 97%;
+        max-width: 94%;
         min-height:60vh;
         height:89vh;
-        overflow-y:auto;
         overflow-x:hidden;
+				overflow-y:auto;
         z-index: 1 !important;
     }  
-
-        /* Webkit Browser Scrollbar */
-        .pageLeftContainer::-webkit-scrollbar {
-            width: 12px;
-            z-index:1;
-        }
     
-        /* Track */
-        .pageLeftContainer::-webkit-scrollbar-track {
-            border-radius: 5px;
-        }
+		/*.appContentFrame{width:100%;height:100%;}*/
     
-        /* Handle */
-        .pageLeftContainer::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-        }
+		::-webkit-scrollbar {
+        width: .9em;
+        height: .9em;
+    }
+    
+    ::-webkit-scrollbar-track {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
 
     /***** Page Content Loader *****/
     .pageLoader {
@@ -690,6 +515,8 @@
         width: 100%;
     }
 
+    .editIcon{margin-left:5px;font-size:1em;}
+
     /* bootstrap 4 slideshow Carousel Customization */   
     .carousel {border-radius:20px;height: 50% !important;}
     .carousel-inner{border-radius:20px;}
@@ -700,8 +527,8 @@
         font-family: "Avenir", "FS ME", Arial, sans-serif !important;
         font-size:1.3em!important;
     }
-    .carousel-caption h4 {font-size:3rem!important}   
-    .carousel-caption h5 span {font-size:1.3rem!important}
+    .carousel-caption h4 {font-size:3rem!important;}   
+    .carousel-caption h5 span {font-size:1.3rem!important;}
     
     .fill {
         width: 100%;
@@ -713,21 +540,18 @@
     /* nav tabs & pills customisation */
     .nav-tabs .nav-link {
         line-height: .8;
-        border-bottom: none;
+        border: none;
         border-radius: 0;
+        font-weight:bold;
     }
     
-        .nav-tabs .nav-link:hover {
-            border-top: 0;
-            border-left: 0;
-            border-right: 0;
-            border-bottom:5px solid var(--PrimaryMid);
-        }
-    .nav-tabs .nav-link:active{border-bottom:5px solid var(--PrimaryDark);}
+    .nav-tabs .nav-link:hover {border-bottom:5px solid var(--PrimaryMid);}
+    .nav-tabs .nav-link:active, .nav-tabs .nav-link:focus {border-bottom:5px solid var(--AccentDark2);}
     
     .nav-tabs .nav-link.active,
     .nav-tabs .nav-link:hover,
     .nav-tabs .nav-link:focus {
+        font-weight:bold;
         cursor: pointer;
         border-top: 0;
         border-left: 0;
@@ -735,10 +559,12 @@
         border-radius: 3px;
     }
     
-    .nav-tabs > li {
+    .nav-tabs .nav-item {
         width: auto;
+        font-size:1rem;
+        margin-right:10px;
     }
-    
+    .nav-pills .nav-item {display:inline-flex;}
     .nav-pills .nav-link {
         border-radius: 10px;
 				margin:0 4px 3px 4px;
@@ -752,8 +578,44 @@
     .nav-pills .nav-link.active:focus {
         border: none;
         text-decoration: none;
-				margin:0 4px;
     }  
+
+    .ui-group {
+        display: inline-block;
+    }
+    
+        .ui-group h3 {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 32px;
+            margin-right: 0.2em;
+            font-size: 16px;
+        }
+    
+        .ui-group .button-group {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    
+    .navTabContainer {
+        padding-left: 5px !important;
+        width: 100%;
+        height: 280px;
+    }
+    
+    .headingText {
+        position: relative;
+        top: 18px !important;
+    }
+    
+        .headingText h2 {
+            padding-top: 5px !important;
+            margin-left: 8px;
+        }
+    
+    .navTabBar ul li {
+        height: 25px;
+    }
 
     /*******************************/
     /**** Sidebar app container ****/     
@@ -797,7 +659,7 @@
                 border: 0 !important;
             }
 										    
-    #slider{top:100px!important; right:0; height: 100%!important; width:35vw!important; transition: all 300ms ease 0s;z-index:100}
+    #slider{top:100px!important; right:0; height: 100%!important; width:40vw!important; transition: all 300ms ease 0s;z-index:100}
     #trigger {
         padding: 5px 0 0 10px;                
         position: absolute;
@@ -810,11 +672,16 @@
         font-weight:bold;
     }
       
-    .sidebar .appContent {position:relative;top:3px;height:84vh;width:63%;padding:5px 5px 0 5px}
-    .sidebar .appTabs {height:84vh;padding-top:3px;margin-top:3px;z-index:9999;position:relative;}
-    .scrollbar{overflow-y:scroll;overflow-x:hidden;height:100%}
-    .usefulLinks .card{margin-bottom:5px}
-    .usefulLinks .card-header{border-radius:10px 10px 0 0;text-decoration: none}
+    .sidebar .appContent {position:relative;top:3px;height:83.8vh;width:59%;padding:5px 5px 0 5px;overflow-y:scroll;overflow-x:hidden}
+    .sidebar .appTabs {height:84vh;flex:0 0 30%;max-width:30vw;padding-top:3px;margin-top:3px;z-index:9999;position:relative;}
+    .sidebar .appTabs .nav {width:100%;}
+    .sidebar .appTabs .nav-link {width:75%;}
+    /*.sidebar .appTabs .nav-link:not(:first-child){position:relative; top:-15px;}*/
+    /*.scrollbar{overflow-y:scroll;overflow-x:hidden;height:100%}*/
+    .sidebar .appTabs .editIcon {position:relative; top:10px; left:10px; width:20px}
+
+    #usefulLinks .card{margin-bottom:5px;width:99%}
+    #usefulLinks .card-header{border-radius:10px 10px 0 0;text-decoration: none}
     .metrotiles {left:10px;position:relative}
 
     .faqCategory, .faqData{height:69vh;}
@@ -837,8 +704,7 @@
         height: 100%;
         margin: 0;
         overflow: hidden;
-    }
-    
+    }    
     .linkContainer {
         margin: 0;
         font-size: 1em !important;
@@ -847,62 +713,48 @@
         overflow-x: hidden;
         height: 99.5%;
         width: 100%;
-    }
-    
-        /*.linkContainer .card {
-            width: 220px;
-        }*/
-    
+    }       
         .linkContainer::-webkit-scrollbar {
             display:none;
-        }
-    
+        }   
         .linkContainer .collapsing {       
             top: -5px !important;      
             width: 100% !important;
-        }
-    
+        }   
         .linkContainer .list-group {
             position: relative;
             max-height: 99%;
             min-width: 100% !important;
             margin-top: 0;
-        }
-    
+        }    
         .linkContainer .list-group-item {
             font-weight: bold;
             text-decoration: none;
-        }
-    
+        }   
             .linkContainer .list-group-item:hover {
                 border-radius: 0;
-            }
-    
-    
+            }     
         .linkContainer a.list-group-item,
         button.list-group-item {
             text-decoration: none;
         }
         
-    /****** Bootstrap Changes for Cards ******/
+    /****** Changes for Bootstrap Cards ******/
     .list-group {
         margin-bottom: 0;
         display:block!important;
-    }
-    
+    }   
     .card > :last-child.list-group :last-child.list-group-item, .card > .collapse > :last-child.list-group :last-child.list-group-item,
     .card > :first-child.list-group :first-child.list-group-item, .card > .collapse > :first-child.list-group :first-child.list-group-item {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
-    }
-    
+    }    
     .card {
         margin-bottom:5px;
         padding-left:1px;
         display:block;
 				width:100%;
-    }
-    
+    }  
             .card > .list-group .list-group-item,
             .card > .collapse > .list-group .list-group-item {
                 border-radius: 0;
@@ -911,690 +763,471 @@
         .card > .show.collapse {
             margin-top: 0px;
         }
-    
-        /*.card > .list-group, .card > .collapse > .list-group {
-            border: .5px solid #545487 !important;
-            padding: 1px;
-        }*/
-    
+        
     .card-header {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        text-decoration: none !important;   
-    }
-    
-    
+        text-decoration: none !important; 
+        margin-bottom:5px;  				  
+    }    
         .card-header:hover, .accordion-toggle:hover {
             text-decoration: none !important;
         }
-    
+    .card-body{padding:.5rem 0 0 .8rem;}
+
+/*     
+    [data-toggle="collapse"] .accordion-toggle:before {
+        position:absolute;
+        top:8px;
+        right:15px;
+        font-size:1.2rem;
+        font-weight:bold;
+        color:#000!important;
+        padding:0;
+        font-family: "Font Awesome 5 Free";
+        content: "\f35a";
+        transition:.3s transform ease-in-out; 
+    }
+
+    [data-toggle="collapse"].collapsed .accordion-toggle:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f35a";  
+        transform: rotate(90deg);       
+    }
+*/
+/*    .accordion-toggle:before{
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900; 
+        content: "\f358";
+        font-size: 1.3em;
+        float:right;
+    }*/
+		    
     .accordion-toggle:after {
         position: relative;
-        top: -35px !important;
-        left: -10px !important;
+        top: -44px !important;
+        left: -13px !important;
         padding: 0;
         font-family: "Font Awesome 5 Free"; 
         font-weight: 900; 
-        content: "\f067";
-        font-size: 1em;
-        float: right;
+        content: "\f35a";
+        font-size: 1.3em;
+        float:right;
+        transition:.3s transform ease-in-out; 
     }
     
     .accordion-toggle.collapsed:after {
         position: relative;
-        top: -35px !important;
-        left: -10px !important;
+        top: -44px !important;
+        left: -13px !important;
         padding: 0;
         font-family: 'Font Awesome 5 Free';
-        font-size: 1em;
+        font-size: 1.3em;
         font-weight:900;
-        content: "\f068";
-        float: right;
+        content: "\f35a";
+        float:right;
+        transform: rotate(90deg); 
     }
-    
-    /***** Page Body End *****/
-    
-    /**********************************/
-    /***** Page Other Parts Start *****/
-    /**********************************/
-    /*.item, .active  {height: auto;} */ 
-    
-    .ms-webpartPage-root {
-        border-spacing: 0px !important;
-    }
-    
-    .ms-webpartzone-cell {
-        margin: 0 0 0 0 !important;
-    }
-    
-    /*.groupheader{
-        background-color: #716439;
-        color: white;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 140%;
-        padding: 0.5em;
-        padding-left: 0.75em;
-        margin-right: 0.5em;
-        margin-bottom: 1px;
-    }*/
-    
-    /*.groupmarker:hover .groupheader{
-        cursor: pointer;
-        color: white;
-        background-color: #47476a;
-    }*/
-    
-    /*.dfwp-list{
-        background-color: #f7f0d6;
-        color:black;
-        margin-bottom: 0.5em;
-        margin-right: 0.75em;
-    }
-    
-    .dfwp-list .item:hover{
-        background-color: #47476a;
-        color:white!important;
-        text-decoration: none;
-    }
-    .dfwp-list .link-item a{
-        margin-left: 2em;
-        color: black;
-        text-decoration: none;
-    }*/
-    
-    /*************************************/
-    /***** Left Navigation - Sidebar *****/
-    /*************************************/
-    .sidebar {
-        margin-top: 0;
-    }
-    
-        .sidebar ul {
-            border-radius: 3px;
-            padding: 5px;
-            list-style: none;
-        }
-    
-            .sidebar ul li ul {
-                border: 0 !important;
-            }
-    
-    /*******************************/
-    /***** Social Icons Styles *****/
-    /*******************************/
-    .list-social-icons {
-        margin-bottom: 45px;
-    }
-    
-    .tooltip-social a {
-        text-decoration: none;
-        color: inherit;
-    }
-    
-    .facebook-link a:hover {
-        color: #3b5998;
-    }
-    
-    .linkedin-link a:hover {
-        color: #007fb1;
-    }
-    
-    .twitter-link a:hover {
-        color: #39a9e0;
-    }
-    
-    .google-plus-link a:hover {
-        color: #d14836;
-    }
-    
-    /*******************************/
-    /***** Service Page Styles *****/
-    /*******************************/
-    .service-icon {
-        font-size: 50px;
-    }
-        
-    .valign {
-        display: inline-block;
-        vertical-align: middle;
-        float: none;
-    }
-    
-    /********************/
-    /***** SP Fixes *****/
-    /********************/
-    #ms-designer-ribbon {
-        z-index: 99 !important;
-    }
-    
-    #s4-bodyContainer {
-        padding-bottom: 10px !important;
-    }
-    
-    /********************************/
-    /***** Ribbon Buttons Fixes *****/
-    /********************************/
-    .ms-cui-dd-text, input.ms-cui-cb-input {
-        height: 100% !important;
-        padding: 5px !important;
-    }
-    
-    .ms-cui-dd-arrow-button {
-        height: 100% !important;
-        padding-left: 0 !important;
-    }
-    
-    .ms-dlgTitle {
-        padding: 10px 30px 10px 15px !important;
-    }
-    
-    .ms-cui-ctl-thin {
-        padding: 0 4px !important;
-        height: 100% !important;
-        margin-top: 10px !important;
-    }
-    
-    .ms-qatbutton span {
-        height: 25px !important;
-        width: 25px !important;
-    }
-    
-    /***********************************/
-    /***** Web Part Properties Box *****/
-    /***********************************/
-    #MSOTlPn_MainTD, #MSOTlPn_Parts {
+
+    #siteWelcomeText{position:relative;left:-10px;}
+
+/****************************
+ ****** Team Home Page ******
+ ****************************/
+     .dashboardTabContainer {
         width: 100%;
-        height: 50vh;
+        height: 70px;
+        z-index:99;
+        overflow: hidden;
     }
-    
-    .ms-ToolPaneOuter {
-        position: fixed;
-        top: 30px;
-        left: 40%;
-        margin: 0 auto;
-        width: 30% !important;
-        height: 60vh !important;
-        overflow: hidden !important;
-        z-index: 1999 !important;
-    }
-    
-    .ms-ToolPaneBody {
-        overflow: scroll !important;
-        width: 100% !important;
-        height: 100% !important;
-        z-index: 1999 !important;
-    }
-    
-    /*********************/
-    /***** Left Menu *****/
-    /*********************/
-    .ms-core-listMenu-verticalBox > .ms-core-listMenu-item, .ms-core-listMenu-verticalBox li.static > .ms-core-listMenu-item {
-        display: none !important;
-        padding: 5px !important;
-    }
-    
-    .ms-core-listMenu-verticalBox li.static > ul.static > li.static > .ms-core-listMenu-item {
-        padding: 3px 3px 3px 10px !important;
-    }
-        
-    /***********************************************************************************************************************************/
-    
-    /**************************/
-    /****** Mobile Screen *****/
-    /**************************/
-    @media (max-width: 1200px) {
-        .navbar-header {
-            float: none;
-        }
-    
-        .navbar-left, .navbar-right {
-            float: none !important;
-        }
-    
-        .navbar-toggle {
-            display: block;
+        .dashboardTabContainer ul {
+            position:fixed;
+            width: 61vw;
+            height:80px;
+            font-size:.95em;
+            list-style-type: none;
+            display: inline-block;
+            white-space: nowrap!important;
+            overflow-x: scroll;
+            overflow-y: hidden;
             margin: 0;
-            padding: 6px 10px;
-            border-radius: 5px;
-            margin: 0 !important;
-            left: 0;
-            height: 30px !important;
+            padding: 15px 5px;
         }
-        
-        .navbar-fixed-top {
-            top: 0;
-            border-width: 0 0 1px;
-        }
-    
-        .navbar-collapse.collapse {
-            display: none !important;
-        }
-    
-        .navbar-nav {
-            float: none !important;
-            margin-top: 7.5px;
-            margin-left: 5px;
-        }
-    
-            .navbar-nav > li {
-                float: none;
-            }
-    
-                .navbar-nav > li > a {
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                }
-    
-        #custom-bootstrap-menu ul li {
-            margin: 0 0 3px 0;
-        }
-    
-        #custom-bootstrap-menu ul a {
-            width: 115%;
-        }
-    
-        #custom-bootstrap-menu ul li:hover > ul {
-            width: 120% !important;
-        }
-    
-        .collapse.in {
-            display: block !important;
-        }
-    
-        .headerLeftContainer {
-            left: 0;
-            width: 45%;
-        }
-    
-        .pageLogo {
-            position: relative;
-            left: 0;
-            height: 0;
-            width: 0;
-            padding: 0;
-        }
-    
-            .pageLogo img {
-                height: 50px;
-                width: 120px;
-            }
-    
-        .nav-section {
-            top: 35px;
-            left: 140px;
-            width: 10%;
-            height: 35px;
-            padding: 0;
-        }
-    
-        .pageTitle {
-            float: left;
-            left: 13px;
-            top: 90px;
-            font-size: inherit;
-        }
-    
-            .pageTitle h1 {
-                font-size: .9em !important;
-                margin: 0;
-            }
-    
-        .navbar-search {
-            position: fixed;
-            top: 35px;
-            left: 49%;
-            width: 50%;
-        }
-    
-        .welcomeText {
-            position: fixed;
-            left: 190px !important;
-            top: 40px !important;
-            /*left: 141px!important;
-            top: 66px;*/
-            width: 45% !important;
-            font-size: .9em;
-            margin: 0 !important;
-        }
-    
-        .adminTools {
-            top: 33px;
-            left: 7%;
-        }
-    
-        .mainContainer {
-            left: 0 !important;
-            width: 100vw;
-            height: 100vh;
-        }
-    
-        .notifications {
-            width: 100vw;
-        }
-    
-        .pageLoader {
-            left: 20%;
-        }
-    
-        .usefulLinksSection {
-            position: fixed;
-            top: 160px;
-            left: 0;
-            -webkit-transition-duration: 0.3s;
-            -moz-transition-duration: 0.3s;
-            -o-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-        }
-    
-        .pageRightContainer {
-            position: fixed;
-            top: 160px;
-            left: -203px;
-            height: 60% !important;
-            padding: 5px 5px 5px 0;
-            -webkit-transition-duration: 0.3s;
-            -moz-transition-duration: 0.3s;
-            -o-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-        }
-    
-        .usefulLinksSection:hover {
-            left: 250px;
-        }
-    
-            .usefulLinksSection:hover .pageRightContainer {
-                left: 0;
-            }
-    }
-    
-    /* For Small Resolutions & Notebooks: max 1280 */
-    @media screen and (min-width:1201px) and (max-width:1278px) {
-        
-        #custom-bootstrap-menu {
-            font-size: .7em;
-        }
-    
-        .adminTools {
-            left: 62%;
-        }
-    
-        .welcomeText {
-            font-size: .9em;
-        }
-    }
-    
-    @media screen and (min-width:1279px) and (max-width:1289px) {
-    
-        .nav-section {
-            font-size: .8em;
-        }
-    
-    }
-    
-    @media screen and (min-width:1290px) and (max-width:1349px) {
-    
-        .nav-section {
-            font-size: .8em;
-        }
-    
-        .adminTools {
-            left: 66%;
-        }
-    
-    }
-    
-    @media screen and (min-width:1350px) and (max-width:1399px) {
-
-        /*.pageLeftContainer {
-            flex: 0 0 57%;
-            max-width: 65%;
-        }
-    
-        .pageRightContainer {
-            left:3%;
-            max-width: 15%;
-            height:80vh;
-        }*/
-
-        .nav-section {
-            font-size: .9em;
-        }
-    
-        .adminTools {
-            left: 66%;
-        }
-    }
-    
-    @media screen and (min-width:1400px) and (max-width:1499px) {
-
-        /*.pageLeftContainer {
-            flex: 0 0 57.6%;
-            max-width: 65%;
-        }
-    
-        .pageRightContainer {
-            max-width: 16%;
-        }*/
-
-        .adminTools {
-            left: 69%;
-        }
-    }
-    
-    @media screen and (min-width:1500px) and (max-width:1599px) {
-    
-        /*.pageLeftContainer {
-            flex: 0 0 59.7%;
-            max-width: 65%;
-            max-height: 82vh;
+        .dashboardTabContainer li {
+            margin: 0 5px 0 3px;
+            display: inline;
         }
 
-        .pageMiddleContainer{max-width: 23%;flex:0 0 21%;}
-				*/
-        
-        .adminTools {
-            left: 69%;
-        }
+    .teamHomeLeftColumn{height:80vh}
+    .teamHomeRightColumn{position:relative;height:80vh;overflow:hidden}
+    .teamHomeTopRow{position:absolute;height:28vh;width:100%;max-width:57vw;flex:0 0 50%;}
+    .teamHomeBottomRow{position:relative;top:19vh;max-width:60vw;flex:0 0 50%;height:60vh;margin-top:10px;overflow:hidden} 
+    /*.faqTitle,.contactsTitle{position:absolute;}*/
+    #contactLink,#faqLink,#changeLink{margin:0 10px 0 0}  
+    .faqTabContainer{top:30px;left:1px;height:47px;overflow-x:auto;overflow-y:hidden;width:99%;}
+    .faqTab{width:auto;flex-wrap:nowrap!important}
+    .faqContent{top:97px;left:0;width:99%!important;height:60vh;overflow-y:scroll;overflow-x:hidden} 
+    .faqQuestions{position:absolute;left:10px;flex:0 0 19%;max-width:19%;width:19%;height:85%;overflow-y:scroll;overflow-x:hidden} 
+    .faqAnswers{position:absolute;left:20.5%;top:10px;flex:0 0 76%;max-width:76%;overflow-y:scroll;overflow-x:hidden}
+    .faqAnswersAccordion {width:98%;}
+    .changeTabs{position:relative;top:7px;padding-bottom:10px;overflow-y:hidden;overflow-x:scroll;}
+    .changeContent{overflow-y:scroll;overflow-x:hidden;height:60vh;margin:0 2px 0 0;}
+    .table-responsive{width: 99% !important;}
+    .nav-tabs{border-bottom:none;}
+    .faqContent .card, .changeContent .card{height:46px;}
+    .teamTabs{overflow-x:scroll;overflow-y:hidden}
+    .teamTabLink{display:inline-flex}
+
+    /***** Contact Cards *****/
+    .contactContainer {						
+        width:100%;
+        top: 2vh;
+        left:0;
+        height: 205px;
+        overflow: hidden;
     }
-    
-    @media only screen and (min-width: 1600px) and (max-width: 1690px) {
-    
-        /*.pageLeftContainer {
-            flex: 0 0 60%;
-            max-width: 65%;
-        }
-    
-        .pageRightContainer {
-            left:0.5%;
-            flex: 0 0 14%;
-            max-width: 14%;
-        }*/
-    
-        .adminTools {
-            left: 69%;
-        }
+    .contactCardRow{
+        flex-wrap:nowrap;
+        white-space: nowrap;
+        width: 99%;
+        overflow-x: scroll;
+        overflow-y: hidden;
     }
-    
-    @media only screen and (min-width: 1691px) and (max-width: 1749px) {
-    
-        /*.pageLeftContainer {
-            flex: 0 0 63.5%;
-            max-width: 65%;
-        }
-    
-        .pageRightContainer {
-            left:0.5%;
-            flex: 0 0 14%;
-            max-width: 14%;
-        }*/
-    
-        .adminTools {
-            left: 70%;
-        }
+		.contactsTitle{margin-bottom:10px;}
+    .contactCard {
+        perspective: 1000px; 
+        display: inline-block;
+        width:150px;
+        height: 175px;
+        margin: 5px 8px 5px 8px;
+        transition: 0.3s;        
     }
-    
-    @media only screen and (min-width: 1750px) and (max-width: 1918px) {
-    
-        .adminTools {
-            left: 70%;
-        }
+    .contactCard div {margin: 0;}
+    .contactCard img{
+        min-height:130px;
+        width: 130px;
+        height: 130px;
+        margin: 5px 0;        
     }
-    
-    /* For resolution 1920px x 1080px only: */
-    @media only screen and (min-width: 1919px) and (max-width:1921px) {
-        .adminTools {
-            left: 70%;
-        }
-    }
-    
-    @media screen and (min-width: 1922px) and (max-width:1999px) {
-        .adminTools {
-            left: 73%;
-        }
-    }
-    
-    @media screen and (min-width: 2000px) and (max-width:2099px) {
-        
-        /****************************/
-        /******* Page Content *******/
-        /****************************/
-        /*.pageLeftContainer {
-            flex: 0 0 69.1%;
-            max-width:80%;
-        }*/
+		.contactCard-Inner{
+     position: relative;
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     transition: transform 0.8s;
+     transform-style: preserve-3d;
+ }
+ .contactCard:hover .contactCard-Inner {
+     transform: rotateY(180deg);
+ }
+ .contactCard-Front, .contactCard-Back {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     backface-visibility: hidden;
+ }
+ .contactCard-Back {
+     transform: rotateY(180deg);
+     word-wrap:break-word;
+     white-space:normal;
+ }
+ .contactCard .userName {font-weight:bolder;font-size:.9em!important;}			
+    .contactCard-Back .jobTitle, .contactCard-Back h4, .contactCard-Back h5, .contactCard-Back .userName, .contactCard-Back .groupName {font-size:.8em!important; margin:5px;}
+    .contactCard-Back .cardIcons {position:absolute;bottom:0;font-size:1.3rem; width:100%}
 
-        /**************************/
-        /******* Metrotiles *******/
-        /**************************/
-        /*.pageMiddleContainer {
-            flex: 0 0 20%;
-        }*/
+/***************************************
+ ***** Toast Bootstrap Page Banner *****
+ ***************************************/ 
+.toast {
+    position:absolute;
+    top:0;
+    right:45vw;
+    z-indeX:999;
+    min-width:auto;
+    border-radius:10px;    
+}
+.toast-header h3{
+    width:100%;
+}
+.toast-header .close{
+    /*float:none;
+    position:absolute;*/
+    right:5px;
+    min-width:28px;
+}
+.toast-header button span {position:relative;top:-3px;}
 
-        .adminTools {
-            left: 79%;
-        }
-    }
-    
-    @media screen and (min-width: 2100px) and (max-width: 2199px) {
-    
-        .adminTools {
-            left: 79%;
-        }
-    }
-    
-    @media screen and (min-width: 2200px) and (max-width:2399px) {
-
-        /****************************/
-        /******* Page Content *******/
-        /****************************/
-        /*.pageLeftContainer {
-            flex: 0 0 72.6%;
-            max-width:80%;
-        }*/
-
-        /**************************/
-        /******* Metrotiles *******/
-        /**************************/
-        /*.pageMiddleContainer {
-            flex: 0 0 20%;
-        }*/
-
-        .adminTools {
-            left: 79%;
-        }
-    }
-    
-    @media screen and (min-width: 2400px) and (max-width:2499px) {
-
-        /****************************/
-        /******* Page Content *******/
-        /****************************/
-        /*.pageLeftContainer {
-            flex: 0 0 75%;
-            max-width:80%;
-        }*/
-
-        /**************************/
-        /******* Metrotiles *******/
-        /**************************/
-        /*.pageMiddleContainer {
-            flex: 0 0 20%;
-        }*/
-
-        .adminTools {
-            left: 70%;
-        }
-    }
-    
-    @media screen and (min-width: 2500px) and (max-width:2600px) {
-    
-        /****************************/
-        /******* Page Content *******/
-        /****************************/
-        /*.pageLeftContainer {
-            flex: 0 0 75%;
-            max-width:80%;
-        }*/
-
-        /**************************/
-        /******* Metrotiles *******/
-        /**************************/
-        /*.pageMiddleContainer {
-            flex: 0 0 20%;
-        }*/
-        
-        .adminTools {
-            left: 70%;
-        }
-    }
-    
-    @media screen and (min-width: 2601px) and (max-width:3000px) {
-
-        /****************************/
-        /******* Page Content *******/
-        /****************************/
-        /*.pageLeftContainer {
-            flex: 0 0 77.2%;
-            max-width:80%;
-        }*/
-
-        /**************************/
-        /******* Metrotiles *******/
-        /**************************/
-        /*.pageMiddleContainer {
-            flex: 0 0 20%;
-        }*/
-
-        .adminTools {
-            left: 79%;
-        }
-    }
-    
-    @media screen and (min-width: 3001px) {
-
-        /****************************/
-        /******* Page Content *******/
-        /****************************/
-        /*.pageLeftContainer {
-            flex: 0 0 79.6%;
-            max-width:80%;
-        }*/
-
-        /**************************/
-        /******* Metrotiles *******/
-        /**************************/
-        /*.pageMiddleContainer {
-            flex: 0 0 20%;
-        }*/
-
-        .adminTools {
-            left: 70%;
-        }
-    }
-    
-    @media screen and (-webkit-min-device-pixel-ratio:0), screen and (-webkit-min-device-pixel-ratio:1), screen and (-webkit-min-device-pixel-ratio:2) {
-    
-        .adminTools {
-            left: 70%;
-        }
-    }
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+  
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+}   
+ 
+ /***** Page Body End *****/
+ 
+ /**********************************/
+ /***** Page Other Parts Start *****/
+ /**********************************/    
+ .ms-webpartPage-root {
+     border-spacing: 0px !important;
+ }
+ 
+ .ms-webpartzone-cell {
+     margin: 0 0 0 0 !important;
+ }
+ 
+ /*******************************/
+ /***** Social Icons Styles *****/
+ /*******************************/
+ .list-social-icons {
+     margin-bottom: 45px;
+ }
+ 
+ .tooltip-social a {
+     text-decoration: none;
+     color: inherit;
+ }
+ 
+ .facebook-link a:hover {
+     color: #3b5998;
+ }
+ 
+ .linkedin-link a:hover {
+     color: #007fb1;
+ }
+ 
+ .twitter-link a:hover {
+     color: #39a9e0;
+ }
+ 
+ .google-plus-link a:hover {
+     color: #d14836;
+ }
+ 
+ /*******************************/
+ /***** Service Page Styles *****/
+ /*******************************/
+ .service-icon {
+     font-size: 50px;
+ }
+     
+ .valign {
+     display: inline-block;
+     vertical-align: middle;
+     float: none;
+ }
+ 
+ /********************/
+ /***** SP Fixes *****/
+ /********************/
+ #ms-designer-ribbon {
+     z-index: 99 !important;
+ }
+ 
+ #s4-bodyContainer {
+     padding-bottom: 10px !important;
+ }
+ 
+ /********************************/
+ /***** Ribbon Buttons Fixes *****/
+ /********************************/
+ .ms-cui-dd-text, input.ms-cui-cb-input {
+     height: 100% !important;
+     padding: 5px !important;
+ }
+ 
+ .ms-cui-dd-arrow-button {
+     height: 100% !important;
+     padding-left: 0 !important;
+ }
+ 
+ .ms-dlgTitle {
+     padding: 10px 30px 10px 15px !important;
+ }
+ 
+ .ms-cui-ctl-thin {
+     padding: 0 4px !important;
+     height: 100% !important;
+     margin-top: 10px !important;
+ }
+ 
+ .ms-qatbutton span {
+     height: 25px !important;
+     width: 25px !important;
+ }
+ 
+ /***********************************/
+ /***** Web Part Properties Box *****/
+ /***********************************/
+ #MSOTlPn_MainTD, #MSOTlPn_Parts {
+     width: 100%;
+     height: 50vh;
+ }
+ 
+ .ms-ToolPaneOuter {
+     position: fixed;
+     top: 30px;
+     left: 40%;
+     margin: 0 auto;
+     width: 30% !important;
+     height: 60vh !important;
+     overflow: hidden !important;
+     z-index: 1999 !important;
+ }
+ 
+ .ms-ToolPaneBody {
+     overflow: scroll !important;
+     width: 100% !important;
+     height: 100% !important;
+     z-index: 1999 !important;
+ }
+ 
+ /*********************/
+ /***** Left Menu *****/
+ /*********************/
+ .ms-core-listMenu-verticalBox > .ms-core-listMenu-item, .ms-core-listMenu-verticalBox li.static > .ms-core-listMenu-item {
+     display: none !important;
+     padding: 5px !important;
+ }
+ 
+ .ms-core-listMenu-verticalBox li.static > ul.static > li.static > .ms-core-listMenu-item {
+     padding: 3px 3px 3px 10px !important;
+ }
+     
+ /***********************************************************************************************************************************/
+     
+ /* For Small Resolutions & Notebooks: max 1280 */
+ @media screen and (min-width:1201px) and (max-width:1278px) {     
+ 
+     .adminTools {
+         left: 62%;
+     }
+ 
+     .welcomeText {
+         font-size: .9em;
+     }
+ }
+ 
+ @media screen and (min-width:1279px) and (max-width:1289px) {
+ 
+     .nav-section {
+         font-size: .8em;
+     }
+ 
+ }
+ 
+ @media screen and (min-width:1290px) and (max-width:1349px) {
+ 
+     .nav-section {
+         font-size: .8em;
+     }
+ 
+     .adminTools {
+         left: 66%;
+     }
+ 
+ }
+ 
+ @media screen and (min-width:1350px) and (max-width:1399px) {
+     .nav-section {
+         font-size: .9em;
+     }
+ 
+     .adminTools {
+         left: 66%;
+     }
+ }
+ 
+ @media screen and (min-width:1400px) and (max-width:1499px) {
+     .adminTools {
+         left: 69%;
+     }
+ }
+ 
+ @media screen and (min-width:1500px) and (max-width:1599px) {        
+     .adminTools {
+         left: 69%;
+     }
+ }
+ 
+ @media only screen and (min-width: 1600px) and (max-width: 1690px) {    
+     .adminTools {
+         left: 69%;
+     }
+ }
+ 
+ @media only screen and (min-width: 1691px) and (max-width: 1749px) {
+     .adminTools {
+         left: 70%;
+     }
+ }
+ 
+ @media only screen and (min-width: 1750px) and (max-width: 1918px) {    
+     .adminTools {
+         left: 70%;
+     }
+ }
+ 
+ /* For resolution 1920px x 1080px only: */
+ @media only screen and (min-width: 1919px) and (max-width:1921px) {
+     .adminTools {
+         left: 70%;
+     }
+ }
+ 
+ @media screen and (min-width: 1922px) and (max-width:1999px) {
+     .adminTools {
+         left: 73%;
+     }
+ }
+ 
+ @media screen and (min-width: 2000px) and (max-width:2099px) {
+     .adminTools {
+         left: 79%;
+     }
+ }
+ 
+ @media screen and (min-width: 2100px) and (max-width: 2199px) {    
+     .adminTools {
+         left: 79%;
+     }
+ }
+ 
+ @media screen and (min-width: 2200px) and (max-width:2399px) {
+     .adminTools {
+         left: 79%;
+     }
+ }
+ 
+ @media screen and (min-width: 2400px) and (max-width:2499px) {
+     .adminTools {
+         left: 70%;
+     }
+ }
+ 
+ @media screen and (min-width: 2500px) and (max-width:2600px) {
+     .adminTools {
+         left: 70%;
+     }
+ }
+ 
+ @media screen and (min-width: 2601px) and (max-width:3000px) {
+     .adminTools {
+         left: 79%;
+     }
+ }
+ 
+ @media screen and (min-width: 3001px) {
+     .adminTools {
+         left: 70%;
+     }
+ }
+ 
+ @media screen and (-webkit-min-device-pixel-ratio:0), screen and (-webkit-min-device-pixel-ratio:1), screen and (-webkit-min-device-pixel-ratio:2) {    
+     .adminTools {
+         left: 70%;
+     }
+ }

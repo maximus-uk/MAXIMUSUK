@@ -1,0 +1,110 @@
+/***** Brand Colours *****/
+:root {
+    --PrimaryDark: #545487;
+    --PrimaryMid: #7676b8;
+    --PrimaryLight: #dbdcf4;
+    --SecondaryDark1: #4f7b39;
+    --SecondaryMid1: #9cc487;
+    --SecondaryLight1: #d9eccd;
+    --SecondaryDark2: #c95828;
+    --SecondaryMid2: #f9ad86;
+    --SecondaryLight2: #fae8d6;
+    --AccentDark1: #205794;
+    --AccentMid1: #6e96cf;
+    --AccentLight1: #e5eaf6;
+    --AccentDark2:#8a742e;
+    --AccentMid2:#ddcc68;
+    --AccentLight2:#f2e5b6;
+    --AccentDark3:#5f295f;
+    --AccentMid3:#cfaccc;
+    --AccentLight3:#f2ddec;
+    --TextColour: black;
+    --BaseColour: white;
+    --UsefulLinkBG: lightgrey;
+    --MaxDarkGrey : #666;
+    --MaxMidGrey : #a1a1a1; 
+    --MaxSilver : #c2c2c4;         
+}
+ 
+/*
+@font-face {
+    font-family: Avenir;
+    font-weight: bold;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Black.otf") format("opentype");
+  }
+
+@font-face {
+    font-family: Avenir;
+    font-weight: bolder;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Avenir;
+    font-weight: 700;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Roman.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/AvenirLTStd-Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: FS ME;  
+    font-weight: bolder;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/FS ME Heavy.otf") format("opentype"),
+        url("/_catalogs/masterpage/MAXUK/fonts/FS ME Heavy.woff") format("woff"),
+        url("/_catalogs/masterpage/MAXUK/fonts/FS ME Heavy.svg#filename") format("svg");
+}
+
+@font-face {
+    font-family: FS ME;
+    font-weight: bold;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/FS ME Bold.otf") format("opentype"),
+        url("/_catalogs/masterpage/MAXUK/fonts/FS ME Bold.woff") format("woff"),
+        url("/_catalogs/masterpage/MAXUK/fonts/FS ME Bold.svg#filename") format("svg");
+}
+
+@font-face {
+    font-family: FS ME;
+    src: url("/_catalogs/masterpage/MAXUK/fonts/FS ME Light.otf") format("opentype"),
+        url("/_catalogs/masterpage/MAXUK/fonts/FS ME Light.woff") format("woff"),
+        url("/_catalogs/masterpage/MAXUK/fonts/FS ME Light.svg#filename") format("svg");
+}
+*/
+
+/*.ms-compositeHeader, .root-18 {
+    background-color:#545487;
+}*/
+body {
+    font-family: "Avenir", "FS ME", Arial, sans-serif !important;
+}
+.ms-siteLogoContainerOuter {
+    border-radius: 10%;
+    border-width: 3px;
+}
+.ms-siteLogo-actual {
+    border-radius: 10%;
+}
+.ms-HorizontalNavItem:hover, .siteNavLink-201:hover{
+    border-radius:5px;
+    border-bottom: 4px solid var(--SecondaryDark2);
+}
+.ms-compositeHeader {
+    background-color:var(--PrimaryLight);
+}
+/*.ms-HorizontalNavItem-link:hover{
+   color:#545487!important;
+}*/
+

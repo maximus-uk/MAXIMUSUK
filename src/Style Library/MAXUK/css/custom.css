@@ -1,6 +1,6 @@
 ﻿/*   **************************************************
      Site   	: MAX UK Intranets
-     Page   	: Any for UK Business Units Intranet / Front Door area using the Classic UI team or publishing site template
+     Page   	: Any for UK Business Units Intranet custom app pages
      Author 	: Jason Clark
      Date   	: Feb 2019
      Purpose	: Custom CSS file for Single Page Apps (SPA) or custom in-page coding which is not part of the core site code for the Classic UI Intranet
@@ -15,12 +15,6 @@
      Notes		:
 
     ************************************************** */
-
-@media screen and (-webkit-min-device-pixel-ratio:1) {
-    .postForm {
-        margin-left: 80px !important;
-    }
-}
 
 /*************************
  ***** Page Elements *****
@@ -62,32 +56,6 @@ div:empty {
     cursor: default;
     pointer-events: none;
 }
-
-.scrollbar {
-    overflow: auto;
-    border-radius: 10px !important;
-}
-
-    /****** Mozilla Scrollbar */
-    .scrollbar::-webkit-scrollbar {
-        width: .9em;
-        height: .9em;
-    }
-
-    .scrollbar::-webkit-scrollbar-track {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-    }
-
-    /****** Mozilla Scrollbar */
-    .hiddenScrollbar::-webkit-scrollbar {
-        width: 10px;
-    }
 
 .homeLink {
     font-size: 1em;
@@ -166,51 +134,6 @@ div:empty {
     width: 25px;
     height: 25px;
     padding: 2px 0 0 2px;
-}
-
-/*.buttonOn {
-    border-radius: 10px !important;
-    min-width: 50px;
-    max-width: inherit;
-    width: auto;
-}
-*/
-
-.ui-group {
-    display: inline-block;
-}
-
-    .ui-group h3 {
-        display: inline-block;
-        vertical-align: top;
-        line-height: 32px;
-        margin-right: 0.2em;
-        font-size: 16px;
-    }
-
-    .ui-group .button-group {
-        display: inline-block;
-        margin-right: 20px;
-    }
-
-.navTabContainer {
-    padding-left: 5px !important;
-    width: 100%;
-    height: 280px;
-}
-
-.headingText {
-    position: relative;
-    top: 18px !important;
-}
-
-    .headingText h2 {
-        padding-top: 5px !important;
-        margin-left: 8px;
-    }
-
-.navTabBar ul li {
-    height: 25px;
 }
 
 .homeTabContainer {
@@ -349,16 +272,78 @@ div:empty {
 /*************************************
  **** Knowledge / Document Pages *****
  *************************************/
+#knDocs {position:relative;}
+
+.docUpload{position:fixed;top:243px;right:0;border-radius:10px 0 0 10px!important;}
+
+.knowledgeMainTabs{
+    padding: 3px;
+    flex: 0 0 15.8%;
+    max-width: 30%;        
+}
+.knowledgeCustomTabs{
+    padding: 3px;
+    flex: 0 0 84%;
+    max-width: 70%;        
+}
 .knowledgeTabContainer {
     position: relative;
-    top: -10px !important;
-    left: 1px !important;
-    width: 100% !important;
-    margin: 0 auto;
+    margin:0 auto;
+    overflow:hidden;
+    padding:5px;
+    height:50px;
+    z-index:99;
+}     
+
+.list {
+    position:absolute;
+    left:0px;
+    top:0px;
+    min-width:3500px;	
+    margin-top:0px;
+    flex-wrap:nowrap;
+} 
+
+.scroller {
+    text-align:center;
+    cursor:pointer;
+    display:none;
+    padding:7px;
+    padding-top:11px;
+    white-space:no-wrap;
+    vertical-align:middle;
+}
+
+.scroller-right{
+    float:right;
+}
+
+.scroller-left {
+    float:left;
+}
+
+#knowledgeTabNames::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+#knowledgeTabNames::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+#knowledgeTabNames::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+}      
+#knowledgeTabNames::-webkit-scrollbar-button {   
+    padding:5px;
+}
+#knowledgeTabNames::-webkit-scrollbar-button:single-button:horizontal:start:decrement {
+    border-radius: 10px;
+}
+#knowledgeTabNames::-webkit-scrollbar-button:horizontal:single-button:end:increment {
+    border-radius: 10px;
 }
 
 #mgmtDocs {
-    visibility: hidden;
+    display: none;
 }
 
 .templateSection {
@@ -382,26 +367,15 @@ div:empty {
 .documentSection {
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 71vh;
+    min-height:60vh;
+    height: 68vh;
+    max-height:75vh;
     width: 40%;
-    position: relative;
-    left: 3px;
+    position:absolute;
+    left:5px;
+    top:60px;
+    z-index:99;
 }
-
-    /* Webkit Browser Scrollbar */
-    .documentSection::-webkit-scrollbar {
-        width: 12px;
-    }
-
-    /* Track */
-    .documentSection::-webkit-scrollbar-track {
-        border-radius: 5px;
-    }
-
-    /* Handle */
-    .documentSection::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-    }
 
 .documentFolder {
     width:99%;
@@ -424,41 +398,47 @@ div:empty {
 	    float:left;
 	    margin-right:10px;
 	}
+     .documentFolder .docRow:first-child .docItem p{margin-left:5px;}
 
 .documentViewer {
     position: absolute;
-    top: 120px;
+    top: 60px;
     left:41%;
     width: 55%;
-    height: 69vh;
+    min-height:65vh;
+    height: 67vh;
+    max-height:75vh;
     z-index: 999;
 }
 .documentViewer iframe {height:100%; width:100%;}
-
+.docRow{margin-left:0;height:30px;}
 .docItem {
     position: relative;
     height:20px;
-    width: 100%;
-    left:4%;
+    width: 70%;
     float: left !important;
-    margin: 5px 0 0 0 !important;
+    margin: 0 0 5px 0 !important;
     font-size: 1em !important;
     font-weight: bold;
+    white-space:nowrap;
+    text-overflow:ellipsis;
 }
 .docItem a:hover{padding:5px;}
 
 .iconContainer {
     display: inline-flex;
-    flex:0 0 5%;
+    min-width:5%;
     max-width:15%;
+    height:30px;
+    padding:0;
 }
 
 /******************************************************************************************************/
 
-.teamDocumentSubfolders .docIcon, .teamDocumentSubfolders .docEdit, .teamDocumentSubfolders .docView,
-.docList .docIcon, .docList .docEdit, .docList .docView {
-    position: absolute;
-    display: inline-table;
+.teamDocumentSubfolders .docIcon, .teamDocumentSubfolders .docEdit, .teamDocumentSubfolders .docView, .teamDocumentSubfolders .docDelete, .teamDocumentSubfolders .docPublish
+.docList .docIcon, .docList .docEdit, .docList .docView, .docList .docDelete, .docList .docPublish {
+    position: relative;
+    top:-21px;
 }
 
 .teamDocumentSubfolders .docIcon, .docList .docIcon {
@@ -466,15 +446,19 @@ div:empty {
 }
 
 .teamDocumentSubfolders .docView, .docList .docView {
-    left: 39px;
+    left: 19px;
 }
 
 .teamDocumentSubfolders .docEdit, .docList .docEdit {
-    left: 65px;
+    left: 25px;
 }
 
 .teamDocumentSubfolders .docDelete, .docList .docDelete {
-    float: right;
+    left: 30px;
+}
+
+.teamDocumentSubfolders .docPublish, .docList .docPublish {
+    left: 36px;
 }
 
 .nav-stacked > li + li {
@@ -506,23 +490,9 @@ div:empty {
         overflow-x: scroll;
         overflow-y: hidden;
     }
-
         .teamDocumentTabs > ul > li {
             display: inline;
         }
-
-        .teamDocumentTabs > ul::-webkit-scrollbar-track {
-            border-radius: 10px;
-        }
-
-        .teamDocumentTabs > ul::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        .teamDocumentTabs > ul::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-        }
-
     .teamDocumentTabs > li {
         margin: 0 5px 5px 3px;
         display: inline;
@@ -679,52 +649,6 @@ blockquote {
     padding:5px;
 }
 
-.bullets {
-    position: relative;
-    top: -1px !important;
-    font-size: 10px;
-    font-family: 'Font Awesome 5 Free';
-    content: "\e165";
-}
-
-    .bullets li {
-        position: relative;
-        top: -19px !important;
-        left: 15px;
-        margin-bottom: -10px;
-        font-size: 14px;
-    }
-
-.profileEditBtn {
-    border-radius: 8px !important;
-}
-    .profileEditBtn:hover {
-        border-radius: 8px;
-    }
-
-.profileName {
-    position: relative;
-}
-
-.profileAbout {
-    position: relative;
-    top: -15px;
-}
-
-.profileTabs {
-    padding-left: -20px;
-    position: relative;
-    left: -20px;
-}
-
-.profileContent {
-    margin-left: 10px;
-    height: 335px;
-    width: 99.2%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
 .titleRow {
     position: absolute;
     z-index: 99;
@@ -740,51 +664,6 @@ blockquote {
     font-size: .9em;
     margin-bottom:5px;
 }
-
-.contactsContainer {
-    position: relative;
-    height: 75vh;
-    top: 5px;
-    z-index: 5;
-}
-
-.contactsTabs, .contactsContent {
-    margin: 0;
-    padding: 0 10px 0 0;
-}
-
-.contactsTabs {
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 17vw;
-    text-align: left;
-}
-
-.contactsContent {
-    margin: 0 0 0 10px;
-    width: 44vw;
-    height: 100%;
-    overflow: auto;
-}
-    .contactsContent .contactTitle {
-        padding-left: 10px;
-        margin: 0;
-        width: 100% !important;
-        height: 40px;
-        border-radius: 10px 10px 0 0;
-    }
-
-    .contactsContent h3 {
-        position: relative;
-        top: -10px !important;
-        font-weight: bold;
-        vertical-align: middle;
-    }
-
-    .contactsContent .contactTable {
-        margin-left: 15px !important;
-        width: 96.5%;
-    }
 
 .dataTab {
     height: 300px;
@@ -848,10 +727,10 @@ blockquote {
 }
 /**************************************************/
 
-/*********************************************
- ***** About Suggestion & Team FAQs Page *****
- *********************************************/
-.suggestionContainer, .faqContainer {
+/*********************************
+ ***** About Suggestion Page *****
+ *********************************/
+.suggestionContainer{
     position: absolute;
     height: 79vh!important;
     width: 100%;
@@ -860,47 +739,47 @@ blockquote {
 .suggestionContainer {top: 8vh;}
 .faqContainer {margin-top: 5px !important;}
 
-.suggestionTabs, .suggestionContent, .faqTabs, .faqContent{
+.suggestionTabs, .suggestionContent{
     position:absolute;
 }
 
-.suggestionTabs, .faqTabs {
+.suggestionTabs {
     overflow-y: scroll;
     padding: 10px;
     height: 99%;
     text-align: left;
 }
-    .suggestionTabs .nav-tabs li > a, .faqTabs .nav-tabs li > a  {
+    .suggestionTabs .nav-tabs li > a {
         font-weight: bold;
         font-size: 1.1em;
         border-radius: 10px;
     }
-        .suggestionTabs .nav-tabs li > a:active, .faqTabs .nav-tabs li > a:active {
+        .suggestionTabs .nav-tabs li > a:active {
             font-size: 1.1em;
             height: 20px;
             border-radius: 10px;
         }
 
-    .suggestionTabs a:hover, .faqTabs a:hover {
+    .suggestionTabs a:hover {
         border-radius: 10px;
     }
 
-.suggestionContent, .faqContent {
+.suggestionContent {
     left: 27vw;
     width: 69% !important;
     height: 99%;
     padding: 10px;
     overflow: scroll;
 }
-.suggestionContent::-webkit-scrollbar, .faqContent::-webkit-scrollbar{display:none;}
-.suggestionTabs::-webkit-scrollbar, .faqTabs::-webkit-scrollbar{display:none;}
+.suggestionContent::-webkit-scrollbar}
+.suggestionTabs::-webkit-scrollbar}
 
     .suggestionContent .collapsing, .faqAnswer .collapsing, .faqContent .collapsing, .faqAnswer .collapsing {
         top: -10px !important;
         width: 100% !important;
     }
 
-    .suggestionContent .panel-group, .faqContent .panel-group {
+    .suggestionContent .panel-group {
         margin-right: 5px;
     }
 
@@ -1001,43 +880,50 @@ blockquote {
     padding-top: 6px;
 }
 
-/***************/
-/** SMT Card  **/
-/***************/
-.contactContainer {
+/************************
+ ***** Key Contacts *****
+ ************************/
+ .contactsContainer {
     position: relative;
-    left: 0;
-    top: 150px;
-    width: 101%;
-    height: 230px;
-    overflow: hidden;
+    height: 75vh;
+    top: 5px;
+    z-index: 5;
 }
 
-.contactCardRow {
-    white-space: nowrap;
-    height: 230px;
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
+.contactsTabs, .contactsContent {
+    margin: 0;
+    padding: 0 10px 0 0;
 }
 
-.contactCard {
-    display: inline-block;
-    width: 144px;
-    height: 200px;
-    margin: 5px 8px 5px 8px;
-    transition: 0.3s;
+.contactsTabs {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 17vw;
+    text-align: left;
 }
-    .contactCard img {
-        width: 130px;
-        height: 130px;
-        margin: 5px 5px 0 5px;
+
+.contactsContent {
+    margin: 0 0 0 10px;
+    width: 44vw;
+    height: 100%;
+    overflow: auto;
+}
+    .contactsContent .contactTitle {
+        padding-left: 10px;
+        margin: 0;
+        width: 100% !important;
+        height: 40px;
+        border-radius: 10px 10px 0 0;
     }
 
-    .contactCard div {
-        margin: 7px 0 0 8px !important;
+    .contactsContent h3 {
+        position: relative;
+        top: -10px !important;
+        font-weight: bold;
+        vertical-align: middle;
     }
-    .contactCard .jobTitle {
-        margin-top: -5px;
-        font-size: .9em;
+
+    .contactsContent .contactTable {
+        margin-left: 15px !important;
+        width: 96.5%;
     }

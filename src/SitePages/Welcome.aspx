@@ -55,8 +55,23 @@
 				<div class="container-fluid p-0">
 					<div class="row no-gutters">
 
+						<div class="logoContainer MaxUK">
+							<a class="portfolio-box" href="/sitepages/home.aspx" target="_blank">
+								<div class="borders">								
+									<img class="img-fluid" src="/publishingimages/logos/maximus-uk_logo.png" alt="" />
+								</div>
+								<div class="portfolio-box-caption">
+									<div class="portfolio-box-caption-content">
+										<div class="project-name">
+											Central Services Intranet
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+												
 						<div class="logoContainer CHDA">	
-							<a class="portfolio-box" href="/sites/chda" target="_blank">
+							<a class="portfolio-box" href="/sites/chda/sitepages/home.aspx" target="_blank">
 								<div class="borders">
 										<img class="img-fluid" src="/publishingimages/logos/chda_logo.png" alt="" />
 								</div>									
@@ -70,55 +85,26 @@
 							</a>							
 						</div>		
 
-						<div class="logoContainer HML">
-							<a class="portfolio-box" href="/sites/HML" target="_blank">
-								<div class="borders">
-									<img class="img-fluid" src="/publishingimages/logos/hml_logo.png" alt="" />
-								</div>
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											HML Intranet
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-
 						<div class="logoContainer MPS">
-							<a class="portfolio-box" href="/sites/mps" target="_blank">
+							<a class="portfolio-box" href="/sites/esd/sitepages/home.aspx" target="_blank">
 								<div class="borders">
 									<img class="img-fluid" src="/publishingimages/logos/mps_logo.png" alt="" />
 								</div>
 								<div class="portfolio-box-caption">
 									<div class="portfolio-box-caption-content">
 										<div class="project-name">
-											MPS Intranet
+											ESD Intranet
 										</div>
 									</div>
 								</div>
 							</a>
 						</div>						
-					</div>
+					</div>						
 
 					<div class="row no-gutters">	
-						<div class="logoContainer Remploy">
-							<a class="portfolio-box" href="/sites/remploy" target="_blank">
-								<div class="borders">
-									<img class="img-fluid" src="/publishingimages/logos/remploy_logo.png" alt="" />
-								</div>
-								<div class="portfolio-box-caption">
-									<div class="portfolio-box-caption-content">
-										<div class="project-name">
-											Remploy Intranet
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
 
 						<div class="logoContainer Revitalise">
-							<a class="portfolio-box" href="/sites/revitalise" target="_blank">
+							<a class="portfolio-box" href="/sites/revitalised/sitepages/home.aspx" target="_blank">
 								<div class="borders">
 									<img class="img-fluid revitalisedLogo" src="/publishingimages/logos/revitalised_logo.png" alt="" />
 								</div>
@@ -132,20 +118,21 @@
 							</a>
 						</div>
 
-						<div class="logoContainer MaxUK">
-							<a class="portfolio-box" href="/sites/maxuk" target="_blank">
-								<div class="borders">								
-									<img class="img-fluid" src="/publishingimages/logos/maximus_logo.png" alt="" />
+						<div class="logoContainer HML">
+							<a class="portfolio-box" href="/sites/HML/sitepages/home.aspx" target="_blank">
+								<div class="borders">
+									<img class="img-fluid" src="/publishingimages/logos/hml_logo.png" alt="" />
 								</div>
 								<div class="portfolio-box-caption">
 									<div class="portfolio-box-caption-content">
 										<div class="project-name">
-											MAXIMUS UK Intranet
+											HML Intranet
 										</div>
 									</div>
 								</div>
 							</a>
-						</div>						
+						</div>
+
 					</div>
 				</div>
 			</section>

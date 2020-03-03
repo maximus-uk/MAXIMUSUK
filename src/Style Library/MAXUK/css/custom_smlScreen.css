@@ -1,9 +1,0 @@
-﻿@media screen and (max-width: 1200px) { 
-
-    .pageLeftContainer{left:0;width:93vw;}
-    .slider-wrapper {
-        width: 100%
-    }
-    .pageMiddleContainer{position:relative!important;left:5.5vw;top:30px}
-
-}

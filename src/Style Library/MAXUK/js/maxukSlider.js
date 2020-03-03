@@ -55,7 +55,6 @@ function getSlideData(siteURL) {
                 var endYYYY = slideEndDate.substr(0, 4);
                 var endMM = slideEndDate.substr(5, 2);
                 var endDD = slideEndDate.substr(8, 2);
-
                 slideEndDate = endDD + '/' + endMM + '/' + endYYYY;
 
                 // check the slide is still in date
@@ -76,7 +75,7 @@ function getSlideData(siteURL) {
                                                 '<img src="'+slideImage+'" alt="'+slideName+'">' +
                                                 '<div class="carousel-caption">' +
                                                     '<h4 class="display-4 text-white font-weight-bolder">'+slideTitle+'</h4>' +
-                                                    '<span>'+slideHeadline+'</span>' +
+                                                    '<p>'+slideHeadline+'</p>' +
                                                 '</div>' +
                                                 '</a>' +                                        
                                                 '</div>');
@@ -89,7 +88,7 @@ function getSlideData(siteURL) {
                                                 '<img src="'+slideImage+'" alt="'+slideName+'">' +
                                                 '<div class="carousel-caption">' +
                                                     '<h4 class="display-4 text-white font-weight-bolder">'+slideTitle+'</h4>' +
-                                                    '<span>'+slideHeadline+'</span>' +
+                                                    '<p>'+slideHeadline+'</p>' +
                                                 '</div>' +
                                                 '</a>' +                                        
                                                 '</div>');

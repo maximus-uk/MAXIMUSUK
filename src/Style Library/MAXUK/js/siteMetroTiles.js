@@ -8,6 +8,7 @@ function getTiles(URL) {
     var rowNum = 1;
     var fields = "<ViewFields>" +
         "<FieldRef Name='ID' />" +
+        "<FieldRef Name='TileOrder' />" +
         "<FieldRef Name='Title' />" +
         "<FieldRef Name='Description' />" +
         "<FieldRef Name='LinkURL' />" +
@@ -15,10 +16,12 @@ function getTiles(URL) {
         "<FieldRef Name='LaunchBehavior' />" +
         "</ViewFields>";
     var query = "<Query><OrderBy><FieldRef Name='TileOrder' Ascending='TRUE'/></OrderBy></Query>";
-    var buName = URL.split('/')[4];
 
     $('#metrotiles').append('<div class="row" id="row' + rowNum + '"></div>');
-
+    var appURL="https://"+URL.split('/')[2]+"/"
+    var buName = URL.split('/')[4];
+    //console.log("metrotiles url="+appURL+" site url="+URL);
+    
     $().SPServices({
         operation: method,
         async: false,
@@ -36,14 +39,14 @@ function getTiles(URL) {
                 var tileImage = $(this).attr("ows_ImageURL").split(',')[0];
                 var tileTarget = $(this).attr("ows_LaunchBehavior");
                 
-                console.log(tileTitle+" "+tileTarget);
+                //console.log(tileTarget);
 
                 if (tileDesc === undefined) { tileDesc = "" };
 
                 $('#row' + rowNum).append('<a href="' + tileLink + '" target="' + tileTarget + '" class="metrotile text-decoration-none text-center">' +
                     '<img class="img-responsive rounded" src="' + tileImage + '">' +
+                    '<div class="overlay">' +
                     '<h5 class="font-weight-bolder text-decoration-none text-uppercase text-white text-center">' + tileTitle + '</h5>' +
-                    '<div class="overlay">' +                   
                     '<p class="info text-decoration-none text-white font-weight-normal rounded">' + tileDesc + '</p>' +
                     '</div>' +
                     '</a>');
@@ -70,10 +73,9 @@ function getTeamTiles(appURL) {
         "<FieldRef Name='Description' />" +
         "<FieldRef Name='LinkURL' />" +
         "<FieldRef Name='ImageURL' />" +
-        "<FieldRef Name='LaunchBehavior' />" +
+        "<FieldRef Name='LaunchBehaviour' />" +
         "</ViewFields>";
     var query = "<Query><OrderBy><FieldRef Name='TileOrder' Ascending='TRUE'/></OrderBy></Query>";
-    //var appURL="https://"+URL.split('/')[2]+"/"
 
     $('#metrotiles').append('<div class="row" id="row' + rowNum + '"></div>');
     
@@ -92,15 +94,14 @@ function getTeamTiles(appURL) {
                 var tileDesc = $(this).attr("ows_Description");
                 var tileLink = $(this).attr("ows_LinkURL").split(',')[0];
                 var tileImage = $(this).attr("ows_ImageURL").split(',')[0];
-                var tileTarget = $(this).attr("ows_LaunchBehavior");
-                
+                var tileTarget = $(this).attr("ows_LaunchBehaviour");
+
                 if (tileDesc === undefined) { tileDesc = "" };
 
                 $('#row' + rowNum).append('<a href="' + tileLink + '" target="' + tileTarget + '" class="metrotile text-decoration-none text-center">' +
-                //$('#row' + rowNum).append('<a href="#" onclick="loadPage(\''+tileTitle+'.html\'); return false;" class="metrotile text-decoration-none text-center">' +
                     '<img class="img-responsive rounded" src="' + tileImage + '">' +
-                    '<h5 class="font-weight-bolder text-decoration-none text-uppercase text-white text-center">' + tileTitle + '</h5>' +
                     '<div class="overlay">' +
+                    '<h5 class="font-weight-bolder text-decoration-none text-uppercase text-white text-center">' + tileTitle + '</h5>' +
                     '<p class="info text-decoration-none text-white font-weight-normal rounded">' + tileDesc + '</p>' +
                     '</div>' +
                     '</a>');
@@ -112,9 +113,4 @@ function getTeamTiles(appURL) {
             });
         }
     });
-}
-
-function loadPage(pageName){
-    console.log(siteURL+"/sitepages/"+pageName);
-    $('#appContentFrame').attr('src',"/sites/chda/it/sitepages/"+pageName);
 }

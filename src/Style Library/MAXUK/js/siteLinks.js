@@ -5,6 +5,7 @@ function getLinkData(URL,site) {
     var fields = "<ViewFields>" +
         "<FieldRef Name='Title' />" +
         "<FieldRef Name='Group' />" +
+        "<FieldRef Name='GroupID' />" +
         "<FieldRef Name='SortOrder' />" +
         "<FieldRef Name='URL' />" +
         "<FieldRef Name='Team' />" +
@@ -14,10 +15,11 @@ function getLinkData(URL,site) {
     var appURL="https://"+URL.split('/')[2]+"/";
     var buName=URL.split('/')[4];
     var linkGroupPrev = "";
-    var groupID=1;
+    var groupID;
     var linkCount=0;
     var cardIDName = "";
-    
+    //console.log("buname="+buName+" appURL="+appURL);
+
     $().SPServices({
         operation: method,
         async: false,
@@ -31,28 +33,31 @@ function getLinkData(URL,site) {
                 // assign SP list item                      
                 var linkTitle = $(this).attr("ows_Title");
                 var linkGroup = $(this).attr("ows_Group");
+                var linkGroupID = $(this).attr("ows_GroupID");
                 var siteName = $(this).attr("ows_Team");//.split(";#")[1];
                 var linkURL = $(this).attr("ows_URL");//.split(",")[0];
                 var pageTarget = $(this).attr("ows_BrowseMethod");
-                
+
+                if(linkGroupID!==undefined){groupID=linkGroupID.split(';#')[1];groupID=groupID.split('.')[0];}
                 if(siteName != undefined){siteName = siteName.split(";#")[1];}
                 if(linkURL != undefined){linkURL = linkURL.split(";#")[0];}
+                console.log(groupID);
                 
                 if(linkGroup==="MAXIMUS UK"){
                     cardIDName="MAXIMUSUK";
                 }else{
-                    
                     cardIDName=linkGroup;
                 }
 
                 if(linkGroup !== linkGroupPrev){ 
                     var groupCard = '<!-- ***** Group '+groupID+' is the '+linkGroup+' links ***** -->'+
                                     '<div class="card" id="usefulLinks'+cardIDName+'">'+                     
-                                    '<a class="accordion-toggle card-link" data-toggle="collapse" href="#group'+groupID+'" style="text-decoration:none">'+
+                                    '<a class="card-link accordion-toggle" data-toggle="collapse" href="#group'+groupID+'" style="text-decoration:none">'+
                                     '<div class="card-header">'+
                                     '<strong id="groupTitle'+groupID+'">'+
                                     linkGroup +
                                     '</strong>'+
+                                    //'<div class="accordion-toggle"></div>' +
                                     '</div>'+
                                     '</a>'+
                                     '<div id="group'+groupID+'" class="collapse" data-parent="#accordion">'+
@@ -64,11 +69,11 @@ function getLinkData(URL,site) {
                                     '</div>'+
                                     '</div>'; 
                      
-                    groupID++;
+                    //groupID++;
                 }                                         
 
                 if(buName===linkGroup || linkGroup==="MAXIMUS UK"){
-                    $('#accordion').append(groupCard);
+                    $('#maxLinks').append(groupCard);
                 }
 
                 if(linkGroup === linkGroupPrev && linkCount>0){
