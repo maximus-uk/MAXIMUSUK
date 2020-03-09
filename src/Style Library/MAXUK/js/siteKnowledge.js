@@ -85,7 +85,6 @@ function getKnowledgeDocs(team,buName,list,tabName,tabNum) {
     var zipIcon = '<i class="fa fa-file-archive orangeIcon" aria-hidden="true"></i>';
     var emailIcon = '<i class="fa fa-envelope forePurple1" aria-hidden="true"></i>';
     var icon;
-    var hasEdit = false;
     var docCount = 0;
     var docFlag = false;
     //var genFlag = false;
@@ -288,7 +287,7 @@ function getKnowledgeDocs(team,buName,list,tabName,tabNum) {
                                 '</nobr>' +
                                 '</div>' +
                                 '<div class="col text-left docItem">' + 
-                                '<a href="#" onclick="openDoc(\''+list+'\',\''+docName+'\',\''+docType+'\',\''+docID+'\');return false" title="open document"><p class="text-truncate">' + docTitle + '</p></a>' +
+                                '<a href="#" onclick="openDoc(\''+list+'\',\''+docName+'\',\''+docType+'\',\''+docID+'\');return false" title="open document"><p class="text-truncate"><i class="text-warning">draft</i> ' + docTitle + '</p></a>' +
                                 '</div>' +
                                 '</div>';                                 
                         }else {
@@ -734,18 +733,21 @@ function getDocTabs(buName,team,callback){
 function showText(team,buName,list,tabName,tabNum){
     //$('#tabLoadMessage').removeClass('hidden');
     //$('#tabLoadMessage').append('Getting Category Documents, please wait...');
-    
-    $('#toastHead h3').html('Getting Category Documents');
-    $('#toastBody').html('Please wait whilst the documents load' +
-                        '<div class="progress">' +
-                        '<div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%;"></div>' +
-                        '</div>');
-    $('.toast').toast('show');     
-    setTimeout(
-        function() 
-        {
-            getKnowledgeDocs(team,buName,list,tabName,tabNum);
-        }, 250);
+    if( $('#knLibrary'+tabNum).contents().length !== 0) {
+        return false;
+    }else{
+        $('#toastHead h3').html('Getting Category Documents');
+        $('#toastBody').html('Please wait whilst the documents load' +
+                            '<div class="progress">' +
+                            '<div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%;"></div>' +
+                            '</div>');
+        $('.toast').toast('show');     
+        setTimeout(
+            function() 
+            {
+                getKnowledgeDocs(team,buName,list,tabName,tabNum);
+            }, 250);
+    }
 }
 
 function progressMove() {
